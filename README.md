@@ -58,7 +58,7 @@ Or check out the latest [release](https://github.com/enronchain/enron/releases).
 ## Genesis
 To get onto our mainnet genesis download the genesis.json here
 
-`wget https://gist.githubusercontent.com/enronchain/ee862f58850fc1b5ee6a6fdccc3130d2/raw/55c2c4ea2fee8a9391d0dc55b2c272adb804054a/genesis.json`
+`wget https://gist.githubusercontent.com/EnronChain/52d111aff20fda340370ad81d69001c4/raw/48514a80cdf5e679e110d074fa3b77e987e3a090/genesis.json`
 
 and then move it into the enrond config (after you have initilized your node)
 
