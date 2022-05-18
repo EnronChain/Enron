@@ -19,9 +19,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/inflation/client/cli"
-	"github.com/echelonfoundation/echelon/v3/x/inflation/keeper"
-	"github.com/echelonfoundation/echelon/v3/x/inflation/types"
+	"github.com/enronchain/enron/v3/x/inflation/client/cli"
+	"github.com/enronchain/enron/v3/x/inflation/keeper"
+	"github.com/enronchain/enron/v3/x/inflation/types"
 )
 
 // type check to ensure the interface is properly implemented

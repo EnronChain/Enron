@@ -26,8 +26,8 @@ import (
 	tmversion "github.com/tendermint/tendermint/proto/tendermint/version"
 	"github.com/tendermint/tendermint/version"
 	evm "github.com/tharsis/ethermint/x/evm/types"
-	"github.com/echelonfoundation/echelon/v3/app"
-	"github.com/echelonfoundation/echelon/v3/x/claims/types"
+	"github.com/enronchain/enron/v3/app"
+	"github.com/enronchain/enron/v3/x/claims/types"
 )
 
 type KeeperTestSuite struct {
@@ -35,7 +35,7 @@ type KeeperTestSuite struct {
 
 	ctx sdk.Context
 
-	app            *app.Echelon
+	app            *app.Enron
 	queryClient    types.QueryClient
 	queryClientEvm evm.QueryClient
 	address        common.Address
@@ -74,7 +74,7 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 	suite.app = app.Setup(false, feemarkettypes.DefaultGenesisState())
 	suite.ctx = suite.app.BaseApp.NewContext(false, tmproto.Header{
 		Height:          1,
-		ChainID:         "echelon_9001-1",
+		ChainID:         "enron_9001-1",
 		Time:            time.Now().UTC(),
 		ProposerAddress: consAddress.Bytes(),
 

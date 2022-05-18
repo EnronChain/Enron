@@ -36,9 +36,9 @@ import (
 	ethermint "github.com/tharsis/ethermint/types"
 	evm "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/echelonfoundation/echelon/v3/app"
-	"github.com/echelonfoundation/echelon/v3/contracts"
-	"github.com/echelonfoundation/echelon/v3/x/incentives/types"
+	"github.com/enronchain/enron/v3/app"
+	"github.com/enronchain/enron/v3/contracts"
+	"github.com/enronchain/enron/v3/x/incentives/types"
 )
 
 var (
@@ -71,7 +71,7 @@ type KeeperTestSuite struct {
 	suite.Suite
 
 	ctx              sdk.Context
-	app              *app.Echelon
+	app              *app.Enron
 	queryClientEvm   evm.QueryClient
 	queryClient      types.QueryClient
 	address          common.Address
@@ -118,7 +118,7 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 	// Set Context
 	suite.ctx = suite.app.BaseApp.NewContext(checkTx, tmproto.Header{
 		Height:          1,
-		ChainID:         "echelon_9001-1",
+		ChainID:         "enron_9001-1",
 		Time:            time.Now().UTC(),
 		ProposerAddress: suite.consAddress.Bytes(),
 

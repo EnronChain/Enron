@@ -3,8 +3,8 @@ package recovery
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/recovery/keeper"
-	"github.com/echelonfoundation/echelon/v3/x/recovery/types"
+	"github.com/enronchain/enron/v3/x/recovery/keeper"
+	"github.com/enronchain/enron/v3/x/recovery/types"
 )
 
 // InitGenesis import module genesis

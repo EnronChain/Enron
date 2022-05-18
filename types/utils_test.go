@@ -16,7 +16,7 @@ import (
 
 func init() {
 	cfg := sdk.GetConfig()
-	cfg.SetBech32PrefixForAccount("echelon", "echelonpub")
+	cfg.SetBech32PrefixForAccount("enron", "enronpub")
 }
 
 func TestIsSupportedKeys(t *testing.T) {
@@ -72,7 +72,7 @@ func TestIsSupportedKeys(t *testing.T) {
 	}
 }
 
-func TestGetEchelonAddressFromBech32(t *testing.T) {
+func TestGetEnronAddressFromBech32(t *testing.T) {
 	testCases := []struct {
 		name       string
 		address    string
@@ -87,38 +87,38 @@ func TestGetEchelonAddressFromBech32(t *testing.T) {
 		},
 		{
 			"invalid bech32 address",
-			"echelon",
+			"enron",
 			"",
 			true,
 		},
 		{
 			"invalid address bytes",
-			"echelon1123",
+			"enron1123",
 			"",
 			true,
 		},
 		{
-			"echelon address",
-			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"enron address",
+			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 		{
 			"cosmos address",
 			"cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 		{
 			"osmosis address",
 			"osmo1qql8ag4cluz6r4dz28p3w00dnc9w8ueuhnecd2",
-			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 	}
 
 	for _, tc := range testCases {
-		addr, err := GetEchelonAddressFromBech32(tc.address)
+		addr, err := GetEnronAddressFromBech32(tc.address)
 		if tc.expError {
 			require.Error(t, err, tc.name)
 		} else {

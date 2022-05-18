@@ -9,7 +9,7 @@ import (
 	"github.com/tharsis/ethermint/tests"
 	evm "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/incentives/types"
+	"github.com/enronchain/enron/v3/x/incentives/types"
 )
 
 // ensureHooksSet tries to set the hooks on EVMKeeper, this will fail if the

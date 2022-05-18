@@ -3,7 +3,7 @@ package testutil
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
-	inflationtypes "github.com/echelonfoundation/echelon/v3/x/inflation/types"
+	inflationtypes "github.com/enronchain/enron/v3/x/inflation/types"
 )
 
 // FundAccount is a utility function that funds an account by minting and

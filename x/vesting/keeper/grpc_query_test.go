@@ -7,8 +7,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
 	"github.com/tharsis/ethermint/tests"
-	"github.com/echelonfoundation/echelon/v3/testutil"
-	"github.com/echelonfoundation/echelon/v3/x/vesting/types"
+	"github.com/enronchain/enron/v3/testutil"
+	"github.com/enronchain/enron/v3/x/vesting/types"
 )
 
 func (suite *KeeperTestSuite) TestBalances() {
@@ -34,7 +34,7 @@ func (suite *KeeperTestSuite) TestBalances() {
 			"invalid address",
 			func() {
 				req = &types.QueryBalancesRequest{
-					Address: "echelon1",
+					Address: "enron1",
 				}
 			},
 			false,

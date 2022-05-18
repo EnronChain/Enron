@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/claims/keeper"
-	"github.com/echelonfoundation/echelon/v3/x/claims/types"
+	"github.com/enronchain/enron/v3/x/claims/keeper"
+	"github.com/enronchain/enron/v3/x/claims/types"
 )
 
 // InitGenesis initializes the claim module's state from a provided genesis

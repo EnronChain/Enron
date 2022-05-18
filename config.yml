@@ -1,39 +1,39 @@
 accounts:
   - name: alice
-    coins: ["100000000uatom", "100000000000000000000aechelon"]
+    coins: ["100000000uatom", "100000000000000000000aenron"]
   - name: bob
-    coins: ["5000000000000aechelon"]
+    coins: ["5000000000000aenron"]
 validator:
   name: alice
-  staked: "100000000000000000000aechelon"
+  staked: "100000000000000000000aenron"
 faucet:
   name: bob 
-  coins: ["10aechelon"]
+  coins: ["10aenron"]
 build:
-  binary: "echelond"
+  binary: "enrond"
 init:
-  home: "$HOME/.echelond"
+  home: "$HOME/.enrond"
   app:
     evm-rpc:
       address: "0.0.0.0:8545"     # change the JSON-RPC address and port
       ws-address: "0.0.0.0:8546"  # change the JSON-RPC websocket address and port
 genesis:
-  chain_id: "echelon_3000-3"
+  chain_id: "enron_3000-3"
   app_state:
     staking:
       params:
-        bond_denom: "aechelon"
+        bond_denom: "aenron"
     mint:
       params:
-        mint_denom: "aechelon"
+        mint_denom: "aenron"
     crisis:
       constant_fee:
-        denom: "aechelon"
+        denom: "aenron"
     gov:
       deposit_params:
         min_deposit:
           - amount: "10000000"
-            denom: "aechelon"
+            denom: "aenron"
     evm:
       params:
-        evm_denom: "aechelon"
+        evm_denom: "aenron"

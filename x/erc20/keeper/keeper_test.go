@@ -41,16 +41,16 @@ import (
 	evm "github.com/tharsis/ethermint/x/evm/types"
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
-	"github.com/echelonfoundation/echelon/v3/app"
-	"github.com/echelonfoundation/echelon/v3/contracts"
-	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
+	"github.com/enronchain/enron/v3/app"
+	"github.com/enronchain/enron/v3/contracts"
+	"github.com/enronchain/enron/v3/x/erc20/types"
 )
 
 type KeeperTestSuite struct {
 	suite.Suite
 
 	ctx              sdk.Context
-	app              *app.Echelon
+	app              *app.Enron
 	queryClientEvm   evm.QueryClient
 	queryClient      types.QueryClient
 	address          common.Address
@@ -118,7 +118,7 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 		// Initialize the chain
 		suite.app.InitChain(
 			abci.RequestInitChain{
-				ChainId:         "echelon_9001-1",
+				ChainId:         "enron_9001-1",
 				Validators:      []abci.ValidatorUpdate{},
 				ConsensusParams: simapp.DefaultConsensusParams,
 				AppStateBytes:   stateBytes,
@@ -128,7 +128,7 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 
 	suite.ctx = suite.app.BaseApp.NewContext(checkTx, tmproto.Header{
 		Height:          1,
-		ChainID:         "echelon_9001-1",
+		ChainID:         "enron_9001-1",
 		Time:            time.Now().UTC(),
 		ProposerAddress: suite.consAddress.Bytes(),
 

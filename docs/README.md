@@ -1,14 +1,14 @@
 <!--
 layout: home
-title: Echelon Documentation
-description: Echelon is a scalable and interoperable Ethereum, built on Proof-of-Stake with fast-finality.
+title: Enron Documentation
+description: Enron is a scalable and interoperable Ethereum, built on Proof-of-Stake with fast-finality.
 sections:
   - title: Introduction
-    desc: Read a high-level overview of Echelon and its architecture.
+    desc: Read a high-level overview of Enron and its architecture.
     url: /intro
     icon: ethereum-intro
   - title: Basics
-    desc: Start with the basic concepts of Echelon, like accounts and transactions.
+    desc: Start with the basic concepts of Enron, like accounts and transactions.
     url: /basics
     icon: basics
   - title: Core Concepts
@@ -27,7 +27,7 @@ stack:
     label: ethereum-black
     url: https://eth.wiki
   - title: Tendermint Core
-    desc: The leading BFT engine for building blockchains, powering Echelon.
+    desc: The leading BFT engine for building blockchains, powering Enron.
     color: "#00BB00"
     label: core
     url: http://docs.tendermint.com
@@ -36,25 +36,25 @@ footer:
 aside: false
 -->
 
-# Echelon Documentation
+# Enron Documentation
 
 ## Get Started
 
-- **[Introduction](./intro/overview.md)**: High-level overview of Echelon.
+- **[Introduction](./intro/overview.md)**: High-level overview of Enron.
 
 ## Reference
 
-- **[Basics](./basics/)**: Documentation on the basic concepts of Echelon, like the standard anatomy of an application, the transaction lifecycle and accounts management.
-- **[Core](./core/)**: Documentation on the core concepts of Echelon, like `encoding`, and `events`.
+- **[Basics](./basics/)**: Documentation on the basic concepts of Enron, like the standard anatomy of an application, the transaction lifecycle and accounts management.
+- **[Core](./core/)**: Documentation on the core concepts of Enron, like `encoding`, and `events`.
 - **[Building Modules](./building-modules/)**: Important concepts for module developers like `message`s, `keeper`s, `handler`s and `querier`s.
-- **[Interfaces](./interfaces/)**: Documentation on building interfaces for Echelon applications.
+- **[Interfaces](./interfaces/)**: Documentation on building interfaces for Enron applications.
 
 ## Other Resources
 
 - **[Module Directory](../x/)**: Module implementations and their respective documentation.
 - **[Ethermint API Reference](https://godoc.org/github.com/tharsis/ethermint)**: Godocs of Ethermint.
-- **[gRPC Gateway API Reference](https://api.echelon.org/)**: List of gRPC Gateway endpoints to interact with an full-node through REST.
+- **[gRPC Gateway API Reference](https://api.enron.org/)**: List of gRPC Gateway endpoints to interact with an full-node through REST.
 
 ## Contribute
 
-See [this file](https://github.com/echelonfoundation/echelon/blob/main/docs/DOCS_README.md) for details of the build process and considerations when making changes.
+See [this file](https://github.com/enronchain/enron/blob/main/docs/DOCS_README.md) for details of the build process and considerations when making changes.

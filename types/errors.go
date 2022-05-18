@@ -5,9 +5,9 @@ import (
 )
 
 // RootCodespace is the codespace for all errors defined in this package
-const RootCodespace = "echelon"
+const RootCodespace = "enron"
 
-// root error codes for Echelon
+// root error codes for Enron
 const (
 	codeKeyTypeNotSupported = iota + 2
 )

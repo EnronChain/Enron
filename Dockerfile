@@ -1,6 +1,6 @@
 FROM golang:1.18.0-alpine3.15 as builder
 
-LABEL author="echelonfoundation"
+LABEL author="enronchain"
 
 RUN apk add --update-cache \
     git \
@@ -10,10 +10,10 @@ RUN apk add --update-cache \
     make \
     wget
 
-RUN git clone https://github.com/echelonfoundation/echelon.git /echelon && \
-    #chmod -R 755 /echelon && \
-    chmod -R 755 /echelon
-WORKDIR /echelon
+RUN git clone https://github.com/enronchain/enron.git /enron && \
+    #chmod -R 755 /enron && \
+    chmod -R 755 /enron
+WORKDIR /enron
 RUN make install
 
 # final image
@@ -23,8 +23,8 @@ RUN mkdir -p /data
 
 VOLUME ["/data"]
 
-COPY --from=builder /go/bin/echelond /usr/local/bin/echelond
+COPY --from=builder /go/bin/enrond /usr/local/bin/enrond
 
 EXPOSE 26656 26657 1317 9090
 
-ENTRYPOINT ["echelond"]
+ENTRYPOINT ["enrond"]

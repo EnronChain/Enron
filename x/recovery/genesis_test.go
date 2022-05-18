@@ -15,9 +15,9 @@ import (
 	"github.com/tharsis/ethermint/tests"
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
-	"github.com/echelonfoundation/echelon/v3/app"
-	"github.com/echelonfoundation/echelon/v3/x/recovery"
-	"github.com/echelonfoundation/echelon/v3/x/recovery/types"
+	"github.com/enronchain/enron/v3/app"
+	"github.com/enronchain/enron/v3/x/recovery"
+	"github.com/enronchain/enron/v3/x/recovery/types"
 )
 
 type GenesisTestSuite struct {
@@ -25,7 +25,7 @@ type GenesisTestSuite struct {
 
 	ctx sdk.Context
 
-	app     *app.Echelon
+	app     *app.Enron
 	genesis types.GenesisState
 }
 
@@ -36,7 +36,7 @@ func (suite *GenesisTestSuite) SetupTest() {
 	suite.app = app.Setup(false, feemarkettypes.DefaultGenesisState())
 	suite.ctx = suite.app.BaseApp.NewContext(false, tmproto.Header{
 		Height:          1,
-		ChainID:         "echelon_3000-3",
+		ChainID:         "enron_3000-3",
 		Time:            time.Now().UTC(),
 		ProposerAddress: consAddress.Bytes(),
 

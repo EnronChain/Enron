@@ -6,7 +6,7 @@ parent:
 
 # Testnet
 
-This section contains different documents for how to access and join the Echelon testnets.
+This section contains different documents for how to access and join the Enron testnets.
 
 1. [Join Testnet](./join)
 1. [Faucet](./faucet)

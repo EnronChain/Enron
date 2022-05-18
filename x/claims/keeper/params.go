@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/claims/types"
+	"github.com/enronchain/enron/v3/x/claims/types"
 )
 
 // GetParams returns the total set of claim parameters.

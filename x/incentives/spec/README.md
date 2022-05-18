@@ -9,11 +9,11 @@ parent:
 
 ## Abstract
 
-This document specifies the internal `x/incentives` module of the Echelon Hub.
+This document specifies the internal `x/incentives` module of the Enron Hub.
 
-The `x/incentives` module is part of the Echelon tokenomics and aims to increase the growth of the network by distributing rewards to users who interact with incentivized smart contracts. The rewards drive users to interact with applications on Echelon and reinvest their rewards in more services in the network.
+The `x/incentives` module is part of the Enron tokenomics and aims to increase the growth of the network by distributing rewards to users who interact with incentivized smart contracts. The rewards drive users to interact with applications on Enron and reinvest their rewards in more services in the network.
 
-The usage incentives are taken from block reward emission (inflation) and are pooled up in the Incentives module account (escrow address). The incentives functionality is fully governed by native $ECHELON token holders who manage the registration of `Incentives`, so that native $ECHELON token holders decide which application should be part of the usage incentives. This governance functionality is implemented using the Cosmos-SDK `gov` module with custom proposal types for registering the incentives.
+The usage incentives are taken from block reward emission (inflation) and are pooled up in the Incentives module account (escrow address). The incentives functionality is fully governed by native $ENRON token holders who manage the registration of `Incentives`, so that native $ENRON token holders decide which application should be part of the usage incentives. This governance functionality is implemented using the Cosmos-SDK `gov` module with custom proposal types for registering the incentives.
 
 Users participate in incentives by submitting transactions to an incentivized contract. The module keeps a record of how much gas the participants spent on their transactions and stores these in gas meters. Based on their gas meters, participants in the incentive are rewarded in regular intervals (epochs).
 

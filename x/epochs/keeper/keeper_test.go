@@ -19,8 +19,8 @@ import (
 
 	evm "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/echelonfoundation/echelon/v3/app"
-	"github.com/echelonfoundation/echelon/v3/x/epochs/types"
+	"github.com/enronchain/enron/v3/app"
+	"github.com/enronchain/enron/v3/x/epochs/types"
 )
 
 var denomMint = evm.DefaultEVMDenom
@@ -29,7 +29,7 @@ type KeeperTestSuite struct {
 	suite.Suite
 
 	ctx            sdk.Context
-	app            *app.Echelon
+	app            *app.Enron
 	queryClientEvm evm.QueryClient
 	queryClient    types.QueryClient
 	consAddress    sdk.ConsAddress
@@ -60,7 +60,7 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 	// setup context
 	suite.ctx = suite.app.BaseApp.NewContext(checkTx, tmproto.Header{
 		Height:          1,
-		ChainID:         "echelon_9001-1",
+		ChainID:         "enron_9001-1",
 		Time:            time.Now().UTC(),
 		ProposerAddress: suite.consAddress.Bytes(),
 

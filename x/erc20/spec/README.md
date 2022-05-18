@@ -9,18 +9,18 @@ parent:
 
 ## Abstract
 
-This document specifies the internal `x/erc20` module of the Echelon Hub.
+This document specifies the internal `x/erc20` module of the Enron Hub.
 
-The `x/erc20` module enables the Echelon Hub to support a trustless, on-chain bidirectional internal relaying (aka intrarelaying) of tokens between Echelon' EVM and Cosmos runtimes, specifically the `x/evm` and `x/bank` modules. This allows token holders on Echelon to instantaneously convert their native Cosmos `sdk.Coins` (in this document referred to as "Coin(s)") to ERC-20 (aka "Token(s)") and vice versa, while retaining fungibility with the original asset on the issuing environment/runtime (EVM or Cosmos) and preserving ownership of the ERC-20 contract.
+The `x/erc20` module enables the Enron Hub to support a trustless, on-chain bidirectional internal relaying (aka intrarelaying) of tokens between Enron' EVM and Cosmos runtimes, specifically the `x/evm` and `x/bank` modules. This allows token holders on Enron to instantaneously convert their native Cosmos `sdk.Coins` (in this document referred to as "Coin(s)") to ERC-20 (aka "Token(s)") and vice versa, while retaining fungibility with the original asset on the issuing environment/runtime (EVM or Cosmos) and preserving ownership of the ERC-20 contract.
 
-This intrarelaying functionality is fully governed by native $ECHELON token holders who manage the canonical `TokenPair` registrations (ie, ERC20 ←→ Coin mappings). This governance functionality is implemented using the Cosmos-SDK `gov` module with custom proposal types for registering and updating the canonical mappings respectively.
+This intrarelaying functionality is fully governed by native $ENRON token holders who manage the canonical `TokenPair` registrations (ie, ERC20 ←→ Coin mappings). This governance functionality is implemented using the Cosmos-SDK `gov` module with custom proposal types for registering and updating the canonical mappings respectively.
 
-Why is this important? Cosmos and the EVM are two runtimes that are not compatible by default. The native Cosmos Coins cannot be used in applications that require the ERC-20 standard. Cosmos coins are held on the `x/bank` module (with access to module methods like querying the supply or balances) and ERC-20 Tokens live on smart contracts. This problem is similar to [wETH](https://weth.io/), with the difference,  that it not only applies to gas tokens (like $ECHELON), but to all Cosmos Coins (IBC vouchers, staking and gov coins, etc.) as well.
+Why is this important? Cosmos and the EVM are two runtimes that are not compatible by default. The native Cosmos Coins cannot be used in applications that require the ERC-20 standard. Cosmos coins are held on the `x/bank` module (with access to module methods like querying the supply or balances) and ERC-20 Tokens live on smart contracts. This problem is similar to [wETH](https://weth.io/), with the difference,  that it not only applies to gas tokens (like $ENRON), but to all Cosmos Coins (IBC vouchers, staking and gov coins, etc.) as well.
 
-With the `x/erc20` users on Echelon can
+With the `x/erc20` users on Enron can
 
 - use existing native cosmos assets (like $OSMO or $ATOM) on EVM-based chains, e.g. for Trading IBC tokens on DeFi protocols, buying NFT, etc.
-- transfer existing tokens on Ethereum and other EVM-based chains to Echelon to take advantage of application-specific chains in the Cosmos ecosystem
+- transfer existing tokens on Ethereum and other EVM-based chains to Enron to take advantage of application-specific chains in the Cosmos ecosystem
 - build new applications that are based on ERC-20 smart contracts and have access to the Cosmos ecosystem.
 
 ## Contents

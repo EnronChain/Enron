@@ -1,10 +1,10 @@
 syntax = "proto3";
-package echelon.erc20.v1;
-import "echelon/erc20/v1/erc20.proto";
+package enron.erc20.v1;
+import "enron/erc20/v1/erc20.proto";
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/echelonfoundation/echelon/v3/x/erc20/types";
+option go_package = "github.com/enronchain/enron/v3/x/erc20/types";
 
 // GenesisState defines the module's genesis state.
 message GenesisState {

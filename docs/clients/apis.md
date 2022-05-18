@@ -1,5 +1,5 @@
 
-# Echelon APIs
+# Enron APIs
 
 ::: tip
 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧
@@ -17,6 +17,6 @@ This documentation page is currently under work in progress.
 
 <!-- TODO: Link JSON-RPC docs -->
 
-## Echelon gRPC Web API
+## Enron gRPC Web API
 
 <!-- TODO: intro -->

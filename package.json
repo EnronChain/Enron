@@ -1,26 +1,26 @@
 {
-  "name": "echelon",
-  "version": "1.0.3",
-  "description": "Echelon Cosmos/EVM Blockchain",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^4.4.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/echelonfoundation/echelon.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/echelonfoundation/echelon/issues"
-  },
-  "homepage": "https://github.com/echelonfoundation/echelon#readme"
+    "name": "enron",
+    "version": "1.0.3",
+    "description": "Enron Cosmos/EVM Blockchain",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.4.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/enronchain/enron.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/enronchain/enron/issues"
+    },
+    "homepage": "https://github.com/enronchain/enron#readme"
 }

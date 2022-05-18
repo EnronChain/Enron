@@ -3,7 +3,7 @@ package types
 import (
 	fmt "fmt"
 
-	epochtypes "github.com/echelonfoundation/echelon/v3/x/epochs/types"
+	epochtypes "github.com/enronchain/enron/v3/x/epochs/types"
 )
 
 // NewGenesisState creates a new GenesisState object

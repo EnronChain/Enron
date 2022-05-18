@@ -7,7 +7,7 @@ import (
 	transfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	channeltypes "github.com/cosmos/ibc-go/v3/modules/core/04-channel/types"
 
-	echelon "github.com/echelonfoundation/echelon/v3/types"
+	enron "github.com/enronchain/enron/v3/types"
 )
 
 // GetTransferSenderRecipient returns the sender and recipient sdk.AccAddresses
@@ -28,15 +28,15 @@ func GetTransferSenderRecipient(packet channeltypes.Packet) (
 	}
 
 	// validate the sender bech32 address from the counterparty chain
-	// and change the bech32 human readable prefix (HRP) of the sender to `echelon`
-	sender, err = echelon.GetEchelonAddressFromBech32(data.Sender)
+	// and change the bech32 human readable prefix (HRP) of the sender to `enron`
+	sender, err = enron.GetEnronAddressFromBech32(data.Sender)
 	if err != nil {
 		return nil, nil, "", "", sdkerrors.Wrap(err, "invalid sender")
 	}
 
 	// validate the recipient bech32 address from the counterparty chain
-	// and change the bech32 human readable prefix (HRP) of the recipient to `echelon`
-	recipient, err = echelon.GetEchelonAddressFromBech32(data.Receiver)
+	// and change the bech32 human readable prefix (HRP) of the recipient to `enron`
+	recipient, err = enron.GetEnronAddressFromBech32(data.Receiver)
 	if err != nil {
 		return nil, nil, "", "", sdkerrors.Wrap(err, "invalid recipient")
 	}

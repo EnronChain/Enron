@@ -6,7 +6,7 @@
 # Documentation
 docs/ @danburck
 
-# Echelon Modules
+# Enron Modules
 x/epochs/ @ramacarlucho
 x/erc20/ @danburck @hanchon
 x/incentives/ @danburck

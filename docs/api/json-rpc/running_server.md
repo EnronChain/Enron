@@ -4,14 +4,14 @@ order: 2
 
 # Running the Server
 
-Learn how to run and setup the JSON-RPC server on Echelon. {synopsis}
+Learn how to run and setup the JSON-RPC server on Enron. {synopsis}
 
 ## Enable Server
 
 To enable RPC server use the following flag (set to true by default).
 
 ```bash
-echelond start --json-rpc.enable
+enrond start --json-rpc.enable
 ```
 
 ## Defining Namespaces
@@ -19,7 +19,7 @@ echelond start --json-rpc.enable
 `Eth`,`Net` and `Web3` [namespaces](./namespaces) are enabled by default. In order to enable other namespaces use flag `--json-rpc.api`.
 
 ```bash
-echelond start --json-rpc.api eth,txpool,personal,net,debug,web3,miner
+enrond start --json-rpc.api eth,txpool,personal,net,debug,web3,miner
 ```
 
 ## Set a Gas Cap
@@ -28,10 +28,10 @@ echelond start --json-rpc.api eth,txpool,personal,net,debug,web3,miner
 
 ```bash
 # set gas cap to 85M
-echelond start --json-rpc.gas-cap 85000000000
+enrond start --json-rpc.gas-cap 85000000000
 
 # set gas cap to infinite (=0)
-echelond start --json-rpc.gas-cap 0
+enrond start --json-rpc.gas-cap 0
 ```
 
 ## CORS

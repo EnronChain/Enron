@@ -1,29 +1,29 @@
 syntax = "proto3";
-package echelon.erc20.v1;
+package enron.erc20.v1;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
-import "echelon/erc20/v1/genesis.proto";
-import "echelon/erc20/v1/erc20.proto";
+import "enron/erc20/v1/genesis.proto";
+import "enron/erc20/v1/erc20.proto";
 import "google/api/annotations.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/echelonfoundation/echelon/v3/x/erc20/types";
+option go_package = "github.com/enronchain/enron/v3/x/erc20/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Retrieves registered token pairs
   rpc TokenPairs(QueryTokenPairsRequest) returns (QueryTokenPairsResponse) {
-    option (google.api.http).get = "/echelon/erc20/v1/token_pairs";
+    option (google.api.http).get = "/enron/erc20/v1/token_pairs";
   }
 
   // Retrieves a registered token pair
   rpc TokenPair(QueryTokenPairRequest) returns (QueryTokenPairResponse) {
-    option (google.api.http).get = "/echelon/erc20/v1/token_pairs/{token}";
+    option (google.api.http).get = "/enron/erc20/v1/token_pairs/{token}";
   }
 
   // Params retrieves the erc20 module params
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/echelon/erc20/v1/params";
+    option (google.api.http).get = "/enron/erc20/v1/params";
   }
 }
 

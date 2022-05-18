@@ -1,4 +1,4 @@
-module github.com/echelonfoundation/echelon/v3
+module github.com/enronchain/enron/v3
 
 go 1.17
 

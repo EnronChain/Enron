@@ -4,21 +4,21 @@ order: 3
 
 # Use Cases
 
-Check out the 2 use cases for the Echelon project. {synopsis}
+Check out the 2 use cases for the Enron project. {synopsis}
 
-## Echelon chain
+## Enron chain
 
-The Echelon blockchain provides Ethereum developers to deploy their smart contracts to the
-Echelon EVM and get the benefits of a fast-finality Proof-of-Stake (PoS) chain. Developers will
+The Enron blockchain provides Ethereum developers to deploy their smart contracts to the
+Enron EVM and get the benefits of a fast-finality Proof-of-Stake (PoS) chain. Developers will
 also benefit from highly-reliable clients from testnets can be used to test and deploy their
 contracts.
 
-Echelon will also offer built-in interoperability functionalities with other Cosmos and BFT chains by using [IBC](https://cosmos.network/ibc). Developers can also benefit from using a bridge network to enable interoperability between mainnet Ethereum and Echelon.
+Enron will also offer built-in interoperability functionalities with other Cosmos and BFT chains by using [IBC](https://cosmos.network/ibc). Developers can also benefit from using a bridge network to enable interoperability between mainnet Ethereum and Enron.
 
 ## EVM module dependency
 
 The EVM module (aka [x/evm](https://github.com/tharsis/ethermint/tree/main/x/evm)) packaged inside
-Echelon can be used separately as its own standalone module. This can be added as a dependency to
+Enron can be used separately as its own standalone module. This can be added as a dependency to
 any Cosmos chain, which will allow for smart contract support.
 
 Importing EVM module can also enable use cases such as Proof-of-Authority
@@ -36,14 +36,14 @@ as a dependency will require the importing of the EVM and the maintaining of the
 validator sets, code upgrades/conformance, community engagement, incentives, etc), thus it incurs on a
 higher operation cost. The benefit of importing the EVM module to your chains is that it allows for
 granular control over the network and chain specific configurations/features that may not be
-available in the Echelon chain such as developing a module or importing a third-party one.
+available in the Enron chain such as developing a module or importing a third-party one.
 
-Using Echelon chain will allow for the direct deployment of smart contracts to the Echelon
-network. Utilizing the Echelon client will defer the chain maintenance to the Echelon network
-and allow for the participation in a more mature blockchain. The Echelon client will also offer
+Using Enron chain will allow for the direct deployment of smart contracts to the Enron
+network. Utilizing the Enron client will defer the chain maintenance to the Enron network
+and allow for the participation in a more mature blockchain. The Enron client will also offer
 (in the near future) IBC compatibility which allows for interoperability between different network.
 
-|                                         | Echelon Chain     | x/evm dependency |
+|                                         | Enron Chain     | x/evm dependency |
 |-----------------------------------------|-----------------|------------------|
 | Maintenance                             | Lower           | Higher           |
 | Sovereignty (validator, config, params) | Lower           | Higher           |
@@ -51,4 +51,4 @@ and allow for the participation in a more mature blockchain. The Echelon client 
 
 ## Next {hide}
 
-Read the available Echelon [resources](./resources.md) {hide}
+Read the available Enron [resources](./resources.md) {hide}

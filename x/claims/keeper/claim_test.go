@@ -14,10 +14,10 @@ import (
 	"github.com/tharsis/ethermint/crypto/ethsecp256k1"
 	"github.com/tharsis/ethermint/tests"
 	ethermint "github.com/tharsis/ethermint/types"
-	"github.com/echelonfoundation/echelon/v3/testutil"
-	inflationtypes "github.com/echelonfoundation/echelon/v3/x/inflation/types"
+	"github.com/enronchain/enron/v3/testutil"
+	inflationtypes "github.com/enronchain/enron/v3/x/inflation/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/claims/types"
+	"github.com/enronchain/enron/v3/x/claims/types"
 )
 
 func (suite *KeeperTestSuite) SetupClaimTest() {
@@ -1034,7 +1034,7 @@ func (suite *KeeperTestSuite) TestClawbackEmptyAccountsAirdrop() {
 	}{
 		{
 			name:           "address active",
-			address:        "echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			address:        "enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			sequence:       1,
 			expectClawback: false,
 			claimsRecord: types.ClaimsRecord{
@@ -1044,7 +1044,7 @@ func (suite *KeeperTestSuite) TestClawbackEmptyAccountsAirdrop() {
 		},
 		{
 			name:           "address inactive",
-			address:        "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			address:        "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 			sequence:       0,
 			expectClawback: true,
 			claimsRecord: types.ClaimsRecord{

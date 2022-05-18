@@ -23,8 +23,8 @@ import (
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 )
 
-// ChainIDPrefix defines the default chain ID prefix for Echelon test chains
-var ChainIDPrefix = "echelon_9000-"
+// ChainIDPrefix defines the default chain ID prefix for Enron test chains
+var ChainIDPrefix = "enron_9000-"
 
 func init() {
 	ibcgotesting.ChainIDPrefix = ChainIDPrefix

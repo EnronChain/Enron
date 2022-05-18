@@ -7,7 +7,7 @@ import (
 	"github.com/tharsis/ethermint/tests"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
+	"github.com/enronchain/enron/v3/x/erc20/types"
 )
 
 func (suite *KeeperTestSuite) TestGetAllTokenPairs() {

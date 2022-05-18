@@ -4,7 +4,7 @@ order: 3
 
 # Truffle: Deploying a Smart Contract
 
-Learn how to deploy a simple Solidity-based smart contract to Echelon using the Truffle environment {synopsis}
+Learn how to deploy a simple Solidity-based smart contract to Enron using the Truffle environment {synopsis}
 
 ## Pre-requisite Readings
 
@@ -22,7 +22,7 @@ yarn install truffle -g
 ```
 
 ::: tip
-If you haven't already, you will also need to install Echelon if you plan on deploying your smart contracts locally. Check this [document](./../../quickstart/installation.md) for the full instructions.
+If you haven't already, you will also need to install Enron if you plan on deploying your smart contracts locally. Check this [document](./../../quickstart/installation.md) for the full instructions.
 :::
 
 ## Create Truffle Project
@@ -32,8 +32,8 @@ In this step we will create a simple counter contract. Feel free to skip this st
 Create a new directory to host the contracts and initialize it:
 
 ```console
-mkdir echelon-truffle
-cd echelon-truffle
+mkdir enron-truffle
+cd enron-truffle
 ```
 
 Initialize the Truffle suite with:
@@ -103,14 +103,14 @@ Open `truffle-config.js` and uncomment the `development` section in `networks`:
     },
 ```
 
-This will allow your contract to connect to your Echelon local node.
+This will allow your contract to connect to your Enron local node.
 
 ## Start Node
 
 Start your local node using the following command on the Terminal
 
 ```bash
-# from the ~/echelon/ directory
+# from the ~/enron/ directory
 $ init.sh
 ```
 
@@ -126,7 +126,7 @@ In the Truffle terminal, migrate the contract using:
 truffle migrate --network development
 ```
 
-You should see incoming deployment logs in the Echelon daemon Terminal tab for each transaction (one to deploy `Migrations.sol` and the other to deploy `Counter.sol`).
+You should see incoming deployment logs in the Enron daemon Terminal tab for each transaction (one to deploy `Migrations.sol` and the other to deploy `Counter.sol`).
 
 ```bash
 $ I[2020-07-15|17:35:59.934] Added good transaction                       module=mempool tx=22245B935689918D332F58E82690F02073F0453D54D5944B6D64AAF1F21974E2 res="&{CheckTx:log:\"[]\" gas_wanted:6721975 }" height=3 total=1
@@ -137,7 +137,7 @@ I[2020-07-15|17:36:02.981] Added good transaction                       module=m
 
 ## Run Truffle tests
 
-Now, you can run the Truffle tests using the Echelon node using the `test` command:
+Now, you can run the Truffle tests using the Enron node using the `test` command:
 
 ```bash
 $ truffle test --network development

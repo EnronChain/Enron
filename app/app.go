@@ -106,31 +106,31 @@ import (
 	feemarketkeeper "github.com/tharsis/ethermint/x/feemarket/keeper"
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
-	"github.com/echelonfoundation/echelon/v3/app/ante"
-	v2 "github.com/echelonfoundation/echelon/v3/app/upgrades/v2"
-	// "github.com/echelonfoundation/echelon/v3/x/claims"
-	// claimskeeper "github.com/echelonfoundation/echelon/v3/x/claims/keeper"
-	// claimstypes "github.com/echelonfoundation/echelon/v3/x/claims/types"
-	"github.com/echelonfoundation/echelon/v3/x/epochs"
-	epochskeeper "github.com/echelonfoundation/echelon/v3/x/epochs/keeper"
-	epochstypes "github.com/echelonfoundation/echelon/v3/x/epochs/types"
-	"github.com/echelonfoundation/echelon/v3/x/erc20"
-	erc20client "github.com/echelonfoundation/echelon/v3/x/erc20/client"
-	erc20keeper "github.com/echelonfoundation/echelon/v3/x/erc20/keeper"
-	erc20types "github.com/echelonfoundation/echelon/v3/x/erc20/types"
-	"github.com/echelonfoundation/echelon/v3/x/incentives"
-	incentivesclient "github.com/echelonfoundation/echelon/v3/x/incentives/client"
-	incentiveskeeper "github.com/echelonfoundation/echelon/v3/x/incentives/keeper"
-	incentivestypes "github.com/echelonfoundation/echelon/v3/x/incentives/types"
-	"github.com/echelonfoundation/echelon/v3/x/inflation"
-	inflationkeeper "github.com/echelonfoundation/echelon/v3/x/inflation/keeper"
-	inflationtypes "github.com/echelonfoundation/echelon/v3/x/inflation/types"
-	"github.com/echelonfoundation/echelon/v3/x/recovery"
-	recoverykeeper "github.com/echelonfoundation/echelon/v3/x/recovery/keeper"
-	recoverytypes "github.com/echelonfoundation/echelon/v3/x/recovery/types"
-	"github.com/echelonfoundation/echelon/v3/x/vesting"
-	vestingkeeper "github.com/echelonfoundation/echelon/v3/x/vesting/keeper"
-	vestingtypes "github.com/echelonfoundation/echelon/v3/x/vesting/types"
+	"github.com/enronchain/enron/v3/app/ante"
+	v2 "github.com/enronchain/enron/v3/app/upgrades/v2"
+	// "github.com/enronchain/enron/v3/x/claims"
+	// claimskeeper "github.com/enronchain/enron/v3/x/claims/keeper"
+	// claimstypes "github.com/enronchain/enron/v3/x/claims/types"
+	"github.com/enronchain/enron/v3/x/epochs"
+	epochskeeper "github.com/enronchain/enron/v3/x/epochs/keeper"
+	epochstypes "github.com/enronchain/enron/v3/x/epochs/types"
+	"github.com/enronchain/enron/v3/x/erc20"
+	erc20client "github.com/enronchain/enron/v3/x/erc20/client"
+	erc20keeper "github.com/enronchain/enron/v3/x/erc20/keeper"
+	erc20types "github.com/enronchain/enron/v3/x/erc20/types"
+	"github.com/enronchain/enron/v3/x/incentives"
+	incentivesclient "github.com/enronchain/enron/v3/x/incentives/client"
+	incentiveskeeper "github.com/enronchain/enron/v3/x/incentives/keeper"
+	incentivestypes "github.com/enronchain/enron/v3/x/incentives/types"
+	"github.com/enronchain/enron/v3/x/inflation"
+	inflationkeeper "github.com/enronchain/enron/v3/x/inflation/keeper"
+	inflationtypes "github.com/enronchain/enron/v3/x/inflation/types"
+	"github.com/enronchain/enron/v3/x/recovery"
+	recoverykeeper "github.com/enronchain/enron/v3/x/recovery/keeper"
+	recoverytypes "github.com/enronchain/enron/v3/x/recovery/types"
+	"github.com/enronchain/enron/v3/x/vesting"
+	vestingkeeper "github.com/enronchain/enron/v3/x/vesting/keeper"
+	vestingtypes "github.com/enronchain/enron/v3/x/vesting/types"
 )
 
 func init() {
@@ -139,15 +139,15 @@ func init() {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".echelond")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".enrond")
 
-	// manually update the power reduction by replacing micro (u) -> atto (a) echelon
+	// manually update the power reduction by replacing micro (u) -> atto (a) enron
 	sdk.DefaultPowerReduction = ethermint.PowerReduction
 }
 
 const (
 	// Name defines the application binary name
-	Name = "echelond"
+	Name = "enrond"
 )
 
 var (
@@ -167,7 +167,7 @@ var (
 		gov.NewAppModuleBasic(
 			paramsclient.ProposalHandler, distrclient.ProposalHandler, upgradeclient.ProposalHandler, upgradeclient.CancelProposalHandler,
 			ibcclientclient.UpdateClientProposalHandler, ibcclientclient.UpgradeProposalHandler,
-			// Echelon proposal types
+			// Enron proposal types
 			erc20client.RegisterCoinProposalHandler, erc20client.RegisterERC20ProposalHandler,
 			erc20client.ToggleTokenRelayProposalHandler, erc20client.UpdateTokenPairERC20ProposalHandler,
 			incentivesclient.RegisterIncentiveProposalHandler, incentivesclient.CancelIncentiveProposalHandler,
@@ -215,15 +215,15 @@ var (
 )
 
 var (
-	_ servertypes.Application = (*Echelon)(nil)
-	_ simapp.App              = (*Echelon)(nil)
-	_ ibctesting.TestingApp   = (*Echelon)(nil)
+	_ servertypes.Application = (*Enron)(nil)
+	_ simapp.App              = (*Enron)(nil)
+	_ ibctesting.TestingApp   = (*Enron)(nil)
 )
 
-// Echelon implements an extended ABCI application. It is an application
+// Enron implements an extended ABCI application. It is an application
 // that may process transactions through Ethereum's EVM running atop of
 // Tendermint consensus.
-type Echelon struct {
+type Enron struct {
 	*baseapp.BaseApp
 
 	// encoding
@@ -263,7 +263,7 @@ type Echelon struct {
 	EvmKeeper       *evmkeeper.Keeper
 	FeeMarketKeeper feemarketkeeper.Keeper
 
-	// Echelon keepers
+	// Enron keepers
 	InflationKeeper  inflationkeeper.Keeper
 	// ClaimsKeeper     *claimskeeper.Keeper
 	Erc20Keeper      erc20keeper.Keeper
@@ -284,8 +284,8 @@ type Echelon struct {
 	tpsCounter *tpsCounter
 }
 
-// NewEchelon returns a reference to a new initialized Ethermint application.
-func NewEchelon(
+// NewEnron returns a reference to a new initialized Ethermint application.
+func NewEnron(
 	logger log.Logger,
 	db dbm.DB,
 	traceStore io.Writer,
@@ -296,7 +296,7 @@ func NewEchelon(
 	encodingConfig simappparams.EncodingConfig,
 	appOpts servertypes.AppOptions,
 	baseAppOptions ...func(*baseapp.BaseApp),
-) *Echelon {
+) *Enron {
 	appCodec := encodingConfig.Marshaler
 	cdc := encodingConfig.Amino
 	interfaceRegistry := encodingConfig.InterfaceRegistry
@@ -324,7 +324,7 @@ func NewEchelon(
 		ibchost.StoreKey, ibctransfertypes.StoreKey,
 		// ethermint keys
 		evmtypes.StoreKey, feemarkettypes.StoreKey,
-		// echelon keys
+		// enron keys
 		inflationtypes.StoreKey, erc20types.StoreKey, incentivestypes.StoreKey,
 		epochstypes.StoreKey, vestingtypes.StoreKey,
 	)
@@ -333,7 +333,7 @@ func NewEchelon(
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey, evmtypes.TransientKey)
 	memKeys := sdk.NewMemoryStoreKeys(capabilitytypes.MemStoreKey)
 
-	app := &Echelon{
+	app := &Enron{
 		BaseApp:           bApp,
 		cdc:               cdc,
 		appCodec:          appCodec,
@@ -419,7 +419,7 @@ func NewEchelon(
 		app.AccountKeeper, app.BankKeeper, &stakingKeeper, govRouter,
 	)
 
-	// Echelon Keeper
+	// Enron Keeper
 	app.InflationKeeper = inflationkeeper.NewKeeper(
 		keys[inflationtypes.StoreKey], appCodec, app.GetSubspace(inflationtypes.ModuleName),
 		app.AccountKeeper, app.BankKeeper, app.DistrKeeper, &stakingKeeper,
@@ -570,7 +570,7 @@ func NewEchelon(
 		// Ethermint app modules
 		evm.NewAppModule(app.EvmKeeper, app.AccountKeeper),
 		feemarket.NewAppModule(app.FeeMarketKeeper),
-		// Echelon app modules
+		// Enron app modules
 		inflation.NewAppModule(app.InflationKeeper, app.AccountKeeper, app.StakingKeeper),
 		erc20.NewAppModule(app.Erc20Keeper, app.AccountKeeper),
 		incentives.NewAppModule(app.IncentivesKeeper, app.AccountKeeper),
@@ -640,7 +640,7 @@ func NewEchelon(
 		feegrant.ModuleName,
 		paramstypes.ModuleName,
 		upgradetypes.ModuleName,
-		// Echelon modules
+		// Enron modules
 		vestingtypes.ModuleName,
 		inflationtypes.ModuleName,
 		erc20types.ModuleName,
@@ -674,7 +674,7 @@ func NewEchelon(
 		upgradetypes.ModuleName,
 		// Ethermint modules
 		evmtypes.ModuleName, feemarkettypes.ModuleName,
-		// Echelon modules
+		// Enron modules
 		vestingtypes.ModuleName,
 		inflationtypes.ModuleName,
 		erc20types.ModuleName,
@@ -772,21 +772,21 @@ func NewEchelon(
 }
 
 // Name returns the name of the App
-func (app *Echelon) Name() string { return app.BaseApp.Name() }
+func (app *Enron) Name() string { return app.BaseApp.Name() }
 
 // BeginBlocker updates every begin block
-func (app *Echelon) BeginBlocker(ctx sdk.Context, req abci.RequestBeginBlock) abci.ResponseBeginBlock {
+func (app *Enron) BeginBlocker(ctx sdk.Context, req abci.RequestBeginBlock) abci.ResponseBeginBlock {
 	BeginBlockForks(ctx, app)
 	return app.mm.BeginBlock(ctx, req)
 }
 
 // EndBlocker updates every end block
-func (app *Echelon) EndBlocker(ctx sdk.Context, req abci.RequestEndBlock) abci.ResponseEndBlock {
+func (app *Enron) EndBlocker(ctx sdk.Context, req abci.RequestEndBlock) abci.ResponseEndBlock {
 	return app.mm.EndBlock(ctx, req)
 }
 
 // We are intentionally decomposing the DeliverTx method so as to calculate the transactions per second.
-func (app *Echelon) DeliverTx(req abci.RequestDeliverTx) (res abci.ResponseDeliverTx) {
+func (app *Enron) DeliverTx(req abci.RequestDeliverTx) (res abci.ResponseDeliverTx) {
 	defer func() {
 		// TODO: Record the count along with the code and or reason so as to display
 		// in the transactions per second live dashboards.
@@ -801,7 +801,7 @@ func (app *Echelon) DeliverTx(req abci.RequestDeliverTx) (res abci.ResponseDeliv
 }
 
 // InitChainer updates at chain initialization
-func (app *Echelon) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
+func (app *Enron) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
 	var genesisState simapp.GenesisState
 	if err := json.Unmarshal(req.AppStateBytes, &genesisState); err != nil {
 		panic(err)
@@ -811,12 +811,12 @@ func (app *Echelon) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci
 }
 
 // LoadHeight loads state at a particular height
-func (app *Echelon) LoadHeight(height int64) error {
+func (app *Enron) LoadHeight(height int64) error {
 	return app.LoadVersion(height)
 }
 
 // ModuleAccountAddrs returns all the app's module account addresses.
-func (app *Echelon) ModuleAccountAddrs() map[string]bool {
+func (app *Enron) ModuleAccountAddrs() map[string]bool {
 	modAccAddrs := make(map[string]bool)
 	for acc := range maccPerms {
 		modAccAddrs[authtypes.NewModuleAddress(acc).String()] = true
@@ -827,7 +827,7 @@ func (app *Echelon) ModuleAccountAddrs() map[string]bool {
 
 // BlockedAddrs returns all the app's module account addresses that are not
 // allowed to receive external tokens.
-func (app *Echelon) BlockedAddrs() map[string]bool {
+func (app *Enron) BlockedAddrs() map[string]bool {
 	blockedAddrs := make(map[string]bool)
 	for acc := range maccPerms {
 		blockedAddrs[authtypes.NewModuleAddress(acc).String()] = !allowedReceivingModAcc[acc]
@@ -836,64 +836,64 @@ func (app *Echelon) BlockedAddrs() map[string]bool {
 	return blockedAddrs
 }
 
-// LegacyAmino returns Echelon's amino codec.
+// LegacyAmino returns Enron's amino codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *Echelon) LegacyAmino() *codec.LegacyAmino {
+func (app *Enron) LegacyAmino() *codec.LegacyAmino {
 	return app.cdc
 }
 
-// AppCodec returns Echelon's app codec.
+// AppCodec returns Enron's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *Echelon) AppCodec() codec.Codec {
+func (app *Enron) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns Echelon's InterfaceRegistry
-func (app *Echelon) InterfaceRegistry() types.InterfaceRegistry {
+// InterfaceRegistry returns Enron's InterfaceRegistry
+func (app *Enron) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }
 
 // GetKey returns the KVStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *Echelon) GetKey(storeKey string) *sdk.KVStoreKey {
+func (app *Enron) GetKey(storeKey string) *sdk.KVStoreKey {
 	return app.keys[storeKey]
 }
 
 // GetTKey returns the TransientStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *Echelon) GetTKey(storeKey string) *sdk.TransientStoreKey {
+func (app *Enron) GetTKey(storeKey string) *sdk.TransientStoreKey {
 	return app.tkeys[storeKey]
 }
 
 // GetMemKey returns the MemStoreKey for the provided mem key.
 //
 // NOTE: This is solely used for testing purposes.
-func (app *Echelon) GetMemKey(storeKey string) *sdk.MemoryStoreKey {
+func (app *Enron) GetMemKey(storeKey string) *sdk.MemoryStoreKey {
 	return app.memKeys[storeKey]
 }
 
 // GetSubspace returns a param subspace for a given module name.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *Echelon) GetSubspace(moduleName string) paramstypes.Subspace {
+func (app *Enron) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
 }
 
 // SimulationManager implements the SimulationApp interface
-func (app *Echelon) SimulationManager() *module.SimulationManager {
+func (app *Enron) SimulationManager() *module.SimulationManager {
 	return app.sm
 }
 
 // RegisterAPIRoutes registers all application module routes with the provided
 // API server.
-func (app *Echelon) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
+func (app *Enron) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
 	clientCtx := apiSvr.ClientCtx
 	rpc.RegisterRoutes(clientCtx, apiSvr.Router)
 
@@ -914,38 +914,38 @@ func (app *Echelon) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APICo
 	}
 }
 
-func (app *Echelon) RegisterTxService(clientCtx client.Context) {
+func (app *Enron) RegisterTxService(clientCtx client.Context) {
 	authtx.RegisterTxService(app.BaseApp.GRPCQueryRouter(), clientCtx, app.BaseApp.Simulate, app.interfaceRegistry)
 }
 
-func (app *Echelon) RegisterTendermintService(clientCtx client.Context) {
+func (app *Enron) RegisterTendermintService(clientCtx client.Context) {
 	tmservice.RegisterTendermintService(app.BaseApp.GRPCQueryRouter(), clientCtx, app.interfaceRegistry)
 }
 
 // IBC Go TestingApp functions
 
 // GetBaseApp implements the TestingApp interface.
-func (app *Echelon) GetBaseApp() *baseapp.BaseApp {
+func (app *Enron) GetBaseApp() *baseapp.BaseApp {
 	return app.BaseApp
 }
 
 // GetStakingKeeper implements the TestingApp interface.
-func (app *Echelon) GetStakingKeeper() stakingkeeper.Keeper {
+func (app *Enron) GetStakingKeeper() stakingkeeper.Keeper {
 	return app.StakingKeeper
 }
 
 // GetIBCKeeper implements the TestingApp interface.
-func (app *Echelon) GetIBCKeeper() *ibckeeper.Keeper {
+func (app *Enron) GetIBCKeeper() *ibckeeper.Keeper {
 	return app.IBCKeeper
 }
 
 // GetScopedIBCKeeper implements the TestingApp interface.
-func (app *Echelon) GetScopedIBCKeeper() capabilitykeeper.ScopedKeeper {
+func (app *Enron) GetScopedIBCKeeper() capabilitykeeper.ScopedKeeper {
 	return app.ScopedIBCKeeper
 }
 
 // GetTxConfig implements the TestingApp interface.
-func (app *Echelon) GetTxConfig() client.TxConfig {
+func (app *Enron) GetTxConfig() client.TxConfig {
 	cfg := encoding.MakeConfig(ModuleBasics)
 	return cfg.TxConfig
 }
@@ -990,7 +990,7 @@ func initParamsKeeper(
 	// ethermint subspaces
 	paramsKeeper.Subspace(evmtypes.ModuleName)
 	paramsKeeper.Subspace(feemarkettypes.ModuleName)
-	// echelon subspaces
+	// enron subspaces
 	paramsKeeper.Subspace(inflationtypes.ModuleName)
 	paramsKeeper.Subspace(erc20types.ModuleName)
 	// paramsKeeper.Subspace(claimstypes.ModuleName)
@@ -999,7 +999,7 @@ func initParamsKeeper(
 	return paramsKeeper
 }
 
-func (app *Echelon) setupUpgradeHandlers() {
+func (app *Enron) setupUpgradeHandlers() {
 	// v2 handler
 	app.UpgradeKeeper.SetUpgradeHandler(
 		v2.UpgradeName,

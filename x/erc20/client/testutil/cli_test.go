@@ -16,8 +16,8 @@ import (
 
 	"github.com/tharsis/ethermint/testutil/network"
 
-	echelonnetwork "github.com/echelonfoundation/echelon/v3/testutil/network"
-	"github.com/echelonfoundation/echelon/v3/x/erc20/client/cli"
+	enronnetwork "github.com/enronchain/enron/v3/testutil/network"
+	"github.com/enronchain/enron/v3/x/erc20/client/cli"
 )
 
 type IntegrationTestSuite struct {
@@ -39,7 +39,7 @@ func (s *IntegrationTestSuite) SetupSuite() {
 	s.T().Log("setting up integration test suite")
 
 	var err error
-	s.cfg = echelonnetwork.DefaultConfig()
+	s.cfg = enronnetwork.DefaultConfig()
 	s.cfg.NumValidators = 1
 
 	s.network, err = network.New(s.T(), s.T().TempDir(), s.cfg)

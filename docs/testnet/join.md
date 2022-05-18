@@ -12,11 +12,11 @@ You specify the network you want to join by setting the **genesis file** and **s
 
 | Testnet Chain ID | Description                       | Site                                                                       | Version                                               |   Status  |
 | ---------------- | --------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------- | --- |
-| `echelon_9000-3`   | Echelon_9000-3 Testnet              | [Echelon 9000-3](https://github.com/tharsis/testnets/tree/main/echelon_9000-3) | [`v3.0.0-beta`](https://github.com/echelonfoundation/echelon/releases/tag/v3.0.0-beta) |  `Live`   |
-| `echelon_9000-2`   | Olympus Mons Incentivized Testnet | [Olympus Mons](https://github.com/tharsis/testnets/tree/main/olympus_mons) | [`v0.3.x`](https://github.com/echelonfoundation/echelon/releases) |  `Stale`   |
-| `echelon_3000-3`   | Arsia Mons Testnet                | [Arsia Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons)     | [`v0.1.x`](https://github.com/echelonfoundation/echelon/releases) | `Stale`    |
+| `enron_9000-3`   | Enron_9000-3 Testnet              | [Enron 9000-3](https://github.com/tharsis/testnets/tree/main/enron_9000-3) | [`v3.0.0-beta`](https://github.com/enronchain/enron/releases/tag/v3.0.0-beta) |  `Live`   |
+| `enron_9000-2`   | Olympus Mons Incentivized Testnet | [Olympus Mons](https://github.com/tharsis/testnets/tree/main/olympus_mons) | [`v0.3.x`](https://github.com/enronchain/enron/releases) |  `Stale`   |
+| `enron_3000-3`   | Arsia Mons Testnet                | [Arsia Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons)     | [`v0.1.x`](https://github.com/enronchain/enron/releases) | `Stale`    |
 
-## Install `echelond`
+## Install `enrond`
 
 Follow the [installation](./../quickstart/installation) document to install the {{ $themeConfig.project.name }} binary `{{ $themeConfig.project.binary }}`.
 
@@ -33,7 +33,7 @@ See the Official [Chain IDs](./../basics/chain_id.md#official-chain-ids) for ref
 :::
 
 ```bash
-echelond config chain-id echelon_9000-3
+enrond config chain-id enron_9000-3
 ```
 
 ## Initialize Node
@@ -41,26 +41,26 @@ echelond config chain-id echelon_9000-3
 We need to initialize the node to create all the necessary validator and node configuration files:
 
 ```bash
-echelond init <your_custom_moniker> --chain-id echelon_9000-3
+enrond init <your_custom_moniker> --chain-id enron_9000-3
 ```
 
 ::: danger
 Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
 :::
 
-By default, the `init` command creates your `~/.echelond` (i.e `$HOME`) directory with subfolders `config/` and `data/`.
+By default, the `init` command creates your `~/.enrond` (i.e `$HOME`) directory with subfolders `config/` and `data/`.
 In the `config` directory, the most important files for configuration are `app.toml` and `config.toml`.
 
 ## Genesis & Seeds
 
 ### Copy the Genesis File
 
-Check the `genesis.json` file from the [`testnets`](https://github.com/tharsis/testnets) repository and copy it over to the `config` directory: `~/.echelond/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
+Check the `genesis.json` file from the [`testnets`](https://github.com/tharsis/testnets) repository and copy it over to the `config` directory: `~/.enrond/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
 
 ```bash
 sudo apt install -y unzip wget
-wget -P ~/.echelond/config https://github.com/tharsis/testnets/raw/main/echelon_9000-3/genesis.zip
-cd ~/.echelond/config
+wget -P ~/.enrond/config https://github.com/tharsis/testnets/raw/main/enron_9000-3/genesis.zip
+cd ~/.enrond/config
 unzip genesis.zip
 rm genesis.zip
 ```
@@ -68,14 +68,14 @@ rm genesis.zip
 Then verify the correctness of the genesis configuration file:
 
 ```bash
-echelond validate-genesis
+enrond validate-genesis
 ```
 
 ### Add Seed Nodes
 
-Your node needs to know how to find [peers](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#peers). You'll need to add healthy [seed nodes](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#seed) to `$HOME/.echelond/config/config.toml`. The [`testnets`](https://github.com/tharsis/testnets) repo contains links to some seed nodes.
+Your node needs to know how to find [peers](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#peers). You'll need to add healthy [seed nodes](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#seed) to `$HOME/.enrond/config/config.toml`. The [`testnets`](https://github.com/tharsis/testnets) repo contains links to some seed nodes.
 
-Edit the file located in `~/.echelond/config/config.toml` and the `seeds` to the following:
+Edit the file located in `~/.enrond/config/config.toml` and the `seeds` to the following:
 
 ```toml
 #######################################################
@@ -92,8 +92,8 @@ seeds = "<node-id>@<ip>:<p2p port>"
 You can use the following code to get seeds from the repo and add it to your config:
 
 ```bash
-SEEDS=`curl -sL https://raw.githubusercontent.com/tharsis/testnets/main/echelon_9000-3/seeds.txt | awk '{print $1}' | paste -s -d, -`
-sed -i.bak -e "s/^seeds =.*/seeds = \"$SEEDS\"/" ~/.echelond/config/config.toml
+SEEDS=`curl -sL https://raw.githubusercontent.com/tharsis/testnets/main/enron_9000-3/seeds.txt | awk '{print $1}' | paste -s -d, -`
+sed -i.bak -e "s/^seeds =.*/seeds = \"$SEEDS\"/" ~/.enrond/config/config.toml
 ```
 
 :::tip
@@ -102,19 +102,19 @@ For more information on seeds and peers, you can the Tendermint [P2P documentati
 
 ### Add Persistent Peers
 
-We can set the [`persistent_peers`](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#persistent-peer) field in `~/.echelond/config/config.toml` to specify peers that your node will maintain persistent connections with. You can retrieve them from the list of
+We can set the [`persistent_peers`](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#persistent-peer) field in `~/.enrond/config/config.toml` to specify peers that your node will maintain persistent connections with. You can retrieve them from the list of
 available peers on the [`testnets`](https://github.com/tharsis/testnets) repo.
 
-A list of available persistent peers is also available in the `#find-peers` channel in the [Echelon Discord](https://discord.gg/echelon). You can get a random 10 entries from the `peers.txt` file in the `PEERS` variable by running the following command:
+A list of available persistent peers is also available in the `#find-peers` channel in the [Enron Discord](https://discord.gg/enron). You can get a random 10 entries from the `peers.txt` file in the `PEERS` variable by running the following command:
 
 ```bash
-PEERS=`curl -sL https://raw.githubusercontent.com/tharsis/testnets/main/echelon_9000-3/peers.txt | sort -R | head -n 10 | awk '{print $1}' | paste -s -d, -`
+PEERS=`curl -sL https://raw.githubusercontent.com/tharsis/testnets/main/enron_9000-3/peers.txt | sort -R | head -n 10 | awk '{print $1}' | paste -s -d, -`
 ```
 
 Use `sed` to include them into the configuration. You can also add them manually:
 
 ```bash
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.echelond/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.enrond/config/config.toml
 ```
 
 ## Run a Testnet Validator
@@ -126,17 +126,17 @@ For more details on how to configure your validator, follow the validator [setup
 :::
 
 ```bash
-echelond tx staking create-validator \
-  --amount=1000000000000atechelon \
-  --pubkey=$(echelond tendermint show-validator) \
-  --moniker="EchelonWhale" \
+enrond tx staking create-validator \
+  --amount=1000000000000atenron \
+  --pubkey=$(enrond tendermint show-validator) \
+  --moniker="EnronWhale" \
   --chain-id=<chain_id> \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1000000" \
   --gas="auto" \
-  --gas-prices="0.025atechelon" \
+  --gas-prices="0.025atenron" \
   --from=<key_name>
 ```
 
@@ -145,7 +145,7 @@ echelond tx staking create-validator \
 The final step is to [start the nodes](./../quickstart/run_node#start-node). Once enough voting power (+2/3) from the genesis validators is up-and-running, the testnet will start producing blocks.
 
 ```bash
-echelond start
+enrond start
 ```
 
 ## Upgrading Your Node
@@ -163,8 +163,8 @@ If the version <new_version> you are upgrading to is not breaking from the previ
 First, remove the outdated files and reset the data.
 
 ```bash
-rm $HOME/.echelond/config/addrbook.json $HOME/.echelond/config/genesis.json
-echelond unsafe-reset-all
+rm $HOME/.enrond/config/addrbook.json $HOME/.enrond/config/genesis.json
+enrond unsafe-reset-all
 ```
 
 Your node is now in a pristine state while keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes setup before,
@@ -180,18 +180,18 @@ Make sure that every node has a unique `priv_validator.json`. Do not copy the `p
 To restart your node, just type:
 
 ```bash
-echelond start
+enrond start
 ```
 
 ## Share your Peer
 
-You can share your peer to posting it in the `#find-peers` channel in the [Echelon Discord](https://discord.gg/echelon).
+You can share your peer to posting it in the `#find-peers` channel in the [Enron Discord](https://discord.gg/enron).
 
 ::: tip
 To get your Node ID use
 
 ```bash
-echelond tendermint show-node-id
+enrond tendermint show-node-id
 ```
 
 :::

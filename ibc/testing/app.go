@@ -21,10 +21,10 @@ import (
 	"github.com/cosmos/ibc-go/v3/testing/simapp"
 
 	ethermint "github.com/tharsis/ethermint/types"
-	echelonapp "github.com/echelonfoundation/echelon/v3/app"
+	enronapp "github.com/enronchain/enron/v3/app"
 )
 
-var DefaultTestingAppInit func() (ibcgotesting.TestingApp, map[string]json.RawMessage) = echelonapp.SetupTestingApp
+var DefaultTestingAppInit func() (ibcgotesting.TestingApp, map[string]json.RawMessage) = enronapp.SetupTestingApp
 
 // SetupWithGenesisValSet initializes a new SimApp with a validator set and genesis accounts
 // that also act as delegators. For simplicity, each validator is bonded with a delegation

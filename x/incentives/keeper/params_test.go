@@ -1,6 +1,6 @@
 package keeper_test
 
-import "github.com/echelonfoundation/echelon/v3/x/incentives/types"
+import "github.com/enronchain/enron/v3/x/incentives/types"
 
 func (suite *KeeperTestSuite) TestParams() {
 	params := suite.app.IncentivesKeeper.GetParams(suite.ctx)
