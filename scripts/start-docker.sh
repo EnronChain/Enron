@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEY="mykey"
-CHAINID="enron_3000-3"
+CHAINID="enron_1234-3"
 MONIKER="mymoniker"
 DATA_DIR=$(mktemp -d -t enron-datadir.XXXXX)
 

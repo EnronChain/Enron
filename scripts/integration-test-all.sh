@@ -17,7 +17,7 @@ RPC_PORT="854"
 IP_ADDR="0.0.0.0"
 
 KEY="mykey"
-CHAINID="enron_3000-3"
+CHAINID="enron_1234-3"
 MONIKER="mymoniker"
 
 ## default port prefixes for enrond

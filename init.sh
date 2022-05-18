@@ -1,5 +1,5 @@
 KEY="yourkey"
-CHAINID="enron_3000-3"
+CHAINID="enron_1234-3"
 MONIKER="Yournodename"
 KEYRING="file"
 KEYPASSWD=""

@@ -37,7 +37,7 @@ func (suite *GenesisTestSuite) SetupTest() {
 	suite.app = app.Setup(false, feemarkettypes.DefaultGenesisState())
 	suite.ctx = suite.app.BaseApp.NewContext(false, tmproto.Header{
 		Height:          1,
-		ChainID:         "enron_3000-3",
+		ChainID:         "enron_1234-3",
 		Time:            time.Now().UTC(),
 		ProposerAddress: consAddress.Bytes(),
 

@@ -63,7 +63,7 @@ The following table provides an example where the second row corresponds to an u
 
 | ChainID        | Identifier | EIP155 Number | Version Number |
 |----------------|------------|---------------|----------------|
-| `enron_3000-3` | enron      | 9000          | 1              |
+| `enron_1234-3` | enron      | 9000          | 1              |
 | `enron_9000-2` | enron      | 9000          | 2              |
 | `...`          | ...        | ...           | ...            |
 | `enron_9000-N` | enron      | 9000          | N              |

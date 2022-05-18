@@ -14,7 +14,7 @@ You specify the network you want to join by setting the **genesis file** and **s
 | ---------------- | --------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------- | --- |
 | `enron_9000-3`   | Enron_9000-3 Testnet              | [Enron 9000-3](https://github.com/tharsis/testnets/tree/main/enron_9000-3) | [`v3.0.0-beta`](https://github.com/enronchain/enron/releases/tag/v3.0.0-beta) |  `Live`   |
 | `enron_9000-2`   | Olympus Mons Incentivized Testnet | [Olympus Mons](https://github.com/tharsis/testnets/tree/main/olympus_mons) | [`v0.3.x`](https://github.com/enronchain/enron/releases) |  `Stale`   |
-| `enron_3000-3`   | Arsia Mons Testnet                | [Arsia Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons)     | [`v0.1.x`](https://github.com/enronchain/enron/releases) | `Stale`    |
+| `enron_1234-3`   | Arsia Mons Testnet                | [Arsia Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons)     | [`v0.1.x`](https://github.com/enronchain/enron/releases) | `Stale`    |
 
 ## Install `enrond`
 
