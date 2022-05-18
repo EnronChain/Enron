@@ -28,15 +28,15 @@ To build start a 4 node testnet run:
 make localnet-start
 ```
 
-This command creates a 4-node network using the `enrondnode` Docker image.
+This command creates a 4-node network using the `echelondnode` Docker image.
 The ports for each node are found in this table:
 
 | Node ID          | P2P Port | Tendermint RPC Port | REST/ Ethereum JSON-RPC Port | WebSocket Port |
 |------------------|----------|---------------------|------------------------------|----------------|
-| `enronnode0` | `26656`  | `26657`             | `8545`                       | `8546`         |
-| `enronnode1` | `26659`  | `26660`             | `8547`                       | `8548`         |
-| `enronnode2` | `26661`  | `26662`             | `8549`                       | `8550`         |
-| `enronnode3` | `26663`  | `26664`             | `8551`                       | `8552`         |
+| `echelonnode0` | `26656`  | `26657`             | `8545`                       | `8546`         |
+| `echelonnode1` | `26659`  | `26660`             | `8547`                       | `8548`         |
+| `echelonnode2` | `26661`  | `26662`             | `8549`                       | `8550`         |
+| `echelonnode3` | `26663`  | `26664`             | `8551`                       | `8552`         |
 
 To update the binary, just rebuild it and restart the nodes
 
@@ -48,11 +48,11 @@ The command above  command will run containers in the background using Docker co
 
 ```bash
 ...
-Creating network "enron_localnet" with driver "bridge"
-Creating enrondnode0 ... done
-Creating enrondnode2 ... done
-Creating enrondnode1 ... done
-Creating enrondnode3 ... done
+Creating network "echelon_localnet" with driver "bridge"
+Creating echelondnode0 ... done
+Creating echelondnode2 ... done
+Creating echelondnode1 ... done
+Creating echelondnode3 ... done
 ```
 
 ### Stop Localnet
@@ -66,55 +66,55 @@ make localnet-stop
 ### Configuration
 
 The `make localnet-start` creates files for a 4-node testnet in `./build` by
-calling the `enrond testnet` command. This outputs a handful of files in the
+calling the `echelond testnet` command. This outputs a handful of files in the
 `./build` directory:
 
 ```bash
 tree -L 3 build/
 
 build/
-├── enrond
-├── enrond
+├── echelond
+├── echelond
 ├── gentxs
 │   ├── node0.json
 │   ├── node1.json
 │   ├── node2.json
 │   └── node3.json
 ├── node0
-│   ├── enrond
+│   ├── echelond
 │   │   ├── key_seed.json
 │   │   └── keyring-test-cosmos
-│   └── enrond
+│   └── echelond
 │       ├── config
 │       ├── data
-│       └── enrond.log
+│       └── echelond.log
 ├── node1
-│   ├── enrond
+│   ├── echelond
 │   │   ├── key_seed.json
 │   │   └── keyring-test-cosmos
-│   └── enrond
+│   └── echelond
 │       ├── config
 │       ├── data
-│       └── enrond.log
+│       └── echelond.log
 ├── node2
-│   ├── enrond
+│   ├── echelond
 │   │   ├── key_seed.json
 │   │   └── keyring-test-cosmos
-│   └── enrond
+│   └── echelond
 │       ├── config
 │       ├── data
-│       └── enrond.log
+│       └── echelond.log
 └── node3
-    ├── enrond
+    ├── echelond
     │   ├── key_seed.json
     │   └── keyring-test-cosmos
-    └── enrond
+    └── echelond
         ├── config
         ├── data
-        └── enrond.log
+        └── echelond.log
 ```
 
-Each `./build/nodeN` directory is mounted to the `/enrond` directory in each container.
+Each `./build/nodeN` directory is mounted to the `/echelond` directory in each container.
 
 ### Logging
 
@@ -122,10 +122,10 @@ In order to see the logs of a particular node you can use the following command:
 
 ```bash
 # node 0: daemon logs
-docker exec enrondnode0 tail enrond.log
+docker exec echelondnode0 tail echelond.log
 
 # node 0: REST & RPC logs
-docker exec enrondnode0 tail enrond.log
+docker exec echelondnode0 tail echelond.log
 ```
 
 The logs for the daemon will look like:
@@ -163,7 +163,7 @@ You can also watch logs as they are produced via Docker with the `--follow` (`-f
 example:
 
 ```bash
-docker logs -f enrondnode0
+docker logs -f echelondnode0
 ```
 
 ### Interact with the Localnet
@@ -190,18 +190,18 @@ Additional instructions on how to interact with the WebSocket can be found on th
 
 ### Keys & Accounts
 
-To interact with `enrond` and start querying state or creating txs, you use the
-`enrond` directory of any given node as your `home`, for example:
+To interact with `echelond` and start querying state or creating txs, you use the
+`echelond` directory of any given node as your `home`, for example:
 
 ```bash
-enrond keys list --home ./build/node0/enrond
+echelond keys list --home ./build/node0/echelond
 ```
 
 Now that accounts exists, you may create new accounts and send those accounts
 funds!
 
 ::: tip
-**Note**: Each node's seed is located at `./build/nodeN/enrond/key_seed.json` and can be restored to the CLI using the `enrond keys add --restore` command
+**Note**: Each node's seed is located at `./build/nodeN/echelond/key_seed.json` and can be restored to the CLI using the `echelond keys add --restore` command
 :::
 
 ### Special Binaries
@@ -210,5 +210,5 @@ If you have multiple binaries with different names, you can specify which one to
 
 ```bash
 # Run with custom binary
-BINARY=enron make localnet-start
+BINARY=echelon make localnet-start
 ```

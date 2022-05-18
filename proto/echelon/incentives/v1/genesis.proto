@@ -1,10 +1,10 @@
 syntax = "proto3";
-package enron.incentives.v1;
-import "enron/incentives/v1/incentives.proto";
+package echelon.incentives.v1;
+import "echelon/incentives/v1/incentives.proto";
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/enronchain/enron/v3/x/incentives/types";
+option go_package = "github.com/echelonfoundation/echelon/v3/x/incentives/types";
 
 // GenesisState defines the module's genesis state.
 message GenesisState {

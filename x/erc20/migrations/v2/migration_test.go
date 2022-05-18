@@ -12,9 +12,9 @@ import (
 
 	"github.com/tharsis/ethermint/encoding"
 
-	"github.com/enron/enron/v3/app"
-	v2 "github.com/enron/enron/v3/x/erc20/migrations/v2"
-	erc20types "github.com/enron/enron/v3/x/erc20/types"
+	"github.com/echelonfoundation/echelon/v3/app"
+	v2 "github.com/echelonfoundation/echelon/v3/x/erc20/migrations/v2"
+	erc20types "github.com/echelonfoundation/echelon/v3/x/erc20/types"
 )
 
 func TestUpdateParams(t *testing.T) {

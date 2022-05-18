@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/enron/enron/v3/x/vesting/types"
+	"github.com/echelonfoundation/echelon/v3/x/vesting/types"
 )
 
 // NewHandler defines the vesting module handler instance

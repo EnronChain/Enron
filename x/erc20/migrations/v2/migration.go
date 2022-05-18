@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 
-	"github.com/enron/enron/v3/x/erc20/types"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
 )
 
 // UpdateParams updates the module parameters EnableERC20 and EnableEMVHook

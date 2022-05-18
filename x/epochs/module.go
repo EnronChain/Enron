@@ -20,9 +20,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/enron/enron/v3/x/epochs/client/cli"
-	"github.com/enron/enron/v3/x/epochs/keeper"
-	"github.com/enron/enron/v3/x/epochs/types"
+	"github.com/echelonfoundation/echelon/v3/x/epochs/client/cli"
+	"github.com/echelonfoundation/echelon/v3/x/epochs/keeper"
+	"github.com/echelonfoundation/echelon/v3/x/epochs/types"
 )
 
 var (

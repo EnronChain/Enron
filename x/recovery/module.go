@@ -19,9 +19,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/enron/enron/v3/x/recovery/client/cli"
-	"github.com/enron/enron/v3/x/recovery/keeper"
-	"github.com/enron/enron/v3/x/recovery/types"
+	"github.com/echelonfoundation/echelon/v3/x/recovery/client/cli"
+	"github.com/echelonfoundation/echelon/v3/x/recovery/keeper"
+	"github.com/echelonfoundation/echelon/v3/x/recovery/types"
 )
 
 // type check to ensure the interface is properly implemented

@@ -6,8 +6,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/enron/enron/v3/x/claims/keeper"
-	"github.com/enron/enron/v3/x/claims/types"
+	"github.com/echelonfoundation/echelon/v3/x/claims/keeper"
+	"github.com/echelonfoundation/echelon/v3/x/claims/types"
 )
 
 // NewHandler returns claim module messages

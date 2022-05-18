@@ -17,10 +17,10 @@ RPC_PORT="854"
 IP_ADDR="0.0.0.0"
 
 KEY="mykey"
-CHAINID="enron_3000-3"
+CHAINID="echelon_3000-3"
 MONIKER="mymoniker"
 
-## default port prefixes for enrond
+## default port prefixes for echelond
 NODE_P2P_PORT="2660"
 NODE_PORT="2663"
 NODE_RPC_PORT="2666"
@@ -52,29 +52,29 @@ done
 
 set -euxo pipefail
 
-DATA_DIR=$(mktemp -d -t enron-datadir.XXXXX)
+DATA_DIR=$(mktemp -d -t echelon-datadir.XXXXX)
 
 if [[ ! "$DATA_DIR" ]]; then
     echo "Could not create $DATA_DIR"
     exit 1
 fi
 
-# Compile enron
-echo "compiling enron"
+# Compile echelon
+echo "compiling echelon"
 make build
 
 # PID array declaration
 arr=()
 
 init_func() {
-    "$PWD"/build/enrond keys add $KEY"$i" --keyring-backend test --home "$DATA_DIR$i" --no-backup --algo "eth_secp256k1"
-    "$PWD"/build/enrond init $MONIKER --chain-id $CHAINID --home "$DATA_DIR$i"
-    "$PWD"/build/enrond add-genesis-account \
-    "$("$PWD"/build/enrond keys show "$KEY$i" --keyring-backend test -a --home "$DATA_DIR$i")" 1000000000000000000aenron,1000000000000000000stake \
+    "$PWD"/build/echelond keys add $KEY"$i" --keyring-backend test --home "$DATA_DIR$i" --no-backup --algo "eth_secp256k1"
+    "$PWD"/build/echelond init $MONIKER --chain-id $CHAINID --home "$DATA_DIR$i"
+    "$PWD"/build/echelond add-genesis-account \
+    "$("$PWD"/build/echelond keys show "$KEY$i" --keyring-backend test -a --home "$DATA_DIR$i")" 1000000000000000000aechelon,1000000000000000000stake \
     --keyring-backend test --home "$DATA_DIR$i"
-    "$PWD"/build/enrond gentx "$KEY$i" 1000000000000000000stake --chain-id $CHAINID --keyring-backend test --home "$DATA_DIR$i"
-    "$PWD"/build/enrond collect-gentxs --home "$DATA_DIR$i"
-    "$PWD"/build/enrond validate-genesis --home "$DATA_DIR$i"
+    "$PWD"/build/echelond gentx "$KEY$i" 1000000000000000000stake --chain-id $CHAINID --keyring-backend test --home "$DATA_DIR$i"
+    "$PWD"/build/echelond collect-gentxs --home "$DATA_DIR$i"
+    "$PWD"/build/echelond validate-genesis --home "$DATA_DIR$i"
 
     if [[ $MODE == "pending" ]]; then
       ls $DATA_DIR$i
@@ -103,17 +103,17 @@ init_func() {
 }
 
 start_func() {
-    echo "starting enron node $i in background ..."
-    "$PWD"/build/enrond start --pruning=nothing --rpc.unsafe \
+    echo "starting echelon node $i in background ..."
+    "$PWD"/build/echelond start --pruning=nothing --rpc.unsafe \
     --p2p.laddr tcp://$IP_ADDR:$NODE_P2P_PORT"$i" --address tcp://$IP_ADDR:$NODE_PORT"$i" --rpc.laddr tcp://$IP_ADDR:$NODE_RPC_PORT"$i" \
     --json-rpc.address=$IP_ADDR:$RPC_PORT"$i" \
     --keyring-backend test --home "$DATA_DIR$i" \
     >"$DATA_DIR"/node"$i".log 2>&1 & disown
 
-    ENRON_PID=$!
-    echo "started enron node, pid=$ENRON_PID"
+    ECHELON_PID=$!
+    echo "started echelon node, pid=$ECHELON_PID"
     # add PID to array
-    arr+=("$ENRON_PID")
+    arr+=("$ECHELON_PID")
 
     if [[ $MODE == "pending" ]]; then
       echo "waiting for the first block..."
@@ -147,7 +147,7 @@ if [[ -z $TEST || $TEST == "rpc" ||  $TEST == "pending" ]]; then
 
     for i in $(seq 1 "$TEST_QTD"); do
         HOST_RPC=http://$IP_ADDR:$RPC_PORT"$i"
-        echo "going to test enron node $HOST_RPC ..."
+        echo "going to test echelon node $HOST_RPC ..."
         MODE=$MODE HOST=$HOST_RPC go test ./tests/... -timeout=$time_out -v -short
 
         RPC_FAIL=$?
@@ -156,12 +156,12 @@ if [[ -z $TEST || $TEST == "rpc" ||  $TEST == "pending" ]]; then
 fi
 
 stop_func() {
-    ENRON_PID=$i
-    echo "shutting down node, pid=$ENRON_PID ..."
+    ECHELON_PID=$i
+    echo "shutting down node, pid=$ECHELON_PID ..."
 
-    # Shutdown enron node
-    kill -9 "$ENRON_PID"
-    wait "$ENRON_PID"
+    # Shutdown echelon node
+    kill -9 "$ECHELON_PID"
+    wait "$ECHELON_PID"
 
     if [ $REMOVE_DATA_DIR == "true" ]
     then

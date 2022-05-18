@@ -7,8 +7,8 @@ import (
 
 	ethermint "github.com/tharsis/ethermint/types"
 
-	incentivestypes "github.com/enron/enron/v3/x/incentives/types"
-	"github.com/enron/enron/v3/x/inflation/types"
+	incentivestypes "github.com/echelonfoundation/echelon/v3/x/incentives/types"
+	"github.com/echelonfoundation/echelon/v3/x/inflation/types"
 )
 
 // 200M token at year 4 allocated to the team
@@ -97,7 +97,7 @@ func (k Keeper) GetProportions(
 }
 
 func (k Keeper) isMainnetChainID(ctx sdk.Context) bool {
-	return strings.Contains(ctx.ChainID(), "enron_9001-")
+	return strings.Contains(ctx.ChainID(), "echelon_9001-")
 }
 
 // BondedRatio the fraction of the staking tokens which are currently bonded

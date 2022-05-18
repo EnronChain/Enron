@@ -4,7 +4,7 @@ order: 2
 
 # Hardhat: Deploying a Smart Contract
 
-Learn how to deploy a simple Solidity-based smart contract to Enron using the Hardhat environment {synopsis}
+Learn how to deploy a simple Solidity-based smart contract to Echelon using the Hardhat environment {synopsis}
 
 [Hardhat](https://hardhat.org/) is a flexible development environment for building Ethereum-based smart contracts. It is designed with integrations and extensibility in mind
 
@@ -51,7 +51,7 @@ $ npm -v
 ```
 
 ::: tip
-If you haven't already, you will also need to install Enron if you plan on deploying your smart contracts locally. Check this [document](./../../quickstart/installation.md) for the full instructions.
+If you haven't already, you will also need to install Echelon if you plan on deploying your smart contracts locally. Check this [document](./../../quickstart/installation.md) for the full instructions.
 :::
 
 ## Create Hardhat Project
@@ -107,7 +107,7 @@ module.exports = {
     hardhat: {
     },
     testnet: {
-      url: "https://enron-archive-testnet.api.bdnodes.net:8545/",
+      url: "https://echelon-archive-testnet.api.bdnodes.net:8545/",
       accounts: [privateKey1, privateKey2, ...]
     }
   },

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/enron/enron/v3/x/inflation/types"
+	"github.com/echelonfoundation/echelon/v3/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestEpochIdentifierAfterEpochEnd() {

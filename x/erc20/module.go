@@ -18,9 +18,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/enron/enron/v3/x/erc20/client/cli"
-	"github.com/enron/enron/v3/x/erc20/keeper"
-	"github.com/enron/enron/v3/x/erc20/types"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/client/cli"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/keeper"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
 )
 
 // type check to ensure the interface is properly implemented

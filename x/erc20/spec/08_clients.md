@@ -6,10 +6,10 @@ order: 8
 
 ## CLI
 
-Find below a list of  `enrond` commands added with the  `x/erc20` module. You can obtain the full list by using the `enrond -h` command. A CLI command can look like this:
+Find below a list of  `echelond` commands added with the  `x/erc20` module. You can obtain the full list by using the `echelond -h` command. A CLI command can look like this:
 
 ```bash
-enrond query erc20 params
+echelond query erc20 params
 ```
 
 ### Queries
@@ -33,21 +33,21 @@ enrond query erc20 params
 
 | Verb   | Method                                   | Description                    |
 | ------ | ---------------------------------------- | ------------------------------ |
-| `gRPC` | `enron.erc20.v1.Query/Params`     | Get erc20 params        |
-| `gRPC` | `enron.erc20.v1.Query/TokenPair`  | Get registered token pair      |
-| `gRPC` | `enron.erc20.v1.Query/TokenPairs` | Get all registered token pairs |
-| `GET`  | `/enron/erc20/v1/params`          | Get erc20 params        |
-| `GET`  | `/enron/erc20/v1/token_pair`      | Get registered token pair      |
-| `GET`  | `/enron/erc20/v1/token_pairs`     | Get all registered token pairs |
+| `gRPC` | `echelon.erc20.v1.Query/Params`     | Get erc20 params        |
+| `gRPC` | `echelon.erc20.v1.Query/TokenPair`  | Get registered token pair      |
+| `gRPC` | `echelon.erc20.v1.Query/TokenPairs` | Get all registered token pairs |
+| `GET`  | `/echelon/erc20/v1/params`          | Get erc20 params        |
+| `GET`  | `/echelon/erc20/v1/token_pair`      | Get registered token pair      |
+| `GET`  | `/echelon/erc20/v1/token_pairs`     | Get all registered token pairs |
 
 ### Transactions
 
 | Verb   | Method                                    | Description                    |
 | ------ | ----------------------------------------- | ------------------------------ |
-| `gRPC` | `enron.erc20.v1.Msg/ConvertCoin`   | Convert a Cosmos Coin to ERC20 |
-| `gRPC` | `enron.erc20.v1.Msg/ConvertERC20`  | Convert a ERC20 to Cosmos Coin |
-| `GET`  | `/enron/erc20/v1/tx/convert_coin`  | Convert a Cosmos Coin to ERC20 |
-| `GET`  | `/enron/erc20/v1/tx/convert_erc20` | Convert a ERC20 to Cosmos Coin |
+| `gRPC` | `echelon.erc20.v1.Msg/ConvertCoin`   | Convert a Cosmos Coin to ERC20 |
+| `gRPC` | `echelon.erc20.v1.Msg/ConvertERC20`  | Convert a ERC20 to Cosmos Coin |
+| `GET`  | `/echelon/erc20/v1/tx/convert_coin`  | Convert a Cosmos Coin to ERC20 |
+| `GET`  | `/echelon/erc20/v1/tx/convert_erc20` | Convert a ERC20 to Cosmos Coin |
 
 <!-- ## JSON-RPC
 

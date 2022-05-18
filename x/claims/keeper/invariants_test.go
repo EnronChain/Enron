@@ -5,8 +5,8 @@ import (
 
 	"github.com/tharsis/ethermint/tests"
 
-	"github.com/enron/enron/v3/x/claims/types"
-	inflationtypes "github.com/enron/enron/v3/x/inflation/types"
+	"github.com/echelonfoundation/echelon/v3/x/claims/types"
+	inflationtypes "github.com/echelonfoundation/echelon/v3/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestClaimsInvariant() {
@@ -29,7 +29,7 @@ func (suite *KeeperTestSuite) TestClaimsInvariant() {
 				suite.app.ClaimsKeeper.SetClaimsRecord(suite.ctx, addr, types.NewClaimsRecord(sdk.NewInt(40)))
 				suite.Require().True(suite.app.ClaimsKeeper.HasClaimsRecord(suite.ctx, addr))
 
-				coins := sdk.Coins{sdk.NewCoin("aenron", sdk.NewInt(100))}
+				coins := sdk.Coins{sdk.NewCoin("aechelon", sdk.NewInt(100))}
 				// update the escrowed account balance to maintain the invariant
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)
@@ -46,7 +46,7 @@ func (suite *KeeperTestSuite) TestClaimsInvariant() {
 				suite.app.ClaimsKeeper.SetClaimsRecord(suite.ctx, addr, types.NewClaimsRecord(sdk.OneInt()))
 				suite.Require().True(suite.app.ClaimsKeeper.HasClaimsRecord(suite.ctx, addr))
 
-				coins := sdk.Coins{sdk.NewCoin("aenron", sdk.NewInt(2))}
+				coins := sdk.Coins{sdk.NewCoin("aechelon", sdk.NewInt(2))}
 				// update the escrowed account balance to maintain the invariant
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)
@@ -67,7 +67,7 @@ func (suite *KeeperTestSuite) TestClaimsInvariant() {
 				suite.app.ClaimsKeeper.SetClaimsRecord(suite.ctx, addr, cr)
 				suite.Require().True(suite.app.ClaimsKeeper.HasClaimsRecord(suite.ctx, addr))
 
-				coins := sdk.Coins{sdk.NewCoin("aenron", sdk.NewInt(100))}
+				coins := sdk.Coins{sdk.NewCoin("aechelon", sdk.NewInt(100))}
 				// update the escrowed account balance to maintain the invariant
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)
@@ -88,7 +88,7 @@ func (suite *KeeperTestSuite) TestClaimsInvariant() {
 				suite.app.ClaimsKeeper.SetClaimsRecord(suite.ctx, addr, cr)
 				suite.Require().True(suite.app.ClaimsKeeper.HasClaimsRecord(suite.ctx, addr))
 
-				coins := sdk.Coins{sdk.NewCoin("aenron", sdk.NewInt(100))}
+				coins := sdk.Coins{sdk.NewCoin("aechelon", sdk.NewInt(100))}
 				// update the escrowed account balance to maintain the invariant
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)
@@ -117,7 +117,7 @@ func (suite *KeeperTestSuite) TestClaimsInvariant() {
 				suite.Require().True(suite.app.ClaimsKeeper.HasClaimsRecord(suite.ctx, addr))
 				suite.Require().True(suite.app.ClaimsKeeper.HasClaimsRecord(suite.ctx, addr2))
 
-				coins := sdk.Coins{sdk.NewCoin("aenron", sdk.NewInt(200))}
+				coins := sdk.Coins{sdk.NewCoin("aechelon", sdk.NewInt(200))}
 				// update the escrowed account balance to maintain the invariant
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)

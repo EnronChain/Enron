@@ -8,14 +8,14 @@ import (
 	channeltypes "github.com/cosmos/ibc-go/v3/modules/core/04-channel/types"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"github.com/enron/enron/v3/app"
-	"github.com/enron/enron/v3/testutil"
-	claimtypes "github.com/enron/enron/v3/x/claims/types"
-	"github.com/enron/enron/v3/x/recovery/types"
+	"github.com/echelonfoundation/echelon/v3/app"
+	"github.com/echelonfoundation/echelon/v3/testutil"
+	claimtypes "github.com/echelonfoundation/echelon/v3/x/claims/types"
+	"github.com/echelonfoundation/echelon/v3/x/recovery/types"
 )
 
 var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
-	coinEnron := sdk.NewCoin("aenron", sdk.NewInt(10000))
+	coinEchelon := sdk.NewCoin("aechelon", sdk.NewInt(10000))
 	coinOsmo := sdk.NewCoin("uosmo", sdk.NewInt(10))
 	coinAtom := sdk.NewCoin("uatom", sdk.NewInt(10))
 
@@ -34,44 +34,44 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 		BeforeEach(func() {
 			params := claimtypes.DefaultParams()
 			params.AuthorizedChannels = []string{}
-			s.EnronChain.App.(*app.Enron).ClaimsKeeper.SetParams(s.EnronChain.GetContext(), params)
+			s.EchelonChain.App.(*app.Echelon).ClaimsKeeper.SetParams(s.EchelonChain.GetContext(), params)
 
 			sender = s.IBCOsmosisChain.SenderAccount.GetAddress().String()
-			receiver = s.EnronChain.SenderAccount.GetAddress().String()
+			receiver = s.EchelonChain.SenderAccount.GetAddress().String()
 			senderAcc, _ = sdk.AccAddressFromBech32(sender)
 			receiverAcc, _ = sdk.AccAddressFromBech32(receiver)
 		})
 		It("should transfer and not recover tokens", func() {
-			s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 1)
+			s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 1)
 
-			nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-			Expect(nativeEnron).To(Equal(coinEnron))
-			ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+			nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+			Expect(nativeEchelon).To(Equal(coinEchelon))
+			ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 			Expect(ibcOsmo).To(Equal(sdk.NewCoin(uosmoIbcdenom, coinOsmo.Amount)))
 		})
 	})
 
 	Describe("from an authorized, non-EVM chain (e.g. Osmosis)", func() {
 
-		Describe("to a different account on Enron (sender != recipient)", func() {
+		Describe("to a different account on Echelon (sender != recipient)", func() {
 			BeforeEach(func() {
 				sender = s.IBCOsmosisChain.SenderAccount.GetAddress().String()
-				receiver = s.EnronChain.SenderAccount.GetAddress().String()
+				receiver = s.EchelonChain.SenderAccount.GetAddress().String()
 				senderAcc, _ = sdk.AccAddressFromBech32(sender)
 				receiverAcc, _ = sdk.AccAddressFromBech32(receiver)
 			})
 
 			It("should transfer and not recover tokens", func() {
-				s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 1)
+				s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 1)
 
-				nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-				Expect(nativeEnron).To(Equal(coinEnron))
-				ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+				nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+				Expect(nativeEchelon).To(Equal(coinEchelon))
+				ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 				Expect(ibcOsmo).To(Equal(sdk.NewCoin(uosmoIbcdenom, coinOsmo.Amount)))
 			})
 		})
 
-		Describe("to the sender's own eth_secp256k1 account on Enron (sender == recipient)", func() {
+		Describe("to the sender's own eth_secp256k1 account on Echelon (sender == recipient)", func() {
 			BeforeEach(func() {
 				sender = s.IBCOsmosisChain.SenderAccount.GetAddress().String()
 				receiver = s.IBCOsmosisChain.SenderAccount.GetAddress().String()
@@ -83,15 +83,15 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 				BeforeEach(func() {
 					params := types.DefaultParams()
 					params.EnableRecovery = false
-					s.EnronChain.App.(*app.Enron).RecoveryKeeper.SetParams(s.EnronChain.GetContext(), params)
+					s.EchelonChain.App.(*app.Echelon).RecoveryKeeper.SetParams(s.EchelonChain.GetContext(), params)
 				})
 
 				It("should not transfer or recover tokens", func() {
-					s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
+					s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
 
-					nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-					Expect(nativeEnron).To(Equal(coinEnron))
-					ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+					nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+					Expect(nativeEchelon).To(Equal(coinEchelon))
+					ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 					Expect(ibcOsmo).To(Equal(sdk.NewCoin(uosmoIbcdenom, coinOsmo.Amount)))
 				})
 			})
@@ -101,16 +101,16 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 					BeforeEach(func() {
 						amt := sdk.NewInt(int64(100))
 						claim = claimtypes.NewClaimsRecord(amt)
-						s.EnronChain.App.(*app.Enron).ClaimsKeeper.SetClaimsRecord(s.EnronChain.GetContext(), senderAcc, claim)
+						s.EchelonChain.App.(*app.Echelon).ClaimsKeeper.SetClaimsRecord(s.EchelonChain.GetContext(), senderAcc, claim)
 					})
 
 					It("should not transfer or recover tokens", func() {
 						// Prevent further funds from getting stuck
-						s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
+						s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
 
-						nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-						Expect(nativeEnron).To(Equal(coinEnron))
-						ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+						Expect(nativeEchelon).To(Equal(coinEchelon))
+						ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 					})
 				})
@@ -119,41 +119,41 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 					// Already has stuck funds
 					BeforeEach(func() {
 						amt := sdk.NewInt(int64(100))
-						coins := sdk.NewCoins(sdk.NewCoin("aenron", sdk.NewInt(int64(75))))
+						coins := sdk.NewCoins(sdk.NewCoin("aechelon", sdk.NewInt(int64(75))))
 						claim = claimtypes.NewClaimsRecord(amt)
 						claim.MarkClaimed(claimtypes.ActionIBCTransfer)
-						s.EnronChain.App.(*app.Enron).ClaimsKeeper.SetClaimsRecord(s.EnronChain.GetContext(), senderAcc, claim)
+						s.EchelonChain.App.(*app.Echelon).ClaimsKeeper.SetClaimsRecord(s.EchelonChain.GetContext(), senderAcc, claim)
 
 						// update the escrowed account balance to maintain the invariant
-						err := testutil.FundModuleAccount(s.EnronChain.App.(*app.Enron).BankKeeper, s.EnronChain.GetContext(), claimtypes.ModuleName, coins)
+						err := testutil.FundModuleAccount(s.EchelonChain.App.(*app.Echelon).BankKeeper, s.EchelonChain.GetContext(), claimtypes.ModuleName, coins)
 						s.Require().NoError(err)
 
-						// aenron & ibc tokens that originated from the sender's chain
-						s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
-						timeout = uint64(s.EnronChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
+						// aechelon & ibc tokens that originated from the sender's chain
+						s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
+						timeout = uint64(s.EchelonChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
 					})
 
 					It("should transfer tokens to the recipient and perform recovery", func() {
 						// Escrow before relaying packets
-						balanceEscrow := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), transfertypes.GetEscrowAddress("transfer", "channel-0"), "aenron")
-						Expect(balanceEscrow).To(Equal(coinEnron))
-						ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						balanceEscrow := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), transfertypes.GetEscrowAddress("transfer", "channel-0"), "aechelon")
+						Expect(balanceEscrow).To(Equal(coinEchelon))
+						ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 
 						// Relay both packets that were sent in the ibc_callback
-						err := s.pathOsmosisEnron.RelayPacket(CreatePacket("10000", "aenron", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
+						err := s.pathOsmosisEchelon.RelayPacket(CreatePacket("10000", "aechelon", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
 						s.Require().NoError(err)
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
 						s.Require().NoError(err)
 
-						// Check that the aenron were recovered
-						nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-						Expect(nativeEnron.IsZero()).To(BeTrue())
-						ibcEnron := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aenronIbcdenom)
-						Expect(ibcEnron).To(Equal(sdk.NewCoin(aenronIbcdenom, coinEnron.Amount)))
+						// Check that the aechelon were recovered
+						nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+						Expect(nativeEchelon.IsZero()).To(BeTrue())
+						ibcEchelon := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aechelonIbcdenom)
+						Expect(ibcEchelon).To(Equal(sdk.NewCoin(aechelonIbcdenom, coinEchelon.Amount)))
 
 						// Check that the uosmo were recovered
-						ibcOsmo = s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						ibcOsmo = s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 						nativeOsmo := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, "uosmo")
 						Expect(nativeOsmo).To(Equal(coinOsmo))
@@ -161,12 +161,12 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 
 					It("should not claim/migrate/merge claims records", func() {
 						// Relay both packets that were sent in the ibc_callback
-						err := s.pathOsmosisEnron.RelayPacket(CreatePacket("10000", "aenron", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
+						err := s.pathOsmosisEchelon.RelayPacket(CreatePacket("10000", "aechelon", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
 						s.Require().NoError(err)
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
 						s.Require().NoError(err)
 
-						claimAfter, _ := s.EnronChain.App.(*app.Enron).ClaimsKeeper.GetClaimsRecord(s.EnronChain.GetContext(), senderAcc)
+						claimAfter, _ := s.EchelonChain.App.(*app.Echelon).ClaimsKeeper.GetClaimsRecord(s.EchelonChain.GetContext(), senderAcc)
 						Expect(claim).To(Equal(claimAfter))
 					})
 				})
@@ -176,30 +176,30 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 				When("recipient has no ibc vouchers that originated from other chains", func() {
 
 					It("should transfer and recover tokens", func() {
-						// aenron & ibc tokens that originated from the sender's chain
-						s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
-						timeout = uint64(s.EnronChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
+						// aechelon & ibc tokens that originated from the sender's chain
+						s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, coinOsmo.Denom, coinOsmo.Amount.Int64(), sender, receiver, 1)
+						timeout = uint64(s.EchelonChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
 
 						// Escrow before relaying packets
-						balanceEscrow := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), transfertypes.GetEscrowAddress("transfer", "channel-0"), "aenron")
-						Expect(balanceEscrow).To(Equal(coinEnron))
-						ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						balanceEscrow := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), transfertypes.GetEscrowAddress("transfer", "channel-0"), "aechelon")
+						Expect(balanceEscrow).To(Equal(coinEchelon))
+						ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 
 						// Relay both packets that were sent in the ibc_callback
-						err := s.pathOsmosisEnron.RelayPacket(CreatePacket("10000", "aenron", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
+						err := s.pathOsmosisEchelon.RelayPacket(CreatePacket("10000", "aechelon", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
 						s.Require().NoError(err)
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
 						s.Require().NoError(err)
 
-						// Check that the aenron were recovered
-						nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-						Expect(nativeEnron.IsZero()).To(BeTrue())
-						ibcEnron := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aenronIbcdenom)
-						Expect(ibcEnron).To(Equal(sdk.NewCoin(aenronIbcdenom, coinEnron.Amount)))
+						// Check that the aechelon were recovered
+						nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+						Expect(nativeEchelon.IsZero()).To(BeTrue())
+						ibcEchelon := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aechelonIbcdenom)
+						Expect(ibcEchelon).To(Equal(sdk.NewCoin(aechelonIbcdenom, coinEchelon.Amount)))
 
 						// Check that the uosmo were recovered
-						ibcOsmo = s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						ibcOsmo = s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 						nativeOsmo := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, "uosmo")
 						Expect(nativeOsmo).To(Equal(coinOsmo))
@@ -211,61 +211,61 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 					BeforeEach(func() {
 						params := types.DefaultParams()
 						params.EnableRecovery = false
-						s.EnronChain.App.(*app.Enron).RecoveryKeeper.SetParams(s.EnronChain.GetContext(), params)
+						s.EchelonChain.App.(*app.Echelon).RecoveryKeeper.SetParams(s.EchelonChain.GetContext(), params)
 
-						// Send uatom from Cosmos to Enron
-						s.SendAndReceiveMessage(s.pathCosmosEnron, s.IBCCosmosChain, coinAtom.Denom, coinAtom.Amount.Int64(), s.IBCCosmosChain.SenderAccount.GetAddress().String(), receiver, 1)
+						// Send uatom from Cosmos to Echelon
+						s.SendAndReceiveMessage(s.pathCosmosEchelon, s.IBCCosmosChain, coinAtom.Denom, coinAtom.Amount.Int64(), s.IBCCosmosChain.SenderAccount.GetAddress().String(), receiver, 1)
 
 						params.EnableRecovery = true
-						s.EnronChain.App.(*app.Enron).RecoveryKeeper.SetParams(s.EnronChain.GetContext(), params)
+						s.EchelonChain.App.(*app.Echelon).RecoveryKeeper.SetParams(s.EchelonChain.GetContext(), params)
 
 					})
 					It("should not recover tokens that originated from other chains", func() {
-						// Send uosmo from Osmosis to Enron
-						s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 1)
+						// Send uosmo from Osmosis to Echelon
+						s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 1)
 
 						// Relay both packets that were sent in the ibc_callback
-						timeout := uint64(s.EnronChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
-						err := s.pathOsmosisEnron.RelayPacket(CreatePacket("10000", "aenron", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
+						timeout := uint64(s.EchelonChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
+						err := s.pathOsmosisEchelon.RelayPacket(CreatePacket("10000", "aechelon", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
 						s.Require().NoError(err)
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
 						s.Require().NoError(err)
 
-						// Aenron was recovered from user address
-						nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-						Expect(nativeEnron.IsZero()).To(BeTrue())
-						ibcEnron := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aenronIbcdenom)
-						Expect(ibcEnron).To(Equal(sdk.NewCoin(aenronIbcdenom, coinEnron.Amount)))
+						// Aechelon was recovered from user address
+						nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+						Expect(nativeEchelon.IsZero()).To(BeTrue())
+						ibcEchelon := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aechelonIbcdenom)
+						Expect(ibcEchelon).To(Equal(sdk.NewCoin(aechelonIbcdenom, coinEchelon.Amount)))
 
 						// Check that the uosmo were retrieved
-						ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 						nativeOsmo := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, "uosmo")
 						Expect(nativeOsmo).To(Equal(coinOsmo))
 
 						// Check that the atoms were not retrieved
-						ibcAtom := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, uatomIbcdenom)
+						ibcAtom := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, uatomIbcdenom)
 						Expect(ibcAtom).To(Equal(sdk.NewCoin(uatomIbcdenom, coinAtom.Amount)))
 
-						// Repeat transaction from Osmosis to Enron
-						s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 2)
+						// Repeat transaction from Osmosis to Echelon
+						s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 2)
 
-						timeout = uint64(s.EnronChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 3, timeout))
+						timeout = uint64(s.EchelonChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 3, timeout))
 						s.Require().NoError(err)
 
 						// No further tokens recovered
-						nativeEnron = s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-						Expect(nativeEnron.IsZero()).To(BeTrue())
-						ibcEnron = s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aenronIbcdenom)
-						Expect(ibcEnron).To(Equal(sdk.NewCoin(aenronIbcdenom, coinEnron.Amount)))
+						nativeEchelon = s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+						Expect(nativeEchelon.IsZero()).To(BeTrue())
+						ibcEchelon = s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aechelonIbcdenom)
+						Expect(ibcEchelon).To(Equal(sdk.NewCoin(aechelonIbcdenom, coinEchelon.Amount)))
 
-						ibcOsmo = s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						ibcOsmo = s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 						nativeOsmo = s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, "uosmo")
 						Expect(nativeOsmo).To(Equal(coinOsmo))
 
-						ibcAtom = s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, uatomIbcdenom)
+						ibcAtom = s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, uatomIbcdenom)
 						Expect(ibcAtom).To(Equal(sdk.NewCoin(uatomIbcdenom, coinAtom.Amount)))
 					})
 				})
@@ -275,54 +275,54 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 					BeforeEach(func() {
 						params := types.DefaultParams()
 						params.EnableRecovery = false
-						s.EnronChain.App.(*app.Enron).RecoveryKeeper.SetParams(s.EnronChain.GetContext(), params)
+						s.EchelonChain.App.(*app.Echelon).RecoveryKeeper.SetParams(s.EchelonChain.GetContext(), params)
 
 						s.SendAndReceiveMessage(s.pathOsmosisCosmos, s.IBCCosmosChain, coinAtom.Denom, coinAtom.Amount.Int64(), s.IBCCosmosChain.SenderAccount.GetAddress().String(), receiver, 1)
 
 						// Send IBC transaction of 10 ibc/uatom
-						transferMsg := transfertypes.NewMsgTransfer(s.pathOsmosisEnron.EndpointA.ChannelConfig.PortID, s.pathOsmosisEnron.EndpointA.ChannelID, sdk.NewCoin(uatomIbcdenom, sdk.NewInt(10)), sender, receiver, timeoutHeight, 0)
+						transferMsg := transfertypes.NewMsgTransfer(s.pathOsmosisEchelon.EndpointA.ChannelConfig.PortID, s.pathOsmosisEchelon.EndpointA.ChannelID, sdk.NewCoin(uatomIbcdenom, sdk.NewInt(10)), sender, receiver, timeoutHeight, 0)
 						_, err := s.IBCOsmosisChain.SendMsgs(transferMsg)
 						s.Require().NoError(err) // message committed
 						transfer := transfertypes.NewFungibleTokenPacketData("transfer/channel-1/uatom", "10", sender, receiver)
-						packet := channeltypes.NewPacket(transfer.GetBytes(), 1, s.pathOsmosisEnron.EndpointA.ChannelConfig.PortID, s.pathOsmosisEnron.EndpointA.ChannelID, s.pathOsmosisEnron.EndpointB.ChannelConfig.PortID, s.pathOsmosisEnron.EndpointB.ChannelID, timeoutHeight, 0)
-						// Receive message on the enron side, and send ack
-						err = s.pathOsmosisEnron.RelayPacket(packet)
+						packet := channeltypes.NewPacket(transfer.GetBytes(), 1, s.pathOsmosisEchelon.EndpointA.ChannelConfig.PortID, s.pathOsmosisEchelon.EndpointA.ChannelID, s.pathOsmosisEchelon.EndpointB.ChannelConfig.PortID, s.pathOsmosisEchelon.EndpointB.ChannelID, timeoutHeight, 0)
+						// Receive message on the echelon side, and send ack
+						err = s.pathOsmosisEchelon.RelayPacket(packet)
 						s.Require().NoError(err)
 
 						// Check that the ibc/uatom are available
-						osmoIBCAtom := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uatomOsmoIbcdenom)
+						osmoIBCAtom := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uatomOsmoIbcdenom)
 						s.Require().Equal(osmoIBCAtom.Amount, coinAtom.Amount)
 
 						params.EnableRecovery = true
-						s.EnronChain.App.(*app.Enron).RecoveryKeeper.SetParams(s.EnronChain.GetContext(), params)
+						s.EchelonChain.App.(*app.Echelon).RecoveryKeeper.SetParams(s.EchelonChain.GetContext(), params)
 
 					})
 					It("should not recover tokens that originated from other chains", func() {
-						s.SendAndReceiveMessage(s.pathOsmosisEnron, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 2)
+						s.SendAndReceiveMessage(s.pathOsmosisEchelon, s.IBCOsmosisChain, "uosmo", 10, sender, receiver, 2)
 
 						// Relay packets that were sent in the ibc_callback
-						timeout := uint64(s.EnronChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
-						err := s.pathOsmosisEnron.RelayPacket(CreatePacket("10000", "aenron", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
+						timeout := uint64(s.EchelonChain.GetContext().BlockTime().Add(time.Hour * 4).Add(time.Second * -20).UnixNano())
+						err := s.pathOsmosisEchelon.RelayPacket(CreatePacket("10000", "aechelon", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 1, timeout))
 						s.Require().NoError(err)
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/transfer/channel-1/uatom", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/transfer/channel-1/uatom", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 2, timeout))
 						s.Require().NoError(err)
-						err = s.pathOsmosisEnron.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 3, timeout))
+						err = s.pathOsmosisEchelon.RelayPacket(CreatePacket("10", "transfer/channel-0/uosmo", sender, receiver, "transfer", "channel-0", "transfer", "channel-0", 3, timeout))
 						s.Require().NoError(err)
 
-						// Aenron was recovered from user address
-						nativeEnron := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), senderAcc, "aenron")
-						Expect(nativeEnron.IsZero()).To(BeTrue())
-						ibcEnron := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aenronIbcdenom)
-						Expect(ibcEnron).To(Equal(sdk.NewCoin(aenronIbcdenom, coinEnron.Amount)))
+						// Aechelon was recovered from user address
+						nativeEchelon := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), senderAcc, "aechelon")
+						Expect(nativeEchelon.IsZero()).To(BeTrue())
+						ibcEchelon := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, aechelonIbcdenom)
+						Expect(ibcEchelon).To(Equal(sdk.NewCoin(aechelonIbcdenom, coinEchelon.Amount)))
 
 						// Check that the uosmo were recovered
-						ibcOsmo := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uosmoIbcdenom)
+						ibcOsmo := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
 						nativeOsmo := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, "uosmo")
 						Expect(nativeOsmo).To(Equal(coinOsmo))
 
 						// Check that the ibc/uatom were retrieved
-						osmoIBCAtom := s.EnronChain.App.(*app.Enron).BankKeeper.GetBalance(s.EnronChain.GetContext(), receiverAcc, uatomOsmoIbcdenom)
+						osmoIBCAtom := s.EchelonChain.App.(*app.Echelon).BankKeeper.GetBalance(s.EchelonChain.GetContext(), receiverAcc, uatomOsmoIbcdenom)
 						Expect(osmoIBCAtom.IsZero()).To(BeTrue())
 						ibcAtom := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), senderAcc, uatomIbcdenom)
 						Expect(ibcAtom).To(Equal(sdk.NewCoin(uatomIbcdenom, sdk.NewInt(10))))

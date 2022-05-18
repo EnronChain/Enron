@@ -6,7 +6,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	incentivestypes "github.com/enron/enron/v3/x/incentives/types"
+	incentivestypes "github.com/echelonfoundation/echelon/v3/x/incentives/types"
 )
 
 var _ = Describe("Inflation", Ordered, func() {

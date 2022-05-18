@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/enron/enron/v3/x/inflation/types"
+	"github.com/echelonfoundation/echelon/v3/x/inflation/types"
 )
 
 // GetParams returns the total set of inflation parameters.

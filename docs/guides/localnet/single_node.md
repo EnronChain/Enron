@@ -15,21 +15,21 @@ You can customize the local testnet script by changing values for convenience fo
 ```bash
 # customize the name of your key, the chain-id, moniker of the node, keyring backend, and log level
 KEY="mykey"
-CHAINID="enron_9000-3"
+CHAINID="echelon_9000-3"
 MONIKER="localtestnet"
 KEYRING="test"
 LOGLEVEL="info"
 
 
 # Allocate genesis accounts (cosmos formatted addresses)
-enrond add-genesis-account $KEY 100000000000000000000000000aenron --keyring-backend $KEYRING
+echelond add-genesis-account $KEY 100000000000000000000000000aechelon --keyring-backend $KEYRING
 
 # Sign genesis transaction
-enrond gentx $KEY 1000000000000000000000aenron --keyring-backend $KEYRING --chain-id $CHAINID
+echelond gentx $KEY 1000000000000000000000aechelon --keyring-backend $KEYRING --chain-id $CHAINID
 ```
 
 The default configuration will generate a single validator localnet with the chain-id
-`enrond-1` and one predefined account (`mykey`) with some allocated funds at the genesis.
+`echelond-1` and one predefined account (`mykey`) with some allocated funds at the genesis.
 
 You can start the local chain using:
 
@@ -48,17 +48,17 @@ Before actually running the node, we need to initialize the chain, and most impo
 ```bash
 $MONIKER=testing
 $KEY=mykey
-$CHAINID="enron_9000-3"
+$CHAINID="echelon_9000-3"
 
 # The argument $MONIKER is the custom username of your node, it should be human-readable.
-enrond init $MONIKER --chain-id=$CHAINID
+echelond init $MONIKER --chain-id=$CHAINID
 ```
 
 ::: tip
 You can [edit](./../../quickstart/binary.md#configuring-the-node) this `moniker` later by updating the `config.toml` file.
 :::
 
-The command above creates all the configuration files needed for your node and validator to run, as well as a default genesis file, which defines the initial state of the network. All these [configuration files](./../../quickstart/binary.md#configuring-the-node) are in `~/.enrond` by default, but you can overwrite the location of this folder by passing the `--home` flag.
+The command above creates all the configuration files needed for your node and validator to run, as well as a default genesis file, which defines the initial state of the network. All these [configuration files](./../../quickstart/binary.md#configuring-the-node) are in `~/.echelond` by default, but you can overwrite the location of this folder by passing the `--home` flag.
 
 ### Genesis Procedure
 
@@ -67,13 +67,13 @@ The command above creates all the configuration files needed for your node and v
 Before starting the chain, you need to populate the state with at least one account using the [keyring](./../keys-wallets/keyring.md#add-keys):
 
 ```bash
-enrond keys add my_validator
+echelond keys add my_validator
 ```
 
-Once you have created a local account, go ahead and grant it some `aenron` tokens in your chain's genesis file. Doing so will also make sure your chain is aware of this account's existence:
+Once you have created a local account, go ahead and grant it some `aechelon` tokens in your chain's genesis file. Doing so will also make sure your chain is aware of this account's existence:
 
 ```bash
-enrond add-genesis-account my_validator 10000000000aenron
+echelond add-genesis-account my_validator 10000000000aechelon
 ```
 
 Now that your account has some tokens, you need to add a validator to your chain.
@@ -84,19 +84,19 @@ Now that your account has some tokens, you need to add a validator to your chain
 # Create a gentx
 # NOTE: this command lets you set the number of coins. 
 # Make sure this account has some coins with the genesis.app_state.staking.params.bond_denom denom
-enrond add-genesis-account my_validator 1000000000stake,10000000000aenron
+echelond add-genesis-account my_validator 1000000000stake,10000000000aechelon
 ```
 
 A `gentx` does three things:
 
 1. Registers the `validator` account you created as a validator operator account (i.e. the account that controls the validator).
 2. Self-delegates the provided `amount` of staking tokens.
-3. Link the operator account with a Tendermint node pubkey that will be used for signing blocks. If no `--pubkey` flag is provided, it defaults to the local node pubkey created via the `enrond init` command above.
+3. Link the operator account with a Tendermint node pubkey that will be used for signing blocks. If no `--pubkey` flag is provided, it defaults to the local node pubkey created via the `echelond init` command above.
 
 For more information on `gentx`, use the following command:
 
 ```bash
-enrond gentx --help
+echelond gentx --help
 ```
 
 ### Collecting `gentx`
@@ -110,23 +110,23 @@ A `gentx` can be added manually to the genesis file, or via the following comman
 
 ```bash
 # Add the gentx to the genesis file
-enrond collect-gentxs
+echelond collect-gentxs
 ```
 
-This command will add all the `gentxs` stored in `~/.enrond/config/gentx` to the genesis file.
+This command will add all the `gentxs` stored in `~/.echelond/config/gentx` to the genesis file.
 
 ### Run Testnet
 
 Finally, check the correctness of the `genesis.json` file:
 
 ```bash
-enrond validate-genesis
+echelond validate-genesis
 ```
 
 Now that everything is set up, you can finally start your node:
 
 ```bash
-enrond start
+echelond start
 ```
 
 :::tip

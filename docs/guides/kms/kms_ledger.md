@@ -48,16 +48,16 @@ You can find other configuration examples [here](https://github.com/iqlusioninc/
   # Example KMS configuration file
   [[validator]]
   addr = "tcp://localhost:26658"                  # or "unix:///path/to/socket"
-  chain_id = "enron_9001-1"
+  chain_id = "echelon_9001-1"
   reconnect = true                                # true is the default
   secret_key = "~/.tmkms/secret_connection.key"
 
   [[providers.ledger]]
-  chain_ids = ["enron_9001-1"]
+  chain_ids = ["echelon_9001-1"]
   ```
 
-- Edit `addr` to point to your `enrond` instance.
-- Adjust `chain-id` to match your `.enrond/config/config.toml` settings.
+- Edit `addr` to point to your `echelond` instance.
+- Adjust `chain-id` to match your `.echelond/config/config.toml` settings.
 - `provider.ledger` has not additional parameters at the moment, however, it is important that you keep that header to enable the feature.
 
 *Plug your Ledger device and open the Tendermint validator app.*
@@ -72,7 +72,7 @@ tmkms keygen ~/.tmkms/secret_connection.key
 
 ### Retrieve validator key
 
-The last step is to retrieve the validator key that you will use in `enrond`.
+The last step is to retrieve the validator key that you will use in `echelond`.
 
 Start the KMS:
 
@@ -84,17 +84,17 @@ The output should look similar to:
 
 ```text
 07:28:24 [INFO] tmkms 0.11.0 starting up...
-07:28:24 [INFO] [keyring:ledger:ledger] added validator key enronvalconspub1zcjduepqy53m39prgp9dz3nz96kaav3el5e0th8ltwcf8cpavqdvpxgr5slsd6wz6f
+07:28:24 [INFO] [keyring:ledger:ledger] added validator key echelonvalconspub1zcjduepqy53m39prgp9dz3nz96kaav3el5e0th8ltwcf8cpavqdvpxgr5slsd6wz6f
 07:28:24 [INFO] KMS node ID: 1BC12314E2E1C29015B66017A397F170C6ECDE4A
 ```
 
-The KMS may complain that it cannot connect to `enrond`. That is fine, we will fix it in the next section.
-This output indicates the validator key linked to this particular device is: `enronvalconspub1zcjduepqy53m39prgp9dz3nz96kaav3el5e0th8ltwcf8cpavqdvpxgr5slsd6wz6f`
+The KMS may complain that it cannot connect to `echelond`. That is fine, we will fix it in the next section.
+This output indicates the validator key linked to this particular device is: `echelonvalconspub1zcjduepqy53m39prgp9dz3nz96kaav3el5e0th8ltwcf8cpavqdvpxgr5slsd6wz6f`
 Take note of the validator pubkey that appears in your screen. *We will use it in the next section.*
 
-## Enron configuration
+## Echelon configuration
 
-You need to enable KMS access by editing `.enrond/config/config.toml`. In this file, modify `priv_validator_laddr` to create a listening address/port or a unix socket in `enrond`.
+You need to enable KMS access by editing `.echelond/config/config.toml`. In this file, modify `priv_validator_laddr` to create a listening address/port or a unix socket in `echelond`.
 
 For example:
 
@@ -106,13 +106,13 @@ priv_validator_laddr = "tcp://127.0.0.1:26658"
 ...
 ```
 
-Let's assume that you have set up your validator account and called it `kmsval`. You can tell enrond the key that we've got in the previous section.
+Let's assume that you have set up your validator account and called it `kmsval`. You can tell echelond the key that we've got in the previous section.
 
 ```bash
-enrond gentx --name kmsval --pubkey <pub_key>
+echelond gentx --name kmsval --pubkey <pub_key>
 ```
 
-Now start `enrond`. You should see that the KMS connects and receives a signature request.
+Now start `echelond`. You should see that the KMS connects and receives a signature request.
 
 Once the Ledger device receives the first message, it will ask for confirmation that the values are adequate.
 

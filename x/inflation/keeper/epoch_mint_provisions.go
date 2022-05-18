@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/enron/enron/v3/x/inflation/types"
+	"github.com/echelonfoundation/echelon/v3/x/inflation/types"
 )
 
 // GetEpochMintProvision gets the current EpochMintProvision

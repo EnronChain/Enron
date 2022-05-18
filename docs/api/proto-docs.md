@@ -4,163 +4,163 @@
 
 ## Table of Contents
 
-- [enron/claims/v1/claims.proto](#enron/claims/v1/claims.proto)
-    - [Claim](#enron.claims.v1.Claim)
-    - [ClaimsRecord](#enron.claims.v1.ClaimsRecord)
-    - [ClaimsRecordAddress](#enron.claims.v1.ClaimsRecordAddress)
+- [echelon/claims/v1/claims.proto](#echelon/claims/v1/claims.proto)
+    - [Claim](#echelon.claims.v1.Claim)
+    - [ClaimsRecord](#echelon.claims.v1.ClaimsRecord)
+    - [ClaimsRecordAddress](#echelon.claims.v1.ClaimsRecordAddress)
   
-    - [Action](#enron.claims.v1.Action)
+    - [Action](#echelon.claims.v1.Action)
   
-- [enron/claims/v1/genesis.proto](#enron/claims/v1/genesis.proto)
-    - [GenesisState](#enron.claims.v1.GenesisState)
-    - [Params](#enron.claims.v1.Params)
+- [echelon/claims/v1/genesis.proto](#echelon/claims/v1/genesis.proto)
+    - [GenesisState](#echelon.claims.v1.GenesisState)
+    - [Params](#echelon.claims.v1.Params)
   
-- [enron/claims/v1/query.proto](#enron/claims/v1/query.proto)
-    - [QueryClaimsRecordRequest](#enron.claims.v1.QueryClaimsRecordRequest)
-    - [QueryClaimsRecordResponse](#enron.claims.v1.QueryClaimsRecordResponse)
-    - [QueryClaimsRecordsRequest](#enron.claims.v1.QueryClaimsRecordsRequest)
-    - [QueryClaimsRecordsResponse](#enron.claims.v1.QueryClaimsRecordsResponse)
-    - [QueryParamsRequest](#enron.claims.v1.QueryParamsRequest)
-    - [QueryParamsResponse](#enron.claims.v1.QueryParamsResponse)
-    - [QueryTotalUnclaimedRequest](#enron.claims.v1.QueryTotalUnclaimedRequest)
-    - [QueryTotalUnclaimedResponse](#enron.claims.v1.QueryTotalUnclaimedResponse)
+- [echelon/claims/v1/query.proto](#echelon/claims/v1/query.proto)
+    - [QueryClaimsRecordRequest](#echelon.claims.v1.QueryClaimsRecordRequest)
+    - [QueryClaimsRecordResponse](#echelon.claims.v1.QueryClaimsRecordResponse)
+    - [QueryClaimsRecordsRequest](#echelon.claims.v1.QueryClaimsRecordsRequest)
+    - [QueryClaimsRecordsResponse](#echelon.claims.v1.QueryClaimsRecordsResponse)
+    - [QueryParamsRequest](#echelon.claims.v1.QueryParamsRequest)
+    - [QueryParamsResponse](#echelon.claims.v1.QueryParamsResponse)
+    - [QueryTotalUnclaimedRequest](#echelon.claims.v1.QueryTotalUnclaimedRequest)
+    - [QueryTotalUnclaimedResponse](#echelon.claims.v1.QueryTotalUnclaimedResponse)
   
-    - [Query](#enron.claims.v1.Query)
+    - [Query](#echelon.claims.v1.Query)
   
-- [enron/epochs/v1/genesis.proto](#enron/epochs/v1/genesis.proto)
-    - [EpochInfo](#enron.epochs.v1.EpochInfo)
-    - [GenesisState](#enron.epochs.v1.GenesisState)
+- [echelon/epochs/v1/genesis.proto](#echelon/epochs/v1/genesis.proto)
+    - [EpochInfo](#echelon.epochs.v1.EpochInfo)
+    - [GenesisState](#echelon.epochs.v1.GenesisState)
   
-- [enron/epochs/v1/query.proto](#enron/epochs/v1/query.proto)
-    - [QueryCurrentEpochRequest](#enron.epochs.v1.QueryCurrentEpochRequest)
-    - [QueryCurrentEpochResponse](#enron.epochs.v1.QueryCurrentEpochResponse)
-    - [QueryEpochsInfoRequest](#enron.epochs.v1.QueryEpochsInfoRequest)
-    - [QueryEpochsInfoResponse](#enron.epochs.v1.QueryEpochsInfoResponse)
+- [echelon/epochs/v1/query.proto](#echelon/epochs/v1/query.proto)
+    - [QueryCurrentEpochRequest](#echelon.epochs.v1.QueryCurrentEpochRequest)
+    - [QueryCurrentEpochResponse](#echelon.epochs.v1.QueryCurrentEpochResponse)
+    - [QueryEpochsInfoRequest](#echelon.epochs.v1.QueryEpochsInfoRequest)
+    - [QueryEpochsInfoResponse](#echelon.epochs.v1.QueryEpochsInfoResponse)
   
-    - [Query](#enron.epochs.v1.Query)
+    - [Query](#echelon.epochs.v1.Query)
   
-- [enron/erc20/v1/erc20.proto](#enron/erc20/v1/erc20.proto)
-    - [RegisterCoinProposal](#enron.erc20.v1.RegisterCoinProposal)
-    - [RegisterERC20Proposal](#enron.erc20.v1.RegisterERC20Proposal)
-    - [ToggleTokenRelayProposal](#enron.erc20.v1.ToggleTokenRelayProposal)
-    - [TokenPair](#enron.erc20.v1.TokenPair)
-    - [UpdateTokenPairERC20Proposal](#enron.erc20.v1.UpdateTokenPairERC20Proposal)
+- [echelon/erc20/v1/erc20.proto](#echelon/erc20/v1/erc20.proto)
+    - [RegisterCoinProposal](#echelon.erc20.v1.RegisterCoinProposal)
+    - [RegisterERC20Proposal](#echelon.erc20.v1.RegisterERC20Proposal)
+    - [ToggleTokenRelayProposal](#echelon.erc20.v1.ToggleTokenRelayProposal)
+    - [TokenPair](#echelon.erc20.v1.TokenPair)
+    - [UpdateTokenPairERC20Proposal](#echelon.erc20.v1.UpdateTokenPairERC20Proposal)
   
-    - [Owner](#enron.erc20.v1.Owner)
+    - [Owner](#echelon.erc20.v1.Owner)
   
-- [enron/erc20/v1/genesis.proto](#enron/erc20/v1/genesis.proto)
-    - [GenesisState](#enron.erc20.v1.GenesisState)
-    - [Params](#enron.erc20.v1.Params)
+- [echelon/erc20/v1/genesis.proto](#echelon/erc20/v1/genesis.proto)
+    - [GenesisState](#echelon.erc20.v1.GenesisState)
+    - [Params](#echelon.erc20.v1.Params)
   
-- [enron/erc20/v1/query.proto](#enron/erc20/v1/query.proto)
-    - [QueryParamsRequest](#enron.erc20.v1.QueryParamsRequest)
-    - [QueryParamsResponse](#enron.erc20.v1.QueryParamsResponse)
-    - [QueryTokenPairRequest](#enron.erc20.v1.QueryTokenPairRequest)
-    - [QueryTokenPairResponse](#enron.erc20.v1.QueryTokenPairResponse)
-    - [QueryTokenPairsRequest](#enron.erc20.v1.QueryTokenPairsRequest)
-    - [QueryTokenPairsResponse](#enron.erc20.v1.QueryTokenPairsResponse)
+- [echelon/erc20/v1/query.proto](#echelon/erc20/v1/query.proto)
+    - [QueryParamsRequest](#echelon.erc20.v1.QueryParamsRequest)
+    - [QueryParamsResponse](#echelon.erc20.v1.QueryParamsResponse)
+    - [QueryTokenPairRequest](#echelon.erc20.v1.QueryTokenPairRequest)
+    - [QueryTokenPairResponse](#echelon.erc20.v1.QueryTokenPairResponse)
+    - [QueryTokenPairsRequest](#echelon.erc20.v1.QueryTokenPairsRequest)
+    - [QueryTokenPairsResponse](#echelon.erc20.v1.QueryTokenPairsResponse)
   
-    - [Query](#enron.erc20.v1.Query)
+    - [Query](#echelon.erc20.v1.Query)
   
-- [enron/erc20/v1/tx.proto](#enron/erc20/v1/tx.proto)
-    - [MsgConvertCoin](#enron.erc20.v1.MsgConvertCoin)
-    - [MsgConvertCoinResponse](#enron.erc20.v1.MsgConvertCoinResponse)
-    - [MsgConvertERC20](#enron.erc20.v1.MsgConvertERC20)
-    - [MsgConvertERC20Response](#enron.erc20.v1.MsgConvertERC20Response)
+- [echelon/erc20/v1/tx.proto](#echelon/erc20/v1/tx.proto)
+    - [MsgConvertCoin](#echelon.erc20.v1.MsgConvertCoin)
+    - [MsgConvertCoinResponse](#echelon.erc20.v1.MsgConvertCoinResponse)
+    - [MsgConvertERC20](#echelon.erc20.v1.MsgConvertERC20)
+    - [MsgConvertERC20Response](#echelon.erc20.v1.MsgConvertERC20Response)
   
-    - [Msg](#enron.erc20.v1.Msg)
+    - [Msg](#echelon.erc20.v1.Msg)
   
-- [enron/incentives/v1/incentives.proto](#enron/incentives/v1/incentives.proto)
-    - [CancelIncentiveProposal](#enron.incentives.v1.CancelIncentiveProposal)
-    - [GasMeter](#enron.incentives.v1.GasMeter)
-    - [Incentive](#enron.incentives.v1.Incentive)
-    - [RegisterIncentiveProposal](#enron.incentives.v1.RegisterIncentiveProposal)
+- [echelon/incentives/v1/incentives.proto](#echelon/incentives/v1/incentives.proto)
+    - [CancelIncentiveProposal](#echelon.incentives.v1.CancelIncentiveProposal)
+    - [GasMeter](#echelon.incentives.v1.GasMeter)
+    - [Incentive](#echelon.incentives.v1.Incentive)
+    - [RegisterIncentiveProposal](#echelon.incentives.v1.RegisterIncentiveProposal)
   
-- [enron/incentives/v1/genesis.proto](#enron/incentives/v1/genesis.proto)
-    - [GenesisState](#enron.incentives.v1.GenesisState)
-    - [Params](#enron.incentives.v1.Params)
+- [echelon/incentives/v1/genesis.proto](#echelon/incentives/v1/genesis.proto)
+    - [GenesisState](#echelon.incentives.v1.GenesisState)
+    - [Params](#echelon.incentives.v1.Params)
   
-- [enron/incentives/v1/query.proto](#enron/incentives/v1/query.proto)
-    - [QueryAllocationMeterRequest](#enron.incentives.v1.QueryAllocationMeterRequest)
-    - [QueryAllocationMeterResponse](#enron.incentives.v1.QueryAllocationMeterResponse)
-    - [QueryAllocationMetersRequest](#enron.incentives.v1.QueryAllocationMetersRequest)
-    - [QueryAllocationMetersResponse](#enron.incentives.v1.QueryAllocationMetersResponse)
-    - [QueryGasMeterRequest](#enron.incentives.v1.QueryGasMeterRequest)
-    - [QueryGasMeterResponse](#enron.incentives.v1.QueryGasMeterResponse)
-    - [QueryGasMetersRequest](#enron.incentives.v1.QueryGasMetersRequest)
-    - [QueryGasMetersResponse](#enron.incentives.v1.QueryGasMetersResponse)
-    - [QueryIncentiveRequest](#enron.incentives.v1.QueryIncentiveRequest)
-    - [QueryIncentiveResponse](#enron.incentives.v1.QueryIncentiveResponse)
-    - [QueryIncentivesRequest](#enron.incentives.v1.QueryIncentivesRequest)
-    - [QueryIncentivesResponse](#enron.incentives.v1.QueryIncentivesResponse)
-    - [QueryParamsRequest](#enron.incentives.v1.QueryParamsRequest)
-    - [QueryParamsResponse](#enron.incentives.v1.QueryParamsResponse)
+- [echelon/incentives/v1/query.proto](#echelon/incentives/v1/query.proto)
+    - [QueryAllocationMeterRequest](#echelon.incentives.v1.QueryAllocationMeterRequest)
+    - [QueryAllocationMeterResponse](#echelon.incentives.v1.QueryAllocationMeterResponse)
+    - [QueryAllocationMetersRequest](#echelon.incentives.v1.QueryAllocationMetersRequest)
+    - [QueryAllocationMetersResponse](#echelon.incentives.v1.QueryAllocationMetersResponse)
+    - [QueryGasMeterRequest](#echelon.incentives.v1.QueryGasMeterRequest)
+    - [QueryGasMeterResponse](#echelon.incentives.v1.QueryGasMeterResponse)
+    - [QueryGasMetersRequest](#echelon.incentives.v1.QueryGasMetersRequest)
+    - [QueryGasMetersResponse](#echelon.incentives.v1.QueryGasMetersResponse)
+    - [QueryIncentiveRequest](#echelon.incentives.v1.QueryIncentiveRequest)
+    - [QueryIncentiveResponse](#echelon.incentives.v1.QueryIncentiveResponse)
+    - [QueryIncentivesRequest](#echelon.incentives.v1.QueryIncentivesRequest)
+    - [QueryIncentivesResponse](#echelon.incentives.v1.QueryIncentivesResponse)
+    - [QueryParamsRequest](#echelon.incentives.v1.QueryParamsRequest)
+    - [QueryParamsResponse](#echelon.incentives.v1.QueryParamsResponse)
   
-    - [Query](#enron.incentives.v1.Query)
+    - [Query](#echelon.incentives.v1.Query)
   
-- [enron/inflation/v1/inflation.proto](#enron/inflation/v1/inflation.proto)
-    - [ExponentialCalculation](#enron.inflation.v1.ExponentialCalculation)
-    - [InflationDistribution](#enron.inflation.v1.InflationDistribution)
+- [echelon/inflation/v1/inflation.proto](#echelon/inflation/v1/inflation.proto)
+    - [ExponentialCalculation](#echelon.inflation.v1.ExponentialCalculation)
+    - [InflationDistribution](#echelon.inflation.v1.InflationDistribution)
   
-- [enron/inflation/v1/genesis.proto](#enron/inflation/v1/genesis.proto)
-    - [GenesisState](#enron.inflation.v1.GenesisState)
-    - [Params](#enron.inflation.v1.Params)
+- [echelon/inflation/v1/genesis.proto](#echelon/inflation/v1/genesis.proto)
+    - [GenesisState](#echelon.inflation.v1.GenesisState)
+    - [Params](#echelon.inflation.v1.Params)
   
-- [enron/inflation/v1/query.proto](#enron/inflation/v1/query.proto)
-    - [QueryEpochMintProvisionRequest](#enron.inflation.v1.QueryEpochMintProvisionRequest)
-    - [QueryEpochMintProvisionResponse](#enron.inflation.v1.QueryEpochMintProvisionResponse)
-    - [QueryInflationRateRequest](#enron.inflation.v1.QueryInflationRateRequest)
-    - [QueryInflationRateResponse](#enron.inflation.v1.QueryInflationRateResponse)
-    - [QueryParamsRequest](#enron.inflation.v1.QueryParamsRequest)
-    - [QueryParamsResponse](#enron.inflation.v1.QueryParamsResponse)
-    - [QueryPeriodRequest](#enron.inflation.v1.QueryPeriodRequest)
-    - [QueryPeriodResponse](#enron.inflation.v1.QueryPeriodResponse)
-    - [QuerySkippedEpochsRequest](#enron.inflation.v1.QuerySkippedEpochsRequest)
-    - [QuerySkippedEpochsResponse](#enron.inflation.v1.QuerySkippedEpochsResponse)
-    - [QueryTotalSupplyRequest](#enron.inflation.v1.QueryTotalSupplyRequest)
-    - [QueryTotalSupplyResponse](#enron.inflation.v1.QueryTotalSupplyResponse)
+- [echelon/inflation/v1/query.proto](#echelon/inflation/v1/query.proto)
+    - [QueryEpochMintProvisionRequest](#echelon.inflation.v1.QueryEpochMintProvisionRequest)
+    - [QueryEpochMintProvisionResponse](#echelon.inflation.v1.QueryEpochMintProvisionResponse)
+    - [QueryInflationRateRequest](#echelon.inflation.v1.QueryInflationRateRequest)
+    - [QueryInflationRateResponse](#echelon.inflation.v1.QueryInflationRateResponse)
+    - [QueryParamsRequest](#echelon.inflation.v1.QueryParamsRequest)
+    - [QueryParamsResponse](#echelon.inflation.v1.QueryParamsResponse)
+    - [QueryPeriodRequest](#echelon.inflation.v1.QueryPeriodRequest)
+    - [QueryPeriodResponse](#echelon.inflation.v1.QueryPeriodResponse)
+    - [QuerySkippedEpochsRequest](#echelon.inflation.v1.QuerySkippedEpochsRequest)
+    - [QuerySkippedEpochsResponse](#echelon.inflation.v1.QuerySkippedEpochsResponse)
+    - [QueryTotalSupplyRequest](#echelon.inflation.v1.QueryTotalSupplyRequest)
+    - [QueryTotalSupplyResponse](#echelon.inflation.v1.QueryTotalSupplyResponse)
   
-    - [Query](#enron.inflation.v1.Query)
+    - [Query](#echelon.inflation.v1.Query)
   
-- [enron/recovery/v1/genesis.proto](#enron/recovery/v1/genesis.proto)
-    - [GenesisState](#enron.recovery.v1.GenesisState)
-    - [Params](#enron.recovery.v1.Params)
+- [echelon/recovery/v1/genesis.proto](#echelon/recovery/v1/genesis.proto)
+    - [GenesisState](#echelon.recovery.v1.GenesisState)
+    - [Params](#echelon.recovery.v1.Params)
   
-- [enron/recovery/v1/query.proto](#enron/recovery/v1/query.proto)
-    - [QueryParamsRequest](#enron.recovery.v1.QueryParamsRequest)
-    - [QueryParamsResponse](#enron.recovery.v1.QueryParamsResponse)
+- [echelon/recovery/v1/query.proto](#echelon/recovery/v1/query.proto)
+    - [QueryParamsRequest](#echelon.recovery.v1.QueryParamsRequest)
+    - [QueryParamsResponse](#echelon.recovery.v1.QueryParamsResponse)
   
-    - [Query](#enron.recovery.v1.Query)
+    - [Query](#echelon.recovery.v1.Query)
   
-- [enron/vesting/v1/query.proto](#enron/vesting/v1/query.proto)
-    - [QueryBalancesRequest](#enron.vesting.v1.QueryBalancesRequest)
-    - [QueryBalancesResponse](#enron.vesting.v1.QueryBalancesResponse)
+- [echelon/vesting/v1/query.proto](#echelon/vesting/v1/query.proto)
+    - [QueryBalancesRequest](#echelon.vesting.v1.QueryBalancesRequest)
+    - [QueryBalancesResponse](#echelon.vesting.v1.QueryBalancesResponse)
   
-    - [Query](#enron.vesting.v1.Query)
+    - [Query](#echelon.vesting.v1.Query)
   
-- [enron/vesting/v1/tx.proto](#enron/vesting/v1/tx.proto)
-    - [MsgClawback](#enron.vesting.v1.MsgClawback)
-    - [MsgClawbackResponse](#enron.vesting.v1.MsgClawbackResponse)
-    - [MsgCreateClawbackVestingAccount](#enron.vesting.v1.MsgCreateClawbackVestingAccount)
-    - [MsgCreateClawbackVestingAccountResponse](#enron.vesting.v1.MsgCreateClawbackVestingAccountResponse)
+- [echelon/vesting/v1/tx.proto](#echelon/vesting/v1/tx.proto)
+    - [MsgClawback](#echelon.vesting.v1.MsgClawback)
+    - [MsgClawbackResponse](#echelon.vesting.v1.MsgClawbackResponse)
+    - [MsgCreateClawbackVestingAccount](#echelon.vesting.v1.MsgCreateClawbackVestingAccount)
+    - [MsgCreateClawbackVestingAccountResponse](#echelon.vesting.v1.MsgCreateClawbackVestingAccountResponse)
   
-    - [Msg](#enron.vesting.v1.Msg)
+    - [Msg](#echelon.vesting.v1.Msg)
   
-- [enron/vesting/v1/vesting.proto](#enron/vesting/v1/vesting.proto)
-    - [ClawbackVestingAccount](#enron.vesting.v1.ClawbackVestingAccount)
+- [echelon/vesting/v1/vesting.proto](#echelon/vesting/v1/vesting.proto)
+    - [ClawbackVestingAccount](#echelon.vesting.v1.ClawbackVestingAccount)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="enron/claims/v1/claims.proto"></a>
+<a name="echelon/claims/v1/claims.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/claims/v1/claims.proto
+## echelon/claims/v1/claims.proto
 
 
 
-<a name="enron.claims.v1.Claim"></a>
+<a name="echelon.claims.v1.Claim"></a>
 
 ### Claim
 Claim defines the action, completed flag and the remaining claimable amount
@@ -169,7 +169,7 @@ for a given user. This is only used during client queries.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `action` | [Action](#enron.claims.v1.Action) |  | action enum |
+| `action` | [Action](#echelon.claims.v1.Action) |  | action enum |
 | `completed` | [bool](#bool) |  | true if the action has been completed |
 | `claimable_amount` | [string](#string) |  | claimable token amount for the action. Zero if completed |
 
@@ -178,7 +178,7 @@ for a given user. This is only used during client queries.
 
 
 
-<a name="enron.claims.v1.ClaimsRecord"></a>
+<a name="echelon.claims.v1.ClaimsRecord"></a>
 
 ### ClaimsRecord
 ClaimsRecord defines the initial claimable airdrop amount and the list of
@@ -195,7 +195,7 @@ completed actions to claim the tokens.
 
 
 
-<a name="enron.claims.v1.ClaimsRecordAddress"></a>
+<a name="echelon.claims.v1.ClaimsRecordAddress"></a>
 
 ### ClaimsRecordAddress
 ClaimsRecordAddress is the claims metadata per address that is used at Genesis.
@@ -214,7 +214,7 @@ ClaimsRecordAddress is the claims metadata per address that is used at Genesis.
  <!-- end messages -->
 
 
-<a name="enron.claims.v1.Action"></a>
+<a name="echelon.claims.v1.Action"></a>
 
 ### Action
 Action defines the list of available actions to claim the airdrop tokens.
@@ -236,14 +236,14 @@ Action defines the list of available actions to claim the airdrop tokens.
 
 
 
-<a name="enron/claims/v1/genesis.proto"></a>
+<a name="echelon/claims/v1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/claims/v1/genesis.proto
+## echelon/claims/v1/genesis.proto
 
 
 
-<a name="enron.claims.v1.GenesisState"></a>
+<a name="echelon.claims.v1.GenesisState"></a>
 
 ### GenesisState
 GenesisState define the claims module's genesis state.
@@ -251,15 +251,15 @@ GenesisState define the claims module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.claims.v1.Params) |  | params defines all the parameters of the module. |
-| `claims_records` | [ClaimsRecordAddress](#enron.claims.v1.ClaimsRecordAddress) | repeated | list of claim records with the corresponding airdrop recipient |
+| `params` | [Params](#echelon.claims.v1.Params) |  | params defines all the parameters of the module. |
+| `claims_records` | [ClaimsRecordAddress](#echelon.claims.v1.ClaimsRecordAddress) | repeated | list of claim records with the corresponding airdrop recipient |
 
 
 
 
 
 
-<a name="enron.claims.v1.Params"></a>
+<a name="echelon.claims.v1.Params"></a>
 
 ### Params
 Params defines the claims module's parameters.
@@ -289,14 +289,14 @@ Params defines the claims module's parameters.
 
 
 
-<a name="enron/claims/v1/query.proto"></a>
+<a name="echelon/claims/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/claims/v1/query.proto
+## echelon/claims/v1/query.proto
 
 
 
-<a name="enron.claims.v1.QueryClaimsRecordRequest"></a>
+<a name="echelon.claims.v1.QueryClaimsRecordRequest"></a>
 
 ### QueryClaimsRecordRequest
 QueryClaimsRecordRequest is the request type for the Query/ClaimsRecord RPC
@@ -312,7 +312,7 @@ method.
 
 
 
-<a name="enron.claims.v1.QueryClaimsRecordResponse"></a>
+<a name="echelon.claims.v1.QueryClaimsRecordResponse"></a>
 
 ### QueryClaimsRecordResponse
 QueryClaimsRecordResponse is the response type for the Query/ClaimsRecord RPC
@@ -322,14 +322,14 @@ method.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `initial_claimable_amount` | [string](#string) |  | total initial claimable amount for the user |
-| `claims` | [Claim](#enron.claims.v1.Claim) | repeated | the claims of the user |
+| `claims` | [Claim](#echelon.claims.v1.Claim) | repeated | the claims of the user |
 
 
 
 
 
 
-<a name="enron.claims.v1.QueryClaimsRecordsRequest"></a>
+<a name="echelon.claims.v1.QueryClaimsRecordsRequest"></a>
 
 ### QueryClaimsRecordsRequest
 QueryClaimsRecordsRequest is the request type for the Query/ClaimsRecords RPC
@@ -345,7 +345,7 @@ method.
 
 
 
-<a name="enron.claims.v1.QueryClaimsRecordsResponse"></a>
+<a name="echelon.claims.v1.QueryClaimsRecordsResponse"></a>
 
 ### QueryClaimsRecordsResponse
 QueryClaimsRecordsResponse is the response type for the Query/ClaimsRecords
@@ -354,7 +354,7 @@ RPC method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `claims` | [ClaimsRecordAddress](#enron.claims.v1.ClaimsRecordAddress) | repeated | claims defines all claims records |
+| `claims` | [ClaimsRecordAddress](#echelon.claims.v1.ClaimsRecordAddress) | repeated | claims defines all claims records |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  | pagination defines the pagination in the response. |
 
 
@@ -362,7 +362,7 @@ RPC method.
 
 
 
-<a name="enron.claims.v1.QueryParamsRequest"></a>
+<a name="echelon.claims.v1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -372,7 +372,7 @@ QueryParamsRequest is the request type for the Query/Params RPC method.
 
 
 
-<a name="enron.claims.v1.QueryParamsResponse"></a>
+<a name="echelon.claims.v1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 QueryParamsResponse is the response type for the Query/Params RPC method.
@@ -380,14 +380,14 @@ QueryParamsResponse is the response type for the Query/Params RPC method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.claims.v1.Params) |  | params defines the parameters of the module. |
+| `params` | [Params](#echelon.claims.v1.Params) |  | params defines the parameters of the module. |
 
 
 
 
 
 
-<a name="enron.claims.v1.QueryTotalUnclaimedRequest"></a>
+<a name="echelon.claims.v1.QueryTotalUnclaimedRequest"></a>
 
 ### QueryTotalUnclaimedRequest
 QueryTotalUnclaimedRequest is the request type for the Query/TotalUnclaimed
@@ -398,7 +398,7 @@ RPC method.
 
 
 
-<a name="enron.claims.v1.QueryTotalUnclaimedResponse"></a>
+<a name="echelon.claims.v1.QueryTotalUnclaimedResponse"></a>
 
 ### QueryTotalUnclaimedResponse
 QueryTotalUnclaimedResponse is the response type for the Query/TotalUnclaimed
@@ -420,30 +420,30 @@ RPC method.
  <!-- end HasExtensions -->
 
 
-<a name="enron.claims.v1.Query"></a>
+<a name="echelon.claims.v1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `TotalUnclaimed` | [QueryTotalUnclaimedRequest](#enron.claims.v1.QueryTotalUnclaimedRequest) | [QueryTotalUnclaimedResponse](#enron.claims.v1.QueryTotalUnclaimedResponse) | TotalUnclaimed queries the total unclaimed tokens from the airdrop | GET|/enron/claims/v1/total_unclaimed|
-| `Params` | [QueryParamsRequest](#enron.claims.v1.QueryParamsRequest) | [QueryParamsResponse](#enron.claims.v1.QueryParamsResponse) | Params returns the claims module parameters | GET|/enron/claims/v1/params|
-| `ClaimsRecords` | [QueryClaimsRecordsRequest](#enron.claims.v1.QueryClaimsRecordsRequest) | [QueryClaimsRecordsResponse](#enron.claims.v1.QueryClaimsRecordsResponse) | ClaimsRecords returns all claims records | GET|/enron/claims/v1/claims_records|
-| `ClaimsRecord` | [QueryClaimsRecordRequest](#enron.claims.v1.QueryClaimsRecordRequest) | [QueryClaimsRecordResponse](#enron.claims.v1.QueryClaimsRecordResponse) | ClaimsRecord returns the claims record for a given address | GET|/enron/claims/v1/claims_records/{address}|
+| `TotalUnclaimed` | [QueryTotalUnclaimedRequest](#echelon.claims.v1.QueryTotalUnclaimedRequest) | [QueryTotalUnclaimedResponse](#echelon.claims.v1.QueryTotalUnclaimedResponse) | TotalUnclaimed queries the total unclaimed tokens from the airdrop | GET|/echelon/claims/v1/total_unclaimed|
+| `Params` | [QueryParamsRequest](#echelon.claims.v1.QueryParamsRequest) | [QueryParamsResponse](#echelon.claims.v1.QueryParamsResponse) | Params returns the claims module parameters | GET|/echelon/claims/v1/params|
+| `ClaimsRecords` | [QueryClaimsRecordsRequest](#echelon.claims.v1.QueryClaimsRecordsRequest) | [QueryClaimsRecordsResponse](#echelon.claims.v1.QueryClaimsRecordsResponse) | ClaimsRecords returns all claims records | GET|/echelon/claims/v1/claims_records|
+| `ClaimsRecord` | [QueryClaimsRecordRequest](#echelon.claims.v1.QueryClaimsRecordRequest) | [QueryClaimsRecordResponse](#echelon.claims.v1.QueryClaimsRecordResponse) | ClaimsRecord returns the claims record for a given address | GET|/echelon/claims/v1/claims_records/{address}|
 
  <!-- end services -->
 
 
 
-<a name="enron/epochs/v1/genesis.proto"></a>
+<a name="echelon/epochs/v1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/epochs/v1/genesis.proto
+## echelon/epochs/v1/genesis.proto
 
 
 
-<a name="enron.epochs.v1.EpochInfo"></a>
+<a name="echelon.epochs.v1.EpochInfo"></a>
 
 ### EpochInfo
 
@@ -464,7 +464,7 @@ Query defines the gRPC querier service.
 
 
 
-<a name="enron.epochs.v1.GenesisState"></a>
+<a name="echelon.epochs.v1.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the epochs module's genesis state.
@@ -472,7 +472,7 @@ GenesisState defines the epochs module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `epochs` | [EpochInfo](#enron.epochs.v1.EpochInfo) | repeated |  |
+| `epochs` | [EpochInfo](#echelon.epochs.v1.EpochInfo) | repeated |  |
 
 
 
@@ -488,14 +488,14 @@ GenesisState defines the epochs module's genesis state.
 
 
 
-<a name="enron/epochs/v1/query.proto"></a>
+<a name="echelon/epochs/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/epochs/v1/query.proto
+## echelon/epochs/v1/query.proto
 
 
 
-<a name="enron.epochs.v1.QueryCurrentEpochRequest"></a>
+<a name="echelon.epochs.v1.QueryCurrentEpochRequest"></a>
 
 ### QueryCurrentEpochRequest
 
@@ -510,7 +510,7 @@ GenesisState defines the epochs module's genesis state.
 
 
 
-<a name="enron.epochs.v1.QueryCurrentEpochResponse"></a>
+<a name="echelon.epochs.v1.QueryCurrentEpochResponse"></a>
 
 ### QueryCurrentEpochResponse
 
@@ -525,7 +525,7 @@ GenesisState defines the epochs module's genesis state.
 
 
 
-<a name="enron.epochs.v1.QueryEpochsInfoRequest"></a>
+<a name="echelon.epochs.v1.QueryEpochsInfoRequest"></a>
 
 ### QueryEpochsInfoRequest
 
@@ -540,7 +540,7 @@ GenesisState defines the epochs module's genesis state.
 
 
 
-<a name="enron.epochs.v1.QueryEpochsInfoResponse"></a>
+<a name="echelon.epochs.v1.QueryEpochsInfoResponse"></a>
 
 ### QueryEpochsInfoResponse
 
@@ -548,7 +548,7 @@ GenesisState defines the epochs module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `epochs` | [EpochInfo](#enron.epochs.v1.EpochInfo) | repeated |  |
+| `epochs` | [EpochInfo](#echelon.epochs.v1.EpochInfo) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
 
 
@@ -562,28 +562,28 @@ GenesisState defines the epochs module's genesis state.
  <!-- end HasExtensions -->
 
 
-<a name="enron.epochs.v1.Query"></a>
+<a name="echelon.epochs.v1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `EpochInfos` | [QueryEpochsInfoRequest](#enron.epochs.v1.QueryEpochsInfoRequest) | [QueryEpochsInfoResponse](#enron.epochs.v1.QueryEpochsInfoResponse) | EpochInfos provide running epochInfos | GET|/enron/epochs/v1/epochs|
-| `CurrentEpoch` | [QueryCurrentEpochRequest](#enron.epochs.v1.QueryCurrentEpochRequest) | [QueryCurrentEpochResponse](#enron.epochs.v1.QueryCurrentEpochResponse) | CurrentEpoch provide current epoch of specified identifier | GET|/enron/epochs/v1/current_epoch|
+| `EpochInfos` | [QueryEpochsInfoRequest](#echelon.epochs.v1.QueryEpochsInfoRequest) | [QueryEpochsInfoResponse](#echelon.epochs.v1.QueryEpochsInfoResponse) | EpochInfos provide running epochInfos | GET|/echelon/epochs/v1/epochs|
+| `CurrentEpoch` | [QueryCurrentEpochRequest](#echelon.epochs.v1.QueryCurrentEpochRequest) | [QueryCurrentEpochResponse](#echelon.epochs.v1.QueryCurrentEpochResponse) | CurrentEpoch provide current epoch of specified identifier | GET|/echelon/epochs/v1/current_epoch|
 
  <!-- end services -->
 
 
 
-<a name="enron/erc20/v1/erc20.proto"></a>
+<a name="echelon/erc20/v1/erc20.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/erc20/v1/erc20.proto
+## echelon/erc20/v1/erc20.proto
 
 
 
-<a name="enron.erc20.v1.RegisterCoinProposal"></a>
+<a name="echelon.erc20.v1.RegisterCoinProposal"></a>
 
 ### RegisterCoinProposal
 RegisterCoinProposal is a gov Content type to register a token pair
@@ -600,7 +600,7 @@ RegisterCoinProposal is a gov Content type to register a token pair
 
 
 
-<a name="enron.erc20.v1.RegisterERC20Proposal"></a>
+<a name="echelon.erc20.v1.RegisterERC20Proposal"></a>
 
 ### RegisterERC20Proposal
 RegisterCoinProposal is a gov Content type to register a token pair
@@ -617,7 +617,7 @@ RegisterCoinProposal is a gov Content type to register a token pair
 
 
 
-<a name="enron.erc20.v1.ToggleTokenRelayProposal"></a>
+<a name="echelon.erc20.v1.ToggleTokenRelayProposal"></a>
 
 ### ToggleTokenRelayProposal
 ToggleTokenRelayProposal is a gov Content type to toggle
@@ -635,7 +635,7 @@ the internal relaying of a token pair.
 
 
 
-<a name="enron.erc20.v1.TokenPair"></a>
+<a name="echelon.erc20.v1.TokenPair"></a>
 
 ### TokenPair
 TokenPair defines an instance that records pairing consisting of a Cosmos
@@ -647,14 +647,14 @@ native Coin and an ERC20 token address.
 | `erc20_address` | [string](#string) |  | address of ERC20 contract token |
 | `denom` | [string](#string) |  | cosmos base denomination to be mapped to |
 | `enabled` | [bool](#bool) |  | shows token mapping enable status |
-| `contract_owner` | [Owner](#enron.erc20.v1.Owner) |  | ERC20 owner address ENUM (0 invalid, 1 ModuleAccount, 2 external address) |
+| `contract_owner` | [Owner](#echelon.erc20.v1.Owner) |  | ERC20 owner address ENUM (0 invalid, 1 ModuleAccount, 2 external address) |
 
 
 
 
 
 
-<a name="enron.erc20.v1.UpdateTokenPairERC20Proposal"></a>
+<a name="echelon.erc20.v1.UpdateTokenPairERC20Proposal"></a>
 
 ### UpdateTokenPairERC20Proposal
 UpdateTokenPairERC20Proposal is a gov Content type to update a token pair's
@@ -675,7 +675,7 @@ ERC20 contract address.
  <!-- end messages -->
 
 
-<a name="enron.erc20.v1.Owner"></a>
+<a name="echelon.erc20.v1.Owner"></a>
 
 ### Owner
 Owner enumerates the ownership of a ERC20 contract.
@@ -695,14 +695,14 @@ Owner enumerates the ownership of a ERC20 contract.
 
 
 
-<a name="enron/erc20/v1/genesis.proto"></a>
+<a name="echelon/erc20/v1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/erc20/v1/genesis.proto
+## echelon/erc20/v1/genesis.proto
 
 
 
-<a name="enron.erc20.v1.GenesisState"></a>
+<a name="echelon.erc20.v1.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the module's genesis state.
@@ -710,15 +710,15 @@ GenesisState defines the module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.erc20.v1.Params) |  | module parameters |
-| `token_pairs` | [TokenPair](#enron.erc20.v1.TokenPair) | repeated | registered token pairs |
+| `params` | [Params](#echelon.erc20.v1.Params) |  | module parameters |
+| `token_pairs` | [TokenPair](#echelon.erc20.v1.TokenPair) | repeated | registered token pairs |
 
 
 
 
 
 
-<a name="enron.erc20.v1.Params"></a>
+<a name="echelon.erc20.v1.Params"></a>
 
 ### Params
 Params defines the erc20 module params
@@ -743,14 +743,14 @@ Params defines the erc20 module params
 
 
 
-<a name="enron/erc20/v1/query.proto"></a>
+<a name="echelon/erc20/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/erc20/v1/query.proto
+## echelon/erc20/v1/query.proto
 
 
 
-<a name="enron.erc20.v1.QueryParamsRequest"></a>
+<a name="echelon.erc20.v1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -760,7 +760,7 @@ QueryParamsRequest is the request type for the Query/Params RPC method.
 
 
 
-<a name="enron.erc20.v1.QueryParamsResponse"></a>
+<a name="echelon.erc20.v1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 QueryParamsResponse is the response type for the Query/Params RPC
@@ -769,14 +769,14 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.erc20.v1.Params) |  |  |
+| `params` | [Params](#echelon.erc20.v1.Params) |  |  |
 
 
 
 
 
 
-<a name="enron.erc20.v1.QueryTokenPairRequest"></a>
+<a name="echelon.erc20.v1.QueryTokenPairRequest"></a>
 
 ### QueryTokenPairRequest
 QueryTokenPairRequest is the request type for the Query/TokenPair RPC method.
@@ -791,7 +791,7 @@ QueryTokenPairRequest is the request type for the Query/TokenPair RPC method.
 
 
 
-<a name="enron.erc20.v1.QueryTokenPairResponse"></a>
+<a name="echelon.erc20.v1.QueryTokenPairResponse"></a>
 
 ### QueryTokenPairResponse
 QueryTokenPairResponse is the response type for the Query/TokenPair RPC
@@ -800,14 +800,14 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `token_pair` | [TokenPair](#enron.erc20.v1.TokenPair) |  |  |
+| `token_pair` | [TokenPair](#echelon.erc20.v1.TokenPair) |  |  |
 
 
 
 
 
 
-<a name="enron.erc20.v1.QueryTokenPairsRequest"></a>
+<a name="echelon.erc20.v1.QueryTokenPairsRequest"></a>
 
 ### QueryTokenPairsRequest
 QueryTokenPairsRequest is the request type for the Query/TokenPairs RPC
@@ -823,7 +823,7 @@ method.
 
 
 
-<a name="enron.erc20.v1.QueryTokenPairsResponse"></a>
+<a name="echelon.erc20.v1.QueryTokenPairsResponse"></a>
 
 ### QueryTokenPairsResponse
 QueryTokenPairsResponse is the response type for the Query/TokenPairs RPC
@@ -832,7 +832,7 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `token_pairs` | [TokenPair](#enron.erc20.v1.TokenPair) | repeated |  |
+| `token_pairs` | [TokenPair](#echelon.erc20.v1.TokenPair) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  | pagination defines the pagination in the response. |
 
 
@@ -846,29 +846,29 @@ method.
  <!-- end HasExtensions -->
 
 
-<a name="enron.erc20.v1.Query"></a>
+<a name="echelon.erc20.v1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `TokenPairs` | [QueryTokenPairsRequest](#enron.erc20.v1.QueryTokenPairsRequest) | [QueryTokenPairsResponse](#enron.erc20.v1.QueryTokenPairsResponse) | Retrieves registered token pairs | GET|/enron/erc20/v1/token_pairs|
-| `TokenPair` | [QueryTokenPairRequest](#enron.erc20.v1.QueryTokenPairRequest) | [QueryTokenPairResponse](#enron.erc20.v1.QueryTokenPairResponse) | Retrieves a registered token pair | GET|/enron/erc20/v1/token_pairs/{token}|
-| `Params` | [QueryParamsRequest](#enron.erc20.v1.QueryParamsRequest) | [QueryParamsResponse](#enron.erc20.v1.QueryParamsResponse) | Params retrieves the erc20 module params | GET|/enron/erc20/v1/params|
+| `TokenPairs` | [QueryTokenPairsRequest](#echelon.erc20.v1.QueryTokenPairsRequest) | [QueryTokenPairsResponse](#echelon.erc20.v1.QueryTokenPairsResponse) | Retrieves registered token pairs | GET|/echelon/erc20/v1/token_pairs|
+| `TokenPair` | [QueryTokenPairRequest](#echelon.erc20.v1.QueryTokenPairRequest) | [QueryTokenPairResponse](#echelon.erc20.v1.QueryTokenPairResponse) | Retrieves a registered token pair | GET|/echelon/erc20/v1/token_pairs/{token}|
+| `Params` | [QueryParamsRequest](#echelon.erc20.v1.QueryParamsRequest) | [QueryParamsResponse](#echelon.erc20.v1.QueryParamsResponse) | Params retrieves the erc20 module params | GET|/echelon/erc20/v1/params|
 
  <!-- end services -->
 
 
 
-<a name="enron/erc20/v1/tx.proto"></a>
+<a name="echelon/erc20/v1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/erc20/v1/tx.proto
+## echelon/erc20/v1/tx.proto
 
 
 
-<a name="enron.erc20.v1.MsgConvertCoin"></a>
+<a name="echelon.erc20.v1.MsgConvertCoin"></a>
 
 ### MsgConvertCoin
 MsgConvertCoin defines a Msg to convert a Cosmos Coin to a ERC20 token
@@ -885,7 +885,7 @@ MsgConvertCoin defines a Msg to convert a Cosmos Coin to a ERC20 token
 
 
 
-<a name="enron.erc20.v1.MsgConvertCoinResponse"></a>
+<a name="echelon.erc20.v1.MsgConvertCoinResponse"></a>
 
 ### MsgConvertCoinResponse
 MsgConvertCoinResponse returns no fields
@@ -895,7 +895,7 @@ MsgConvertCoinResponse returns no fields
 
 
 
-<a name="enron.erc20.v1.MsgConvertERC20"></a>
+<a name="echelon.erc20.v1.MsgConvertERC20"></a>
 
 ### MsgConvertERC20
 MsgConvertERC20 defines a Msg to convert an ERC20 token to a Cosmos SDK coin.
@@ -913,7 +913,7 @@ MsgConvertERC20 defines a Msg to convert an ERC20 token to a Cosmos SDK coin.
 
 
 
-<a name="enron.erc20.v1.MsgConvertERC20Response"></a>
+<a name="echelon.erc20.v1.MsgConvertERC20Response"></a>
 
 ### MsgConvertERC20Response
 MsgConvertERC20Response returns no fields
@@ -929,28 +929,28 @@ MsgConvertERC20Response returns no fields
  <!-- end HasExtensions -->
 
 
-<a name="enron.erc20.v1.Msg"></a>
+<a name="echelon.erc20.v1.Msg"></a>
 
 ### Msg
 Msg defines the erc20 Msg service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `ConvertCoin` | [MsgConvertCoin](#enron.erc20.v1.MsgConvertCoin) | [MsgConvertCoinResponse](#enron.erc20.v1.MsgConvertCoinResponse) | ConvertCoin mints a ERC20 representation of the SDK Coin denom that is registered on the token mapping. | GET|/enron/erc20/v1/tx/convert_coin|
-| `ConvertERC20` | [MsgConvertERC20](#enron.erc20.v1.MsgConvertERC20) | [MsgConvertERC20Response](#enron.erc20.v1.MsgConvertERC20Response) | ConvertERC20 mints a Cosmos coin representation of the ERC20 token contract that is registered on the token mapping. | GET|/enron/erc20/v1/tx/convert_erc20|
+| `ConvertCoin` | [MsgConvertCoin](#echelon.erc20.v1.MsgConvertCoin) | [MsgConvertCoinResponse](#echelon.erc20.v1.MsgConvertCoinResponse) | ConvertCoin mints a ERC20 representation of the SDK Coin denom that is registered on the token mapping. | GET|/echelon/erc20/v1/tx/convert_coin|
+| `ConvertERC20` | [MsgConvertERC20](#echelon.erc20.v1.MsgConvertERC20) | [MsgConvertERC20Response](#echelon.erc20.v1.MsgConvertERC20Response) | ConvertERC20 mints a Cosmos coin representation of the ERC20 token contract that is registered on the token mapping. | GET|/echelon/erc20/v1/tx/convert_erc20|
 
  <!-- end services -->
 
 
 
-<a name="enron/incentives/v1/incentives.proto"></a>
+<a name="echelon/incentives/v1/incentives.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/incentives/v1/incentives.proto
+## echelon/incentives/v1/incentives.proto
 
 
 
-<a name="enron.incentives.v1.CancelIncentiveProposal"></a>
+<a name="echelon.incentives.v1.CancelIncentiveProposal"></a>
 
 ### CancelIncentiveProposal
 CancelIncentiveProposal is a gov Content type to cancel an incentive
@@ -967,7 +967,7 @@ CancelIncentiveProposal is a gov Content type to cancel an incentive
 
 
 
-<a name="enron.incentives.v1.GasMeter"></a>
+<a name="echelon.incentives.v1.GasMeter"></a>
 
 ### GasMeter
 GasMeter tracks the cumulative gas spent per participant in one epoch
@@ -984,7 +984,7 @@ GasMeter tracks the cumulative gas spent per participant in one epoch
 
 
 
-<a name="enron.incentives.v1.Incentive"></a>
+<a name="echelon.incentives.v1.Incentive"></a>
 
 ### Incentive
 Incentive defines an instance that organizes distribution conditions for a
@@ -1004,7 +1004,7 @@ given smart contract
 
 
 
-<a name="enron.incentives.v1.RegisterIncentiveProposal"></a>
+<a name="echelon.incentives.v1.RegisterIncentiveProposal"></a>
 
 ### RegisterIncentiveProposal
 RegisterIncentiveProposal is a gov Content type to register an incentive
@@ -1032,14 +1032,14 @@ RegisterIncentiveProposal is a gov Content type to register an incentive
 
 
 
-<a name="enron/incentives/v1/genesis.proto"></a>
+<a name="echelon/incentives/v1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/incentives/v1/genesis.proto
+## echelon/incentives/v1/genesis.proto
 
 
 
-<a name="enron.incentives.v1.GenesisState"></a>
+<a name="echelon.incentives.v1.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the module's genesis state.
@@ -1047,16 +1047,16 @@ GenesisState defines the module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.incentives.v1.Params) |  | module parameters |
-| `incentives` | [Incentive](#enron.incentives.v1.Incentive) | repeated | active incentives |
-| `gas_meters` | [GasMeter](#enron.incentives.v1.GasMeter) | repeated | active Gasmeters |
+| `params` | [Params](#echelon.incentives.v1.Params) |  | module parameters |
+| `incentives` | [Incentive](#echelon.incentives.v1.Incentive) | repeated | active incentives |
+| `gas_meters` | [GasMeter](#echelon.incentives.v1.GasMeter) | repeated | active Gasmeters |
 
 
 
 
 
 
-<a name="enron.incentives.v1.Params"></a>
+<a name="echelon.incentives.v1.Params"></a>
 
 ### Params
 Params defines the incentives module params
@@ -1083,14 +1083,14 @@ Params defines the incentives module params
 
 
 
-<a name="enron/incentives/v1/query.proto"></a>
+<a name="echelon/incentives/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/incentives/v1/query.proto
+## echelon/incentives/v1/query.proto
 
 
 
-<a name="enron.incentives.v1.QueryAllocationMeterRequest"></a>
+<a name="echelon.incentives.v1.QueryAllocationMeterRequest"></a>
 
 ### QueryAllocationMeterRequest
 QueryAllocationMeterRequest is the request type for the Query/AllocationMeter
@@ -1106,7 +1106,7 @@ RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryAllocationMeterResponse"></a>
+<a name="echelon.incentives.v1.QueryAllocationMeterResponse"></a>
 
 ### QueryAllocationMeterResponse
 QueryAllocationMeterResponse is the response type for the
@@ -1122,7 +1122,7 @@ Query/AllocationMeter RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryAllocationMetersRequest"></a>
+<a name="echelon.incentives.v1.QueryAllocationMetersRequest"></a>
 
 ### QueryAllocationMetersRequest
 QueryAllocationMetersRequest is the request type for the
@@ -1138,7 +1138,7 @@ Query/AllocationMeters RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryAllocationMetersResponse"></a>
+<a name="echelon.incentives.v1.QueryAllocationMetersResponse"></a>
 
 ### QueryAllocationMetersResponse
 QueryAllocationMetersResponse is the response type for the
@@ -1155,7 +1155,7 @@ Query/AllocationMeters RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryGasMeterRequest"></a>
+<a name="echelon.incentives.v1.QueryGasMeterRequest"></a>
 
 ### QueryGasMeterRequest
 QueryGasMeterRequest is the request type for the Query/Incentive RPC method.
@@ -1171,7 +1171,7 @@ QueryGasMeterRequest is the request type for the Query/Incentive RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryGasMeterResponse"></a>
+<a name="echelon.incentives.v1.QueryGasMeterResponse"></a>
 
 ### QueryGasMeterResponse
 QueryGasMeterResponse is the response type for the Query/Incentive RPC
@@ -1187,7 +1187,7 @@ method.
 
 
 
-<a name="enron.incentives.v1.QueryGasMetersRequest"></a>
+<a name="echelon.incentives.v1.QueryGasMetersRequest"></a>
 
 ### QueryGasMetersRequest
 QueryGasMetersRequest is the request type for the Query/Incentives RPC
@@ -1204,7 +1204,7 @@ method.
 
 
 
-<a name="enron.incentives.v1.QueryGasMetersResponse"></a>
+<a name="echelon.incentives.v1.QueryGasMetersResponse"></a>
 
 ### QueryGasMetersResponse
 QueryGasMetersResponse is the response type for the Query/Incentives RPC
@@ -1213,7 +1213,7 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `gas_meters` | [GasMeter](#enron.incentives.v1.GasMeter) | repeated |  |
+| `gas_meters` | [GasMeter](#echelon.incentives.v1.GasMeter) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  | pagination defines the pagination in the response. |
 
 
@@ -1221,7 +1221,7 @@ method.
 
 
 
-<a name="enron.incentives.v1.QueryIncentiveRequest"></a>
+<a name="echelon.incentives.v1.QueryIncentiveRequest"></a>
 
 ### QueryIncentiveRequest
 QueryIncentiveRequest is the request type for the Query/Incentive RPC method.
@@ -1236,7 +1236,7 @@ QueryIncentiveRequest is the request type for the Query/Incentive RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryIncentiveResponse"></a>
+<a name="echelon.incentives.v1.QueryIncentiveResponse"></a>
 
 ### QueryIncentiveResponse
 QueryIncentiveResponse is the response type for the Query/Incentive RPC
@@ -1245,14 +1245,14 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `incentive` | [Incentive](#enron.incentives.v1.Incentive) |  |  |
+| `incentive` | [Incentive](#echelon.incentives.v1.Incentive) |  |  |
 
 
 
 
 
 
-<a name="enron.incentives.v1.QueryIncentivesRequest"></a>
+<a name="echelon.incentives.v1.QueryIncentivesRequest"></a>
 
 ### QueryIncentivesRequest
 QueryIncentivesRequest is the request type for the Query/Incentives RPC
@@ -1268,7 +1268,7 @@ method.
 
 
 
-<a name="enron.incentives.v1.QueryIncentivesResponse"></a>
+<a name="echelon.incentives.v1.QueryIncentivesResponse"></a>
 
 ### QueryIncentivesResponse
 QueryIncentivesResponse is the response type for the Query/Incentives RPC
@@ -1277,7 +1277,7 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `incentives` | [Incentive](#enron.incentives.v1.Incentive) | repeated |  |
+| `incentives` | [Incentive](#echelon.incentives.v1.Incentive) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  | pagination defines the pagination in the response. |
 
 
@@ -1285,7 +1285,7 @@ method.
 
 
 
-<a name="enron.incentives.v1.QueryParamsRequest"></a>
+<a name="echelon.incentives.v1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -1295,7 +1295,7 @@ QueryParamsRequest is the request type for the Query/Params RPC method.
 
 
 
-<a name="enron.incentives.v1.QueryParamsResponse"></a>
+<a name="echelon.incentives.v1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 QueryParamsResponse is the response type for the Query/Params RPC
@@ -1304,7 +1304,7 @@ method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.incentives.v1.Params) |  |  |
+| `params` | [Params](#echelon.incentives.v1.Params) |  |  |
 
 
 
@@ -1317,33 +1317,33 @@ method.
  <!-- end HasExtensions -->
 
 
-<a name="enron.incentives.v1.Query"></a>
+<a name="echelon.incentives.v1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Incentives` | [QueryIncentivesRequest](#enron.incentives.v1.QueryIncentivesRequest) | [QueryIncentivesResponse](#enron.incentives.v1.QueryIncentivesResponse) | Incentives retrieves registered incentives | GET|/enron/incentives/v1/incentives|
-| `Incentive` | [QueryIncentiveRequest](#enron.incentives.v1.QueryIncentiveRequest) | [QueryIncentiveResponse](#enron.incentives.v1.QueryIncentiveResponse) | Incentive retrieves a registered incentive | GET|/enron/incentives/v1/incentives/{contract}|
-| `GasMeters` | [QueryGasMetersRequest](#enron.incentives.v1.QueryGasMetersRequest) | [QueryGasMetersResponse](#enron.incentives.v1.QueryGasMetersResponse) | GasMeters retrieves active gas meters for a given contract | GET|/enron/incentives/v1/gas_meters/{contract}|
-| `GasMeter` | [QueryGasMeterRequest](#enron.incentives.v1.QueryGasMeterRequest) | [QueryGasMeterResponse](#enron.incentives.v1.QueryGasMeterResponse) | GasMeter Retrieves a active gas meter | GET|/enron/incentives/v1/gas_meters/{contract}/{participant}|
-| `AllocationMeters` | [QueryAllocationMetersRequest](#enron.incentives.v1.QueryAllocationMetersRequest) | [QueryAllocationMetersResponse](#enron.incentives.v1.QueryAllocationMetersResponse) | AllocationMeters retrieves active allocation meters for a given denomination | GET|/enron/incentives/v1/allocation_meters|
-| `AllocationMeter` | [QueryAllocationMeterRequest](#enron.incentives.v1.QueryAllocationMeterRequest) | [QueryAllocationMeterResponse](#enron.incentives.v1.QueryAllocationMeterResponse) | AllocationMeter Retrieves a active gas meter | GET|/enron/incentives/v1/allocation_meters/{denom}|
-| `Params` | [QueryParamsRequest](#enron.incentives.v1.QueryParamsRequest) | [QueryParamsResponse](#enron.incentives.v1.QueryParamsResponse) | Params retrieves the incentives module params | GET|/enron/incentives/v1/params|
+| `Incentives` | [QueryIncentivesRequest](#echelon.incentives.v1.QueryIncentivesRequest) | [QueryIncentivesResponse](#echelon.incentives.v1.QueryIncentivesResponse) | Incentives retrieves registered incentives | GET|/echelon/incentives/v1/incentives|
+| `Incentive` | [QueryIncentiveRequest](#echelon.incentives.v1.QueryIncentiveRequest) | [QueryIncentiveResponse](#echelon.incentives.v1.QueryIncentiveResponse) | Incentive retrieves a registered incentive | GET|/echelon/incentives/v1/incentives/{contract}|
+| `GasMeters` | [QueryGasMetersRequest](#echelon.incentives.v1.QueryGasMetersRequest) | [QueryGasMetersResponse](#echelon.incentives.v1.QueryGasMetersResponse) | GasMeters retrieves active gas meters for a given contract | GET|/echelon/incentives/v1/gas_meters/{contract}|
+| `GasMeter` | [QueryGasMeterRequest](#echelon.incentives.v1.QueryGasMeterRequest) | [QueryGasMeterResponse](#echelon.incentives.v1.QueryGasMeterResponse) | GasMeter Retrieves a active gas meter | GET|/echelon/incentives/v1/gas_meters/{contract}/{participant}|
+| `AllocationMeters` | [QueryAllocationMetersRequest](#echelon.incentives.v1.QueryAllocationMetersRequest) | [QueryAllocationMetersResponse](#echelon.incentives.v1.QueryAllocationMetersResponse) | AllocationMeters retrieves active allocation meters for a given denomination | GET|/echelon/incentives/v1/allocation_meters|
+| `AllocationMeter` | [QueryAllocationMeterRequest](#echelon.incentives.v1.QueryAllocationMeterRequest) | [QueryAllocationMeterResponse](#echelon.incentives.v1.QueryAllocationMeterResponse) | AllocationMeter Retrieves a active gas meter | GET|/echelon/incentives/v1/allocation_meters/{denom}|
+| `Params` | [QueryParamsRequest](#echelon.incentives.v1.QueryParamsRequest) | [QueryParamsResponse](#echelon.incentives.v1.QueryParamsResponse) | Params retrieves the incentives module params | GET|/echelon/incentives/v1/params|
 
  <!-- end services -->
 
 
 
-<a name="enron/inflation/v1/inflation.proto"></a>
+<a name="echelon/inflation/v1/inflation.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/inflation/v1/inflation.proto
+## echelon/inflation/v1/inflation.proto
 
 
 
-<a name="enron.inflation.v1.ExponentialCalculation"></a>
+<a name="echelon.inflation.v1.ExponentialCalculation"></a>
 
 ### ExponentialCalculation
 ExponentialCalculation holds factors to calculate exponential inflation on
@@ -1366,7 +1366,7 @@ f(x)            = (a * (1 - r) ^ x + c)  *  (1 + max_variance - bondedRatio *
 
 
 
-<a name="enron.inflation.v1.InflationDistribution"></a>
+<a name="echelon.inflation.v1.InflationDistribution"></a>
 
 ### InflationDistribution
 InflationDistribution defines the distribution in which inflation is
@@ -1398,14 +1398,14 @@ mintDistribution1 = distribution1 / (1 - teamVestingDistribution)
 
 
 
-<a name="enron/inflation/v1/genesis.proto"></a>
+<a name="echelon/inflation/v1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/inflation/v1/genesis.proto
+## echelon/inflation/v1/genesis.proto
 
 
 
-<a name="enron.inflation.v1.GenesisState"></a>
+<a name="echelon.inflation.v1.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the inflation module's genesis state.
@@ -1413,7 +1413,7 @@ GenesisState defines the inflation module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.inflation.v1.Params) |  | params defines all the paramaters of the module. |
+| `params` | [Params](#echelon.inflation.v1.Params) |  | params defines all the paramaters of the module. |
 | `period` | [uint64](#uint64) |  | amount of past periods, based on the epochs per period param |
 | `epoch_identifier` | [string](#string) |  | inflation epoch identifier |
 | `epochs_per_period` | [int64](#int64) |  | number of epochs after which inflation is recalculated |
@@ -1424,7 +1424,7 @@ GenesisState defines the inflation module's genesis state.
 
 
 
-<a name="enron.inflation.v1.Params"></a>
+<a name="echelon.inflation.v1.Params"></a>
 
 ### Params
 Params holds parameters for the inflation module.
@@ -1433,8 +1433,8 @@ Params holds parameters for the inflation module.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `mint_denom` | [string](#string) |  | type of coin to mint |
-| `exponential_calculation` | [ExponentialCalculation](#enron.inflation.v1.ExponentialCalculation) |  | variables to calculate exponential inflation |
-| `inflation_distribution` | [InflationDistribution](#enron.inflation.v1.InflationDistribution) |  | inflation distribution of the minted denom |
+| `exponential_calculation` | [ExponentialCalculation](#echelon.inflation.v1.ExponentialCalculation) |  | variables to calculate exponential inflation |
+| `inflation_distribution` | [InflationDistribution](#echelon.inflation.v1.InflationDistribution) |  | inflation distribution of the minted denom |
 | `enable_inflation` | [bool](#bool) |  | parameter to enable inflation and halt increasing the skipped_epochs |
 
 
@@ -1451,14 +1451,14 @@ Params holds parameters for the inflation module.
 
 
 
-<a name="enron/inflation/v1/query.proto"></a>
+<a name="echelon/inflation/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/inflation/v1/query.proto
+## echelon/inflation/v1/query.proto
 
 
 
-<a name="enron.inflation.v1.QueryEpochMintProvisionRequest"></a>
+<a name="echelon.inflation.v1.QueryEpochMintProvisionRequest"></a>
 
 ### QueryEpochMintProvisionRequest
 QueryEpochMintProvisionRequest is the request type for the
@@ -1469,7 +1469,7 @@ Query/EpochMintProvision RPC method.
 
 
 
-<a name="enron.inflation.v1.QueryEpochMintProvisionResponse"></a>
+<a name="echelon.inflation.v1.QueryEpochMintProvisionResponse"></a>
 
 ### QueryEpochMintProvisionResponse
 QueryEpochMintProvisionResponse is the response type for the
@@ -1485,7 +1485,7 @@ Query/EpochMintProvision RPC method.
 
 
 
-<a name="enron.inflation.v1.QueryInflationRateRequest"></a>
+<a name="echelon.inflation.v1.QueryInflationRateRequest"></a>
 
 ### QueryInflationRateRequest
 QueryInflationRateRequest is the request type for the Query/InflationRate RPC method.
@@ -1495,7 +1495,7 @@ QueryInflationRateRequest is the request type for the Query/InflationRate RPC me
 
 
 
-<a name="enron.inflation.v1.QueryInflationRateResponse"></a>
+<a name="echelon.inflation.v1.QueryInflationRateResponse"></a>
 
 ### QueryInflationRateResponse
 QueryInflationRateResponse is the response type for the Query/InflationRate RPC method.
@@ -1510,7 +1510,7 @@ QueryInflationRateResponse is the response type for the Query/InflationRate RPC 
 
 
 
-<a name="enron.inflation.v1.QueryParamsRequest"></a>
+<a name="echelon.inflation.v1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -1520,7 +1520,7 @@ QueryParamsRequest is the request type for the Query/Params RPC method.
 
 
 
-<a name="enron.inflation.v1.QueryParamsResponse"></a>
+<a name="echelon.inflation.v1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 QueryParamsResponse is the response type for the Query/Params RPC method.
@@ -1528,14 +1528,14 @@ QueryParamsResponse is the response type for the Query/Params RPC method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.inflation.v1.Params) |  | params defines the parameters of the module. |
+| `params` | [Params](#echelon.inflation.v1.Params) |  | params defines the parameters of the module. |
 
 
 
 
 
 
-<a name="enron.inflation.v1.QueryPeriodRequest"></a>
+<a name="echelon.inflation.v1.QueryPeriodRequest"></a>
 
 ### QueryPeriodRequest
 QueryPeriodRequest is the request type for the Query/Period RPC method.
@@ -1545,7 +1545,7 @@ QueryPeriodRequest is the request type for the Query/Period RPC method.
 
 
 
-<a name="enron.inflation.v1.QueryPeriodResponse"></a>
+<a name="echelon.inflation.v1.QueryPeriodResponse"></a>
 
 ### QueryPeriodResponse
 QueryPeriodResponse is the response type for the Query/Period RPC method.
@@ -1560,7 +1560,7 @@ QueryPeriodResponse is the response type for the Query/Period RPC method.
 
 
 
-<a name="enron.inflation.v1.QuerySkippedEpochsRequest"></a>
+<a name="echelon.inflation.v1.QuerySkippedEpochsRequest"></a>
 
 ### QuerySkippedEpochsRequest
 QuerySkippedEpochsRequest is the request type for the Query/SkippedEpochs RPC method.
@@ -1570,7 +1570,7 @@ QuerySkippedEpochsRequest is the request type for the Query/SkippedEpochs RPC me
 
 
 
-<a name="enron.inflation.v1.QuerySkippedEpochsResponse"></a>
+<a name="echelon.inflation.v1.QuerySkippedEpochsResponse"></a>
 
 ### QuerySkippedEpochsResponse
 QuerySkippedEpochsResponse is the response type for the Query/SkippedEpochs RPC method.
@@ -1585,7 +1585,7 @@ QuerySkippedEpochsResponse is the response type for the Query/SkippedEpochs RPC 
 
 
 
-<a name="enron.inflation.v1.QueryTotalSupplyRequest"></a>
+<a name="echelon.inflation.v1.QueryTotalSupplyRequest"></a>
 
 ### QueryTotalSupplyRequest
 QueryTotalSupplyRequest is the request type for the Query/TotalSupply RPC method.
@@ -1595,7 +1595,7 @@ QueryTotalSupplyRequest is the request type for the Query/TotalSupply RPC method
 
 
 
-<a name="enron.inflation.v1.QueryTotalSupplyResponse"></a>
+<a name="echelon.inflation.v1.QueryTotalSupplyResponse"></a>
 
 ### QueryTotalSupplyResponse
 QueryTotalSupplyResponse is the response type for the Query/TotalSupply RPC method.
@@ -1616,32 +1616,32 @@ QueryTotalSupplyResponse is the response type for the Query/TotalSupply RPC meth
  <!-- end HasExtensions -->
 
 
-<a name="enron.inflation.v1.Query"></a>
+<a name="echelon.inflation.v1.Query"></a>
 
 ### Query
 Query provides defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Period` | [QueryPeriodRequest](#enron.inflation.v1.QueryPeriodRequest) | [QueryPeriodResponse](#enron.inflation.v1.QueryPeriodResponse) | Period retrieves current period. | GET|/enron/inflation/v1/period|
-| `EpochMintProvision` | [QueryEpochMintProvisionRequest](#enron.inflation.v1.QueryEpochMintProvisionRequest) | [QueryEpochMintProvisionResponse](#enron.inflation.v1.QueryEpochMintProvisionResponse) | EpochMintProvision retrieves current minting epoch provision value. | GET|/enron/inflation/v1/epoch_mint_provision|
-| `SkippedEpochs` | [QuerySkippedEpochsRequest](#enron.inflation.v1.QuerySkippedEpochsRequest) | [QuerySkippedEpochsResponse](#enron.inflation.v1.QuerySkippedEpochsResponse) | SkippedEpochs retrieves the total number of skipped epochs. | GET|/enron/inflation/v1/skipped_epochs|
-| `TotalSupply` | [QueryTotalSupplyRequest](#enron.inflation.v1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#enron.inflation.v1.QueryTotalSupplyResponse) | TotalSupply retrieves the total number of skipped epochs. | GET|/enron/inflation/v1/total_supply|
-| `InflationRate` | [QueryInflationRateRequest](#enron.inflation.v1.QueryInflationRateRequest) | [QueryInflationRateResponse](#enron.inflation.v1.QueryInflationRateResponse) | InflationRate retrieves the inflation rate of the current period. | GET|/enron/inflation/v1/inflation_rate|
-| `Params` | [QueryParamsRequest](#enron.inflation.v1.QueryParamsRequest) | [QueryParamsResponse](#enron.inflation.v1.QueryParamsResponse) | Params retrieves the total set of minting parameters. | GET|/enron/inflation/v1/params|
+| `Period` | [QueryPeriodRequest](#echelon.inflation.v1.QueryPeriodRequest) | [QueryPeriodResponse](#echelon.inflation.v1.QueryPeriodResponse) | Period retrieves current period. | GET|/echelon/inflation/v1/period|
+| `EpochMintProvision` | [QueryEpochMintProvisionRequest](#echelon.inflation.v1.QueryEpochMintProvisionRequest) | [QueryEpochMintProvisionResponse](#echelon.inflation.v1.QueryEpochMintProvisionResponse) | EpochMintProvision retrieves current minting epoch provision value. | GET|/echelon/inflation/v1/epoch_mint_provision|
+| `SkippedEpochs` | [QuerySkippedEpochsRequest](#echelon.inflation.v1.QuerySkippedEpochsRequest) | [QuerySkippedEpochsResponse](#echelon.inflation.v1.QuerySkippedEpochsResponse) | SkippedEpochs retrieves the total number of skipped epochs. | GET|/echelon/inflation/v1/skipped_epochs|
+| `TotalSupply` | [QueryTotalSupplyRequest](#echelon.inflation.v1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#echelon.inflation.v1.QueryTotalSupplyResponse) | TotalSupply retrieves the total number of skipped epochs. | GET|/echelon/inflation/v1/total_supply|
+| `InflationRate` | [QueryInflationRateRequest](#echelon.inflation.v1.QueryInflationRateRequest) | [QueryInflationRateResponse](#echelon.inflation.v1.QueryInflationRateResponse) | InflationRate retrieves the inflation rate of the current period. | GET|/echelon/inflation/v1/inflation_rate|
+| `Params` | [QueryParamsRequest](#echelon.inflation.v1.QueryParamsRequest) | [QueryParamsResponse](#echelon.inflation.v1.QueryParamsResponse) | Params retrieves the total set of minting parameters. | GET|/echelon/inflation/v1/params|
 
  <!-- end services -->
 
 
 
-<a name="enron/recovery/v1/genesis.proto"></a>
+<a name="echelon/recovery/v1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/recovery/v1/genesis.proto
+## echelon/recovery/v1/genesis.proto
 
 
 
-<a name="enron.recovery.v1.GenesisState"></a>
+<a name="echelon.recovery.v1.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the recovery module's genesis state.
@@ -1649,14 +1649,14 @@ GenesisState defines the recovery module's genesis state.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.recovery.v1.Params) |  | params defines all the paramaters of the module. |
+| `params` | [Params](#echelon.recovery.v1.Params) |  | params defines all the paramaters of the module. |
 
 
 
 
 
 
-<a name="enron.recovery.v1.Params"></a>
+<a name="echelon.recovery.v1.Params"></a>
 
 ### Params
 Params holds parameters for the recovery module
@@ -1681,14 +1681,14 @@ Params holds parameters for the recovery module
 
 
 
-<a name="enron/recovery/v1/query.proto"></a>
+<a name="echelon/recovery/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/recovery/v1/query.proto
+## echelon/recovery/v1/query.proto
 
 
 
-<a name="enron.recovery.v1.QueryParamsRequest"></a>
+<a name="echelon.recovery.v1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -1698,7 +1698,7 @@ QueryParamsRequest is the request type for the Query/Params RPC method.
 
 
 
-<a name="enron.recovery.v1.QueryParamsResponse"></a>
+<a name="echelon.recovery.v1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 QueryParamsResponse is the response type for the Query/Params RPC method.
@@ -1706,7 +1706,7 @@ QueryParamsResponse is the response type for the Query/Params RPC method.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#enron.recovery.v1.Params) |  | params defines the parameters of the module. |
+| `params` | [Params](#echelon.recovery.v1.Params) |  | params defines the parameters of the module. |
 
 
 
@@ -1719,27 +1719,27 @@ QueryParamsResponse is the response type for the Query/Params RPC method.
  <!-- end HasExtensions -->
 
 
-<a name="enron.recovery.v1.Query"></a>
+<a name="echelon.recovery.v1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#enron.recovery.v1.QueryParamsRequest) | [QueryParamsResponse](#enron.recovery.v1.QueryParamsResponse) | Params retrieves the total set of recovery parameters. | GET|/enron/recovery/v1/params|
+| `Params` | [QueryParamsRequest](#echelon.recovery.v1.QueryParamsRequest) | [QueryParamsResponse](#echelon.recovery.v1.QueryParamsResponse) | Params retrieves the total set of recovery parameters. | GET|/echelon/recovery/v1/params|
 
  <!-- end services -->
 
 
 
-<a name="enron/vesting/v1/query.proto"></a>
+<a name="echelon/vesting/v1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/vesting/v1/query.proto
+## echelon/vesting/v1/query.proto
 
 
 
-<a name="enron.vesting.v1.QueryBalancesRequest"></a>
+<a name="echelon.vesting.v1.QueryBalancesRequest"></a>
 
 ### QueryBalancesRequest
 QueryBalancesRequest is the request type for the Query/Balances RPC method.
@@ -1754,7 +1754,7 @@ QueryBalancesRequest is the request type for the Query/Balances RPC method.
 
 
 
-<a name="enron.vesting.v1.QueryBalancesResponse"></a>
+<a name="echelon.vesting.v1.QueryBalancesResponse"></a>
 
 ### QueryBalancesResponse
 QueryBalancesResponse is the response type for the Query/Balances RPC
@@ -1778,27 +1778,27 @@ method.
  <!-- end HasExtensions -->
 
 
-<a name="enron.vesting.v1.Query"></a>
+<a name="echelon.vesting.v1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Balances` | [QueryBalancesRequest](#enron.vesting.v1.QueryBalancesRequest) | [QueryBalancesResponse](#enron.vesting.v1.QueryBalancesResponse) | Retrieves the unvested, vested and locked tokens for a vesting account | GET|/enron/vesting/v1/balances/{address}|
+| `Balances` | [QueryBalancesRequest](#echelon.vesting.v1.QueryBalancesRequest) | [QueryBalancesResponse](#echelon.vesting.v1.QueryBalancesResponse) | Retrieves the unvested, vested and locked tokens for a vesting account | GET|/echelon/vesting/v1/balances/{address}|
 
  <!-- end services -->
 
 
 
-<a name="enron/vesting/v1/tx.proto"></a>
+<a name="echelon/vesting/v1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/vesting/v1/tx.proto
+## echelon/vesting/v1/tx.proto
 
 
 
-<a name="enron.vesting.v1.MsgClawback"></a>
+<a name="echelon.vesting.v1.MsgClawback"></a>
 
 ### MsgClawback
 MsgClawback defines a message that removes unvested tokens from a
@@ -1816,7 +1816,7 @@ ClawbackVestingAccount.
 
 
 
-<a name="enron.vesting.v1.MsgClawbackResponse"></a>
+<a name="echelon.vesting.v1.MsgClawbackResponse"></a>
 
 ### MsgClawbackResponse
 MsgClawbackResponse defines the MsgClawback response type.
@@ -1826,7 +1826,7 @@ MsgClawbackResponse defines the MsgClawback response type.
 
 
 
-<a name="enron.vesting.v1.MsgCreateClawbackVestingAccount"></a>
+<a name="echelon.vesting.v1.MsgCreateClawbackVestingAccount"></a>
 
 ### MsgCreateClawbackVestingAccount
 MsgCreateClawbackVestingAccount defines a message that enables creating a ClawbackVestingAccount.
@@ -1846,7 +1846,7 @@ MsgCreateClawbackVestingAccount defines a message that enables creating a Clawba
 
 
 
-<a name="enron.vesting.v1.MsgCreateClawbackVestingAccountResponse"></a>
+<a name="echelon.vesting.v1.MsgCreateClawbackVestingAccountResponse"></a>
 
 ### MsgCreateClawbackVestingAccountResponse
 MsgCreateClawbackVestingAccountResponse defines the
@@ -1863,28 +1863,28 @@ MsgCreateClawbackVestingAccount response type.
  <!-- end HasExtensions -->
 
 
-<a name="enron.vesting.v1.Msg"></a>
+<a name="echelon.vesting.v1.Msg"></a>
 
 ### Msg
 Msg defines the vesting Msg service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `CreateClawbackVestingAccount` | [MsgCreateClawbackVestingAccount](#enron.vesting.v1.MsgCreateClawbackVestingAccount) | [MsgCreateClawbackVestingAccountResponse](#enron.vesting.v1.MsgCreateClawbackVestingAccountResponse) | CreateClawbackVestingAccount creats a vesting account that is subject to clawback and the configuration of vesting and lockup schedules. | GET|/enron/vesting/v1/tx/create_clawback_vesting_account|
-| `Clawback` | [MsgClawback](#enron.vesting.v1.MsgClawback) | [MsgClawbackResponse](#enron.vesting.v1.MsgClawbackResponse) | Clawback removes the unvested tokens from a ClawbackVestingAccount. | GET|/enron/vesting/v1/tx/clawback|
+| `CreateClawbackVestingAccount` | [MsgCreateClawbackVestingAccount](#echelon.vesting.v1.MsgCreateClawbackVestingAccount) | [MsgCreateClawbackVestingAccountResponse](#echelon.vesting.v1.MsgCreateClawbackVestingAccountResponse) | CreateClawbackVestingAccount creats a vesting account that is subject to clawback and the configuration of vesting and lockup schedules. | GET|/echelon/vesting/v1/tx/create_clawback_vesting_account|
+| `Clawback` | [MsgClawback](#echelon.vesting.v1.MsgClawback) | [MsgClawbackResponse](#echelon.vesting.v1.MsgClawbackResponse) | Clawback removes the unvested tokens from a ClawbackVestingAccount. | GET|/echelon/vesting/v1/tx/clawback|
 
  <!-- end services -->
 
 
 
-<a name="enron/vesting/v1/vesting.proto"></a>
+<a name="echelon/vesting/v1/vesting.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## enron/vesting/v1/vesting.proto
+## echelon/vesting/v1/vesting.proto
 
 
 
-<a name="enron.vesting.v1.ClawbackVestingAccount"></a>
+<a name="echelon.vesting.v1.ClawbackVestingAccount"></a>
 
 ### ClawbackVestingAccount
 ClawbackVestingAccount implements the VestingAccount interface. It provides

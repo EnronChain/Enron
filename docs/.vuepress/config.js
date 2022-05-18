@@ -1,6 +1,6 @@
 module.exports = {
   theme: 'cosmos',
-  title: 'Enron Documentation',
+  title: 'Echelon Documentation',
   locales: {
     '/': {
       lang: 'en-US'
@@ -44,39 +44,39 @@ module.exports = {
     // ['link', { rel: "apple-touch-icon-precomposed", href: "/apple-touch-icon-precomposed.png" }],
   ],
   themeConfig: {
-    repo: 'tharsis/enron',
-    docsRepo: 'tharsis/enron',
+    repo: 'tharsis/echelon',
+    docsRepo: 'tharsis/echelon',
     docsBranch: 'main',
     docsDir: 'docs',
     editLinks: true,
     custom: true,
     project: {
-      name: 'Enron',
-      denom: 'Enron',
+      name: 'Echelon',
+      denom: 'Echelon',
       ticker: 'ECH',
-      binary: 'enrond',
-      testnet_denom: 'tEnron',
-      testnet_ticker: 'tENRON',
-      rpc_url: 'https://eth.bd.enron.org:8545',
-      rpc_url_testnet: 'https://eth.bd.enron.dev:8545',
+      binary: 'echelond',
+      testnet_denom: 'tEchelon',
+      testnet_ticker: 'tECHELON',
+      rpc_url: 'https://eth.bd.echelon.org:8545',
+      rpc_url_testnet: 'https://eth.bd.echelon.dev:8545',
       rpc_url_local: 'http://localhost:8545/',
       chain_id: '3000',
       testnet_chain_id: '9003',
       latest_version: 'v1.0.0-Beta',
       version_number: '2',
       testnet_version_number: '3',
-      testnet_evm_explorer_url: 'https://evm.enron.dev',
-      evm_explorer_url: 'https://evm.enron.org',
-      testnet_cosmos_explorer_url: 'https://explorer.enron.dev/',
-      cosmos_explorer_url: 'https://www.mintscan.io/enron',
+      testnet_evm_explorer_url: 'https://evm.echelon.dev',
+      evm_explorer_url: 'https://evm.echelon.org',
+      testnet_cosmos_explorer_url: 'https://explorer.echelon.dev/',
+      cosmos_explorer_url: 'https://www.mintscan.io/echelon',
     },
     logo: {
-      src: '/enron-black.svg',
+      src: '/echelon-black.svg',
     },
     algolia: {
       id: 'BH4D9OD16A',
       key: 'a5d55fe5f540cc3bd28fa2c72f2b5bd8',
-      index: 'enron'
+      index: 'echelon'
     },
     topbar: {
       banner: false
@@ -113,7 +113,7 @@ module.exports = {
           title: 'Governance',
           children: [
             {
-              title: 'Enron Governance',
+              title: 'Echelon Governance',
               directory: true,
               path: '/governance'
             },
@@ -178,9 +178,9 @@ module.exports = {
         //       path: '/clients/apis'
         //     },
         //     {
-        //       title: 'Enronjs',
+        //       title: 'Echelonjs',
         //       directory: false,
-        //       path: '/clients/enronjs'
+        //       path: '/clients/echelonjs'
         //     },
         //   ]
         // },
@@ -231,11 +231,11 @@ module.exports = {
             },
             {
               title: 'Blockscout (EVM)',
-              path: 'https://evm.enron.org'
+              path: 'https://evm.echelon.org'
             },
             {
               title: 'Mintscan (Cosmos)',
-              path: 'https://www.mintscan.io/enron/'
+              path: 'https://www.mintscan.io/echelon/'
             },
           ]
         },
@@ -243,12 +243,12 @@ module.exports = {
           title: 'Ecosystem',
           children: [
             {
-              title: 'Awesome Enron',
+              title: 'Awesome Echelon',
               path: 'https://github.com/tharsis/awesome'
             },
             {
-              title: 'Enron Space',
-              path: 'https://enron.space/'
+              title: 'Echelon Space',
+              path: 'https://echelon.space/'
             }
           ]
         },
@@ -256,16 +256,16 @@ module.exports = {
           title: 'Resources',
           children: [
             {
-              title: 'Enron Go API',
-              path: 'https://pkg.go.dev/github.com/enron/enron'
+              title: 'Echelon Go API',
+              path: 'https://pkg.go.dev/github.com/echelonfoundation/echelon'
             },
             {
               title: 'Ethermint Library Go API',
               path: 'https://pkg.go.dev/github.com/tharsis/ethermint'
             },
             {
-              title: 'Enron gRPC Gateway API',
-              path: 'https://api.enron.dev/'
+              title: 'Echelon gRPC Gateway API',
+              path: 'https://api.echelon.dev/'
             },
             {
               title: 'JSON-RPC API',
@@ -279,13 +279,13 @@ module.exports = {
       title: 'Help & Support',
       chat: {
         title: 'Developer Chat',
-        text: 'Chat with Enron developers on Discord.',
-        url: 'https://discord.gg/enron',
+        text: 'Chat with Echelon developers on Discord.',
+        url: 'https://discord.gg/echelon',
         bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)'
       },
       forum: {
-        title: 'Enron Developer Forum',
-        text: 'Join the Enron Developer Forum to learn more.',
+        title: 'Echelon Developer Forum',
+        text: 'Join the Echelon Developer Forum to learn more.',
         url: 'https://forum.cosmos.network/c/ethermint', // TODO: replace with commonwealth link
         bg: 'linear-gradient(221.79deg, #3D6B99 -1.08%, #336699 95.88%)',
         logo: 'ethereum-white'
@@ -297,23 +297,23 @@ module.exports = {
       }
     },
     footer: {
-      logo: '/enron-black.svg',
+      logo: '/echelon-black.svg',
       textLink: {
-        text: 'enron.org',
-        url: 'https://enron.org'
+        text: 'echelon.org',
+        url: 'https://echelon.org'
       },
       services: [
         {
           service: 'github',
-          url: 'https://github.com/enron/enron'
+          url: 'https://github.com/echelonfoundation/echelon'
         },
         {
           service: "twitter",
-          url: "https://twitter.com/EnronOrg",
+          url: "https://twitter.com/EchelonOrg",
         },
         {
           service: "telegram",
-          url: "https://t.me/EnronOrg",
+          url: "https://t.me/EchelonOrg",
         },
         {
           service: "linkedin",
@@ -321,7 +321,7 @@ module.exports = {
         },
         {
           service: "medium",
-          url: "https://enron.blog/",
+          url: "https://echelon.blog/",
         },
       ],
       smallprint: 'This website is maintained by Tharsis Labs Ltd.',
@@ -344,8 +344,8 @@ module.exports = {
       {
         title: 'Community',
         children: [{
-          title: 'Enron Community',
-          url: 'https://discord.gg/enron'
+          title: 'Echelon Community',
+          url: 'https://discord.gg/echelon'
         },
         ]
       },

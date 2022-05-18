@@ -4,7 +4,7 @@ order: 4
 
 # Keplr
 
-Connect your Keplr wallet with Enron {synopsis}
+Connect your Keplr wallet with Echelon {synopsis}
 
 ## Pre-requisite Readings
 
@@ -20,13 +20,13 @@ Add the Keplr browser extension following the instructions on the [Keplr website
 
 Open the Keplr extension on your browser. If you are setting up Keplr for the first time, you can either create a new account or import an existing account. Refer to the [Keplr documentation](https://keplr.crunch.help/getting-started) for further information.
 
-## Connect to Enron Testnet and Request Funds from the Faucet
+## Connect to Echelon Testnet and Request Funds from the Faucet
 
-Once you are signed in to the Keplr extension, visit the [Faucet](https://faucet.enron.dev/) and click the `Request Funds with Keplr` button. Then approve the both following pop ups `Chain Add Request` and `Request Connection` to add the {{ $themeConfig.project.name }} testnet chain (`enron_{{ $themeConfig.project.testnet_chain_id }}-{{ $themeConfig.project.testnet_version_number }}`) to Keplr and approve the connection.
+Once you are signed in to the Keplr extension, visit the [Faucet](https://faucet.echelon.dev/) and click the `Request Funds with Keplr` button. Then approve the both following pop ups `Chain Add Request` and `Request Connection` to add the {{ $themeConfig.project.name }} testnet chain (`echelon_{{ $themeConfig.project.testnet_chain_id }}-{{ $themeConfig.project.testnet_version_number }}`) to Keplr and approve the connection.
 
 ![chain add request](./../img/keplr_approve_chain.png)
 
-After approval, you can see a transaction confirmation informing you that {{ $themeConfig.project.testnet_denom }} have been successfully transferred to your [enron address](../../basics/accounts.md#address-formats-for-clients) on the testnet (only `eth_secp256k1` addresses are supported).
+After approval, you can see a transaction confirmation informing you that {{ $themeConfig.project.testnet_denom }} have been successfully transferred to your [echelon address](../../basics/accounts.md#address-formats-for-clients) on the testnet (only `eth_secp256k1` addresses are supported).
 
 ![chain add request](./../img/keplr_transaction.png)
 

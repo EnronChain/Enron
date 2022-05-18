@@ -4,24 +4,24 @@ order: 3
 
 # Clients
 
-Learn about the client supported by your Enron node. {synopsis}
+Learn about the client supported by your Echelon node. {synopsis}
 
 ## Client Servers
 
-The Enron client supports both Cosmos [gRPC endpoints](https://api.enron.org/) and Ethereum's [JSON-RPC](https://eth.wiki/json-rpc/API).
+The Echelon client supports both Cosmos [gRPC endpoints](https://api.echelon.org/) and Ethereum's [JSON-RPC](https://eth.wiki/json-rpc/API).
 
 ### Cosmos gRPC and Tendermint RPC
 
-Enron exposes gRPC endpoints (and REST) for all the integrated Cosmos-SDK modules. This makes it easier for
+Echelon exposes gRPC endpoints (and REST) for all the integrated Cosmos-SDK modules. This makes it easier for
 wallets and block explorers to interact with the proof-of-stake logic and native Cosmos transactions and queries
 
 ::: tip
-See the list of supported gRPC Gatewat API [endpoints](https://api.enron.org/).
+See the list of supported gRPC Gatewat API [endpoints](https://api.echelon.org/).
 :::
 
 ### Ethereum JSON-RPC server
 
-Enron also supports most of the standard web3 [JSON-RPC APIs](./../api/json-rpc/running_server) to connect with existing web3 tooling.
+Echelon also supports most of the standard web3 [JSON-RPC APIs](./../api/json-rpc/running_server) to connect with existing web3 tooling.
 
 ::: tip
 See the list of supported JSON-RPC API [endpoints](./../api/json-rpc/endpoints) and [namespaces](./../api/json-rpc/namespaces).

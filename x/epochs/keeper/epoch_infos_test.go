@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"time"
 
-	"github.com/enron/enron/v3/x/epochs/types"
+	"github.com/echelonfoundation/echelon/v3/x/epochs/types"
 )
 
 func (suite *KeeperTestSuite) TestEpochLifeCycle() {

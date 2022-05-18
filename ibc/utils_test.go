@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/enron/enron/v3/x/claims/types"
+	"github.com/echelonfoundation/echelon/v3/x/claims/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
@@ -15,7 +15,7 @@ import (
 
 func init() {
 	cfg := sdk.GetConfig()
-	cfg.SetBech32PrefixForAccount("enron", "enronpub")
+	cfg.SetBech32PrefixForAccount("echelon", "echelonpub")
 }
 
 func TestGetTransferSenderRecipient(t *testing.T) {
@@ -56,7 +56,7 @@ func TestGetTransferSenderRecipient(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "123456",
 					},
 				),
@@ -70,7 +70,7 @@ func TestGetTransferSenderRecipient(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "enron1",
+						Receiver: "echelon1",
 						Amount:   "123456",
 					},
 				),
@@ -79,48 +79,48 @@ func TestGetTransferSenderRecipient(t *testing.T) {
 			true,
 		},
 		{
-			"valid - cosmos sender, enron recipient",
+			"valid - cosmos sender, echelon recipient",
 			channeltypes.Packet{
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "123456",
 					},
 				),
 			},
-			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 			false,
 		},
 		{
-			"valid - enron sender, cosmos recipient",
+			"valid - echelon sender, cosmos recipient",
 			channeltypes.Packet{
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
-						Sender:   "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Sender:   "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Receiver: "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
 						Amount:   "123456",
 					},
 				),
 			},
-			"enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
-			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 		{
-			"valid - osmosis sender, enron recipient",
+			"valid - osmosis sender, echelon recipient",
 			channeltypes.Packet{
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "osmo1qql8ag4cluz6r4dz28p3w00dnc9w8ueuhnecd2",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "123456",
 					},
 				),
 			},
-			"enron1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			"echelon1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 			false,
 		},
 	}
@@ -164,7 +164,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "",
 					},
 				),
@@ -178,7 +178,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "test",
 					},
 				),
@@ -192,7 +192,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "10000",
 					},
 				),
@@ -206,7 +206,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "enron1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "echelon1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   types.IBCTriggerAmt,
 					},
 				),

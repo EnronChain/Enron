@@ -6,15 +6,15 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	v2 "github.com/enron/enron/v3/app/upgrades/v2"
+	v2 "github.com/echelonfoundation/echelon/v3/app/upgrades/v2"
 )
 
 // BeginBlockForks executes any necessary fork logic based upon the current block height.
-func BeginBlockForks(ctx sdk.Context, app *Enron) {
+func BeginBlockForks(ctx sdk.Context, app *Echelon) {
 	switch ctx.BlockHeight() {
 	case v2.UpgradeHeight:
 		// NOTE: only run for mainnet
-		if !strings.HasPrefix(ctx.ChainID(), "enron_3001-") {
+		if !strings.HasPrefix(ctx.ChainID(), "echelon_3001-") {
 			return
 		}
 

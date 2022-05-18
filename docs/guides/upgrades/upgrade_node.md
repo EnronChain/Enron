@@ -10,14 +10,14 @@ With every new software release, we strongly recommend validators to perform a s
 
 You can upgrade your node by 1) upgrading your software version and 2) upgrading your node to that version. In this guide, you can find out how to automatically upgrade your node with Cosmovisor or perform the update manually.
 
-## Updating the `enrond` binary
+## Updating the `echelond` binary
 
 These instructions are for full nodes that have ran on previous versions of and would like to upgrade to the latest testnet.
 
-First, stop your instance of `enrond`. Next, upgrade the software:
+First, stop your instance of `echelond`. Next, upgrade the software:
 
 ```bash
-cd enron
+cd echelon
 git fetch --all && git checkout <new_version>
 make install
 ```
@@ -26,15 +26,15 @@ make install
 If you have issues at this step, please check that you have the latest stable version of GO installed.
 :::
 
-You will need to ensure that the version installed matches the one needed for th testnet. Check the Enron [release page](https://github.com/enron/enron/releases) for details on each release.
+You will need to ensure that the version installed matches the one needed for th testnet. Check the Echelon [release page](https://github.com/echelonfoundation/echelon/releases) for details on each release.
 
-Verify that everything is OK. If you get something like the following, you've successfully installed Enron on your system.
+Verify that everything is OK. If you get something like the following, you've successfully installed Echelon on your system.
 
 ```bash
-$ enrond version --long
+$ echelond version --long
 
-name: enron
-server_name: enrond
+name: echelon
+server_name: echelond
 version: 0.4.0
 commit: 070b668f2cbbf52548c46e96b236e09884483dd4
 build_tags: netgo,ledger
@@ -42,7 +42,7 @@ go: go version go1.17 darwin/amd64
 ...
 ```
 
-If the software version does not match, then please check your $PATH to ensure the correct enrond is running.
+If the software version does not match, then please check your $PATH to ensure the correct echelond is running.
 
 ## Upgrading your Validator
 
@@ -68,27 +68,27 @@ Set up the Cosmovisor environment variables. We recommend setting these in your 
 
 ```bash
 echo "# Setup Cosmovisor" >> ~/.profile
-echo "export DAEMON_NAME=enrond" >> ~/.profile
-echo "export DAEMON_HOME=$HOME/.enrond" >> ~/.profile
+echo "export DAEMON_NAME=echelond" >> ~/.profile
+echo "export DAEMON_HOME=$HOME/.echelond" >> ~/.profile
 source ~/.profile
 ```
 
-After this, you must make the necessary folders for cosmosvisor in your daemon home directory (~/.enrond) and copy over the current binary.
+After this, you must make the necessary folders for cosmosvisor in your daemon home directory (~/.echelond) and copy over the current binary.
 
 ```bash
-mkdir -p ~/.enrond/cosmovisor
-mkdir -p ~/.enrond/cosmovisor/genesis
-mkdir -p ~/.enrond/cosmovisor/genesis/bin
-mkdir -p ~/.enrond/cosmovisor/upgrades
+mkdir -p ~/.echelond/cosmovisor
+mkdir -p ~/.echelond/cosmovisor/genesis
+mkdir -p ~/.echelond/cosmovisor/genesis/bin
+mkdir -p ~/.echelond/cosmovisor/upgrades
 
-cp $GOPATH/bin/enrond ~/.enrond/cosmovisor/genesis/bin
+cp $GOPATH/bin/echelond ~/.echelond/cosmovisor/genesis/bin
 ```
 
-To check that you did this correctly, ensure your versions of cosmovisor and enrond are the same:
+To check that you did this correctly, ensure your versions of cosmovisor and echelond are the same:
 
 ```
 cosmovisor version
-enrond version
+echelond version
 ```
 
 #### Generally Preparing an Upgrade
@@ -106,29 +106,29 @@ echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
 You can now download the "genesis" file for the chain. It is pre-filled with the entire genesis state and gentxs.
 
 ```bash
-curl https://raw.githubusercontent.com/tharsis/testnets/main/olympus_mons/genesis.json > ~/.enrond/config/genesis.json
+curl https://raw.githubusercontent.com/tharsis/testnets/main/olympus_mons/genesis.json > ~/.echelond/config/genesis.json
 ```
 
 We recommend using `sha256sum` to check the hash of the genesis.
 
 ```bash
-cd ~/.enrond/config
+cd ~/.echelond/config
 echo "2b5164f4bab00263cb424c3d0aa5c47a707184c6ff288322acc4c7e0c5f6f36f  genesis.json" | sha256sum -c
 ```
 
 #### Reset Chain Database
 
-There shouldn't be any chain database yet, but in case there is for some reason, you should reset it. This is a good idea especially if you ran `enrond start` on an old, broken genesis file.
+There shouldn't be any chain database yet, but in case there is for some reason, you should reset it. This is a good idea especially if you ran `echelond start` on an old, broken genesis file.
 
 ```bash
-enrond unsafe-reset-all
+echelond unsafe-reset-all
 ```
 
 #### Ensure that you have set peers
 
-In `~/.enrond/config/config.toml` you can set your peers. See the [peers.txt](https://github.com/tharsis/testnets/blob/main/olympus_mons/peers.txt) file for a list of up to date peers.
+In `~/.echelond/config/config.toml` you can set your peers. See the [peers.txt](https://github.com/tharsis/testnets/blob/main/olympus_mons/peers.txt) file for a list of up to date peers.
 
-See the [Add persistent peers section](https://enron.dev/testnet/join.html#add-persistent-peers) in our docs for an automated method, but field should look something like a comma separated string of peers (do not copy this, just an example):
+See the [Add persistent peers section](https://echelon.dev/testnet/join.html#add-persistent-peers) in our docs for an automated method, but field should look something like a comma separated string of peers (do not copy this, just an example):
 
 ```bash
 persistent_peers = "5576b0160761fe81ccdf88e06031a01bc8643d51@195.201.108.97:24656,13e850d14610f966de38fc2f925f6dc35c7f4bf4@176.9.60.27:26656,38eb4984f89899a5d8d1f04a79b356f15681bb78@18.169.155.159:26656,59c4351009223b3652674bd5ee4324926a5a11aa@51.15.133.26:26656,3a5a9022c8aa2214a7af26ebbfac49b77e34e5c5@65.108.1.46:26656,4fc0bea2044c9fd1ea8cc987119bb8bdff91aaf3@65.21.246.124:26656,6624238168de05893ca74c2b0270553189810aa7@95.216.100.80:26656,9d247286cd407dc8d07502240245f836e18c0517@149.248.32.208:26656,37d59371f7578101dee74d5a26c86128a229b8bf@194.163.172.168:26656,b607050b4e5b06e52c12fcf2db6930fd0937ef3b@95.217.107.96:26656,7a6bbbb6f6146cb11aebf77039089cd038003964@94.130.54.247:26656"
@@ -137,7 +137,7 @@ persistent_peers = "5576b0160761fe81ccdf88e06031a01bc8643d51@195.201.108.97:2465
 You can share your peer with
 
 ```bash
-enrond tendermint show-node-id
+echelond tendermint show-node-id
 ```
 
 **Peer Format**: `node-id@ip:port`
@@ -165,9 +165,9 @@ cosmovisor start
 You will need some way to keep the process always running. If you're on linux, you can do this by creating a service.
 
 ```bash
-sudo tee /etc/systemd/system/enrond.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/echelond.service > /dev/null <<EOF
 [Unit]
-Description=Enron Daemon
+Description=Echelon Daemon
 After=network-online.target
 
 [Service]
@@ -177,8 +177,8 @@ Restart=always
 RestartSec=3
 LimitNOFILE=infinity
 
-Environment="DAEMON_HOME=$HOME/.enrond"
-Environment="DAEMON_NAME=enrond"
+Environment="DAEMON_HOME=$HOME/.echelond"
+Environment="DAEMON_NAME=echelond"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 
@@ -191,14 +191,14 @@ Then update and start the node
 
 ```bash
 sudo -S systemctl daemon-reload
-sudo -S systemctl enable enrond
-sudo -S systemctl start enrond
+sudo -S systemctl enable echelond
+sudo -S systemctl start echelond
 ```
 
 You can check the status with:
 
 ```bash
-systemctl status enrond
+systemctl status echelond
 ```
 
 #### Update Cosmosvisor to V2
@@ -206,27 +206,27 @@ systemctl status enrond
 If you're not yet on the latest V1 release (`v1.1.2`) please upgrade your current version first:
 
 ```bash
-cd $HOME/enron
+cd $HOME/echelon
 git pull
 git checkout v1.1.2
 make build
-systemctl stop enrond.service
-cp build/enrond ~/.enrond/cosmovisor/genesis/bin
-systemctl start enrond.service
+systemctl stop echelond.service
+cp build/echelond ~/.echelond/cosmovisor/genesis/bin
+systemctl start echelond.service
 cd $HOME
 ```
 
-If you are on the latest V1 release (`v1.1.2`) and you want enrond to upgrade automatically from V1 to V2, do the following steps prior to the upgrade height:
+If you are on the latest V1 release (`v1.1.2`) and you want echelond to upgrade automatically from V1 to V2, do the following steps prior to the upgrade height:
 
 ```bash
-mkdir -p ~/.enrond/cosmovisor/upgrades/v2/bin
-cd $HOME/enron
+mkdir -p ~/.echelond/cosmovisor/upgrades/v2/bin
+cd $HOME/echelon
 git pull
 git checkout v2.0.0
 make build
-systemctl stop enrond.service
-cp build/enrond ~/.enrond/cosmovisor/upgrades/v2/bin
-systemctl start enrond.service
+systemctl stop echelond.service
+cp build/echelond ~/.echelond/cosmovisor/upgrades/v2/bin
+systemctl start echelond.service
 cd $HOME
 ```
 
@@ -240,7 +240,7 @@ If the new version you are upgrading to has breaking changes, you will have to [
 If it is **not** breaking (eg. from `v0.1.x` to `v0.1.<x+1>`), you can skip to [Restart](#restart-node) after installing the new version.
 :::
 
-To upgrade the genesis file, you can either fetch it from a trusted source or export it locally using the `enrond export` command.
+To upgrade the genesis file, you can either fetch it from a trusted source or export it locally using the `echelond export` command.
 
 #### Fetch from a Trusted Source
 
@@ -249,32 +249,32 @@ If you are joining an existing testnet, you can fetch the genesis from the appro
 Save the new genesis as `new_genesis.json`. Then, replace the old `genesis.json` with `new_genesis.json`.
 
 ```bash
-cd $HOME/.enrond/config
+cd $HOME/.echelond/config
 cp -f genesis.json new_genesis.json
 mv new_genesis.json genesis.json
 ```
 
 #### Export State
 
-Enron can dump the entire application state to a JSON file. This, besides upgrades, can be
+Echelon can dump the entire application state to a JSON file. This, besides upgrades, can be
 useful for manual analysis of the state at a given height.
 
 Export state with:
 
 ```bash
-enrond export > new_genesis.json
+echelond export > new_genesis.json
 ```
 
 You can also export state from a particular height (at the end of processing the block of that height):
 
 ```bash
-enrond export --height [height] > new_genesis.json
+echelond export --height [height] > new_genesis.json
 ```
 
 If you plan to start a new network for 0 height (i.e genesis) from the exported state, export with the `--for-zero-height` flag:
 
 ```bash
-enrond export --height [height] --for-zero-height > new_genesis.json
+echelond export --height [height] --for-zero-height > new_genesis.json
 ```
 
 Then, replace the old `genesis.json` with `new_genesis.json`.
@@ -289,7 +289,7 @@ At this point, you might want to run a script to update the exported genesis int
 You can use the `migrate` command to migrate from a given version to the next one (eg: `v0.X.X` to `v1.X.X`):
 
 ```bash
-enrond migrate [target-version] [/path/to/genesis.json] --chain-id=<new_chain_id> --genesis-time=<yyyy-mm-ddThh:mm:ssZ>
+echelond migrate [target-version] [/path/to/genesis.json] --chain-id=<new_chain_id> --genesis-time=<yyyy-mm-ddThh:mm:ssZ>
 ```
 
 #### Restart Node
@@ -297,5 +297,5 @@ enrond migrate [target-version] [/path/to/genesis.json] --chain-id=<new_chain_id
 To restart your node once the new genesis has been updated, use the `start` command:
 
 ```bash
-enrond start
+echelond start
 ```

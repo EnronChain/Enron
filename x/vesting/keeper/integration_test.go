@@ -9,9 +9,9 @@ import (
 
 	"github.com/tharsis/ethermint/encoding"
 	"github.com/tharsis/ethermint/tests"
-	"github.com/enron/enron/v3/app"
-	"github.com/enron/enron/v3/app/ante"
-	"github.com/enron/enron/v3/testutil"
+	"github.com/echelonfoundation/echelon/v3/app"
+	"github.com/echelonfoundation/echelon/v3/app/ante"
+	"github.com/echelonfoundation/echelon/v3/testutil"
 
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
@@ -22,7 +22,7 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/enron/enron/v3/x/vesting/types"
+	"github.com/echelonfoundation/echelon/v3/x/vesting/types"
 )
 
 // Clawback vesting with Cliff and Lock. In this case the cliff is reached
@@ -30,7 +30,7 @@ import (
 // employee starts before mainnet launch (periodsCliff < lockupPeriod)
 
 // Example:
-// 21/10 Employee joins Enron and vesting starts
+// 21/10 Employee joins Echelon and vesting starts
 // 22/03 Mainnet launch
 // 22/09 Cliff ends
 // 23/02 Lock ends
@@ -205,7 +205,7 @@ var _ = Describe("Clawback Vesting Accounts", Ordered, func() {
 })
 
 // Example:
-// 21/10 Employee joins Enron and vesting starts
+// 21/10 Employee joins Echelon and vesting starts
 // 22/03 Mainnet launch
 // 22/09 Cliff ends
 // 23/02 Lock ends
@@ -444,7 +444,7 @@ func delegate(clawbackAccount *types.ClawbackVestingAccount, amount int64) error
 	addr, err := sdk.AccAddressFromBech32(clawbackAccount.Address)
 	s.Require().NoError(err)
 	//
-	val, err := sdk.ValAddressFromBech32("enronvaloper1z3t55m0l9h0eupuz3dp5t5cypyv674jjn4d6nn")
+	val, err := sdk.ValAddressFromBech32("echelonvaloper1z3t55m0l9h0eupuz3dp5t5cypyv674jjn4d6nn")
 	s.Require().NoError(err)
 	delegateMsg := stakingtypes.NewMsgDelegate(addr, val, sdk.NewCoin(stakingtypes.DefaultParams().BondDenom, sdk.NewInt(amount)))
 	txBuilder.SetMsgs(delegateMsg)

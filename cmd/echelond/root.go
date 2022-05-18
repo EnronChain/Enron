@@ -38,16 +38,16 @@ import (
 	servercfg "github.com/tharsis/ethermint/server/config"
 	srvflags "github.com/tharsis/ethermint/server/flags"
 
-	"github.com/enron/enron/v3/app"
-	cmdcfg "github.com/enron/enron/v3/cmd/config"
-	enronkr "github.com/enron/enron/v3/crypto/keyring"
+	"github.com/echelonfoundation/echelon/v3/app"
+	cmdcfg "github.com/echelonfoundation/echelon/v3/cmd/config"
+	echelonkr "github.com/echelonfoundation/echelon/v3/crypto/keyring"
 )
 
 const (
-	EnvPrefix = "ENROND"
+	EnvPrefix = "ECHELOND"
 )
 
-// NewRootCmd creates a new root command for enrond. It is called once in the
+// NewRootCmd creates a new root command for echelond. It is called once in the
 // main function.
 func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 	encodingConfig := encoding.MakeConfig(app.ModuleBasics)
@@ -60,12 +60,12 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 		WithAccountRetriever(types.AccountRetriever{}).
 		WithBroadcastMode(flags.BroadcastBlock).
 		WithHomeDir(app.DefaultNodeHome).
-		WithKeyringOptions(enronkr.Option()).
+		WithKeyringOptions(echelonkr.Option()).
 		WithViper(EnvPrefix)
 
 	rootCmd := &cobra.Command{
 		Use:   app.Name,
-		Short: "Enron Daemon",
+		Short: "Echelon Daemon",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs
 			cmd.SetOut(cmd.OutOrStdout())
@@ -206,7 +206,7 @@ func initAppConfig(chainID string) (string, interface{}) {
 
 	srvCfg.EVM.MaxTxGasWanted = 53948 // Lower allows more transaction throughput
 
-	srvCfg.MinGasPrices = "0.0025aenron"
+	srvCfg.MinGasPrices = "0.0025aechelon"
 
 	srvCfg.StateSync.SnapshotInterval = 0 // Only 1500 for non-validators
 	srvCfg.StateSync.SnapshotKeepRecent = 2
@@ -246,7 +246,7 @@ func (a appCreator) newApp(logger log.Logger, db dbm.DB, traceStore io.Writer, a
 		panic(err)
 	}
 
-	enronApp := app.NewEnron(
+	echelonApp := app.NewEchelon(
 		logger, db, traceStore, true, skipUpgradeHeights,
 		cast.ToString(appOpts.Get(flags.FlagHome)),
 		cast.ToUint(appOpts.Get(sdkserver.FlagInvCheckPeriod)),
@@ -265,7 +265,7 @@ func (a appCreator) newApp(logger log.Logger, db dbm.DB, traceStore io.Writer, a
 		baseapp.SetSnapshotKeepRecent(cast.ToUint32(appOpts.Get(sdkserver.FlagStateSyncSnapshotKeepRecent))),
 	)
 
-	return enronApp
+	return echelonApp
 }
 
 // appExport creates a new simapp (optionally at a given height)
@@ -274,21 +274,21 @@ func (a appCreator) appExport(
 	logger log.Logger, db dbm.DB, traceStore io.Writer, height int64, forZeroHeight bool, jailAllowedAddrs []string,
 	appOpts servertypes.AppOptions,
 ) (servertypes.ExportedApp, error) {
-	var enronApp *app.Enron
+	var echelonApp *app.Echelon
 	homePath, ok := appOpts.Get(flags.FlagHome).(string)
 	if !ok || homePath == "" {
 		return servertypes.ExportedApp{}, errors.New("application home not set")
 	}
 
 	if height != -1 {
-		enronApp = app.NewEnron(logger, db, traceStore, false, map[int64]bool{}, "", uint(1), a.encCfg, appOpts)
+		echelonApp = app.NewEchelon(logger, db, traceStore, false, map[int64]bool{}, "", uint(1), a.encCfg, appOpts)
 
-		if err := enronApp.LoadHeight(height); err != nil {
+		if err := echelonApp.LoadHeight(height); err != nil {
 			return servertypes.ExportedApp{}, err
 		}
 	} else {
-		enronApp = app.NewEnron(logger, db, traceStore, true, map[int64]bool{}, "", uint(1), a.encCfg, appOpts)
+		echelonApp = app.NewEchelon(logger, db, traceStore, true, map[int64]bool{}, "", uint(1), a.encCfg, appOpts)
 	}
 
-	return enronApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs)
+	return echelonApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs)
 }

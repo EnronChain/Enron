@@ -5,7 +5,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	"github.com/enron/enron/v3/x/erc20/types"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
 )
 
 // MintingEnabled checks that:

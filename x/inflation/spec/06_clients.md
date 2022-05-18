@@ -9,8 +9,8 @@ REST.
 
 ## CLI
 
-Find below a list of `enrond` commands added with the `x/inflation` module. You
-can obtain the full list by using the `enrond -h` command.
+Find below a list of `echelond` commands added with the `x/inflation` module. You
+can obtain the full list by using the `echelond -h` command.
 
 ### Queries
 
@@ -21,7 +21,7 @@ The `query` commands allow users to query `inflation` state.
 Allows users to query the current inflation period.
 
 ```go
-enrond query inflation period [flags]
+echelond query inflation period [flags]
 ```
 
 **`epoch-mint-provision`**
@@ -29,7 +29,7 @@ enrond query inflation period [flags]
 Allows users to query the current inflation epoch provisions value.
 
 ```go
-enrond query inflation epoch-mint-provision [flags]
+echelond query inflation epoch-mint-provision [flags]
 ```
 
 **`skipped-epochs`**
@@ -37,7 +37,7 @@ enrond query inflation epoch-mint-provision [flags]
 Allows users to query the current number of skipped epochs.
 
 ```go
-enrond query inflation skipped-epochs [flags]
+echelond query inflation skipped-epochs [flags]
 ```
 
 **`total-supply`**
@@ -45,7 +45,7 @@ enrond query inflation skipped-epochs [flags]
 Allows users to query the total supply of tokens in circulation.
 
 ```go
-enrond query inflation total-supply [flags]
+echelond query inflation total-supply [flags]
 ```
 
 **`inflation-rate`**
@@ -53,7 +53,7 @@ enrond query inflation total-supply [flags]
 Allows users to query the inflation rate of the current period.
 
 ```go
-enrond query inflation inflation-rate [flags]
+echelond query inflation inflation-rate [flags]
 ```
 
 **`params`**
@@ -61,7 +61,7 @@ enrond query inflation inflation-rate [flags]
 Allows users to query the current inflation parameters.
 
 ```go
-enrond query inflation params [flags]
+echelond query inflation params [flags]
 ```
 
 ### Proposals
@@ -74,7 +74,7 @@ using the governance module CLI:
 Allows users to submit a `ParameterChangeProposal`.
 
 ```bash
-enrond tx gov submit-proposal param-change [proposal-file] [flags]
+echelond tx gov submit-proposal param-change [proposal-file] [flags]
 ```
 
 ## gRPC
@@ -83,15 +83,15 @@ enrond tx gov submit-proposal param-change [proposal-file] [flags]
 
 | Verb   | Method                                        | Description                                   |
 | ------ | --------------------------------------------- | --------------------------------------------- |
-| `gRPC` | `enron.inflation.v1.Query/Period`             | Gets current inflation period                 |
-| `gRPC` | `enron.inflation.v1.Query/EpochMintProvision` | Gets current inflation epoch provisions value |
-| `gRPC` | `enron.inflation.v1.Query/Params`             | Gets current inflation parameters             |
-| `gRPC` | `enron.inflation.v1.Query/SkippedEpochs`      | Gets current number of skipped epochs         |
-| `gRPC` | `enron.inflation.v1.Query/TotalSupply`        | Gets current total supply                     |
-| `gRPC` | `enron.inflation.v1.Query/InflationRate`      | Gets current inflation rate                   |
-| `GET`  | `/enron/inflation/v1/period`                  | Gets current inflation period                 |
-| `GET`  | `/enron/inflation/v1/epoch_mint_provision`    | Gets current inflation epoch provisions value |
-| `GET`  | `/enron/inflation/v1/skipped_epochs`          | Gets current number of skipped epochs         |
-| `GET`  | `/enron/inflation/v1/total_supply`          | Gets current total supply                     |
-| `GET`  | `/enron/inflation/v1/inflation_rate`          | Gets current inflation rate                   |
-| `GET`  | `/enron/inflation/v1/params`                  | Gets current inflation parameters             |
+| `gRPC` | `echelon.inflation.v1.Query/Period`             | Gets current inflation period                 |
+| `gRPC` | `echelon.inflation.v1.Query/EpochMintProvision` | Gets current inflation epoch provisions value |
+| `gRPC` | `echelon.inflation.v1.Query/Params`             | Gets current inflation parameters             |
+| `gRPC` | `echelon.inflation.v1.Query/SkippedEpochs`      | Gets current number of skipped epochs         |
+| `gRPC` | `echelon.inflation.v1.Query/TotalSupply`        | Gets current total supply                     |
+| `gRPC` | `echelon.inflation.v1.Query/InflationRate`      | Gets current inflation rate                   |
+| `GET`  | `/echelon/inflation/v1/period`                  | Gets current inflation period                 |
+| `GET`  | `/echelon/inflation/v1/epoch_mint_provision`    | Gets current inflation epoch provisions value |
+| `GET`  | `/echelon/inflation/v1/skipped_epochs`          | Gets current number of skipped epochs         |
+| `GET`  | `/echelon/inflation/v1/total_supply`          | Gets current total supply                     |
+| `GET`  | `/echelon/inflation/v1/inflation_rate`          | Gets current inflation rate                   |
+| `GET`  | `/echelon/inflation/v1/params`                  | Gets current inflation parameters             |

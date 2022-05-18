@@ -23,10 +23,10 @@ import (
 	"github.com/tharsis/ethermint/encoding"
 	"github.com/tharsis/ethermint/tests"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
-	"github.com/enron/enron/v3/app"
-	"github.com/enron/enron/v3/testutil"
-	incentivestypes "github.com/enron/enron/v3/x/incentives/types"
-	inflationtypes "github.com/enron/enron/v3/x/inflation/types"
+	"github.com/echelonfoundation/echelon/v3/app"
+	"github.com/echelonfoundation/echelon/v3/testutil"
+	incentivestypes "github.com/echelonfoundation/echelon/v3/x/incentives/types"
+	inflationtypes "github.com/echelonfoundation/echelon/v3/x/inflation/types"
 
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
@@ -35,8 +35,8 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tharsis/ethermint/server/config"
 	evm "github.com/tharsis/ethermint/x/evm/types"
-	"github.com/enron/enron/v3/contracts"
-	"github.com/enron/enron/v3/x/claims/types"
+	"github.com/echelonfoundation/echelon/v3/contracts"
+	"github.com/echelonfoundation/echelon/v3/x/claims/types"
 )
 
 var _ = Describe("Claiming", Ordered, func() {

@@ -6,7 +6,7 @@ parent:
 
 # Basics
 
-This repository contains reference documentation on the basic concepts of Enron.
+This repository contains reference documentation on the basic concepts of Echelon.
 
 1. [Chain ID](./chain_id.md)
 1. [Accounts](./accounts.md)

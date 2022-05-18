@@ -2,4 +2,4 @@ make install
 
 echo Adding to /usr/local/bin/
 
-cp ~/go/bin/enrond /usr/local/bin/enrond
+cp ~/go/bin/echelond /usr/local/bin/echelond

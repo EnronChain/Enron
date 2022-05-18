@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/enron/enron/v3/x/erc20/types"
-	inflationtypes "github.com/enron/enron/v3/x/inflation/types"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
+	inflationtypes "github.com/echelonfoundation/echelon/v3/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestConvertCoinNativeCoin() {

@@ -8,7 +8,7 @@ import (
 
 const (
 	// Bech32Prefix defines the Bech32 prefix used for EthAccounts
-	Bech32Prefix = "enron"
+	Bech32Prefix = "echelon"
 
 	// Bech32PrefixAccAddr defines the Bech32 prefix of an account's address
 	Bech32PrefixAccAddr = Bech32Prefix
@@ -26,9 +26,9 @@ const (
 
 const (
 	// DisplayDenom defines the denomination displayed to users in client applications.
-	DisplayDenom = "enron"
-	// BaseDenom defines to the default denomination used in Enron (staking, EVM, governance, etc.)
-	BaseDenom = "aenron"
+	DisplayDenom = "echelon"
+	// BaseDenom defines to the default denomination used in Echelon (staking, EVM, governance, etc.)
+	BaseDenom = "aechelon"
 )
 
 // SetBech32Prefixes sets the global prefixes to be used when serializing addresses and public keys to Bech32 strings.

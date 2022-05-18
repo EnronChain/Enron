@@ -9,7 +9,7 @@ can be modified via governance.
 
 | Key                      | Type                   | Default Value                                                                 |
 | ------------------------ | ---------------------- | ----------------------------------------------------------------------------- |
-| `MintDenom`              | string                 | `evm.DefaultEVMDenom` // “aenron”                                             |
+| `MintDenom`              | string                 | `evm.DefaultEVMDenom` // “aechelon”                                             |
 | `ExponentialCalculation` | ExponentialCalculation | `A: sdk.NewDec(int64(300_000_000))`                                           |
 |                          |                        | `R: sdk.NewDecWithPrec(50, 2)`                                                |
 |                          |                        | `C: sdk.NewDec(int64(9_375_000))`                                             |
@@ -40,13 +40,13 @@ The `IinflationDistribution` parameter defines the distribution in which
 inflation is allocated through minting on each epoch (`stakingRewards`,
 `usageIncentives`,  `CommunityPool`). The `x/inflation` excludes the team
 vesting distribution, as team vesting is minted once at genesis. To reflect this
-the distribution from the Enron Token Model is recalculated into a distribution
+the distribution from the Echelon Token Model is recalculated into a distribution
 that excludes team vesting. Note, that this does not change the inflation
-proposed in the Enron Token Model. Each `InflationDistribution` can be
+proposed in the Echelon Token Model. Each `InflationDistribution` can be
 calculated like this:
 
 ```markdown
-stakingRewards = enronTokenModelDistribution / (1 - teamVestingDistribution)
+stakingRewards = echelonTokenModelDistribution / (1 - teamVestingDistribution)
 0.5333333      = 40%                         / (1 - 25%)
 ```
 

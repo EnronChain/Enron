@@ -1,5 +1,5 @@
 {
-  "name": "enron",
+  "name": "echelon",
   "version": "1.0.0",
   "description": "<!-- parent:   order: false -->",
   "main": "index.js",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enron/enron.git"
+    "url": "git+https://github.com/echelonfoundation/echelon.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/enron/enron/issues"
+    "url": "https://github.com/echelonfoundation/echelon/issues"
   },
-  "homepage": "https://github.com/enron/enron#readme"
+  "homepage": "https://github.com/echelonfoundation/echelon#readme"
 }

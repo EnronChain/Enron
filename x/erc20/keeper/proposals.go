@@ -9,8 +9,8 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 
-	"github.com/enron/enron/v3/contracts"
-	"github.com/enron/enron/v3/x/erc20/types"
+	"github.com/echelonfoundation/echelon/v3/contracts"
+	"github.com/echelonfoundation/echelon/v3/x/erc20/types"
 )
 
 // RegisterCoin deploys an erc20 contract and creates the token pair for the existing cosmos coin
@@ -129,7 +129,7 @@ func (k Keeper) RegisterERC20(ctx sdk.Context, contract common.Address) (*types.
 	return &pair, nil
 }
 
-// CreateCoinMetadata generates the metadata to represent the ERC20 token on enron.
+// CreateCoinMetadata generates the metadata to represent the ERC20 token on echelon.
 func (k Keeper) CreateCoinMetadata(ctx sdk.Context, contract common.Address) (*banktypes.Metadata, error) {
 	strContract := contract.String()
 
