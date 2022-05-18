@@ -6,6 +6,10 @@ order: 1
 
 This document outlines the steps to join an existing testnet {synopsis}
 
+## Pre-requisite Readings
+
+- [Validator Security](./security.md) {prereq}
+
 ## Mainnet
 
 You need to set the **genesis file** and **seeds**. If you need more information about past networks, check our [mainnet repo](https://github.com/tharsis/mainnet).
@@ -135,7 +139,7 @@ enrond tx staking create-validator \
 ```
 
 ::: danger
-🚨 **DANGER**: <u>Never</u> create your validator keys using a [`test`](./../guides/keys-wallets/keyring.md#testing) keying backend. Doing so might result in a loss of funds by making your funds remotely accessible via the `eth_sendTransaction` JSON-RPC endpoint.
+🚨 **DANGER**: <u>Never</u> create your validator keys using a [`test`](./../guides/keys-wallets/keyring.md#testing) keyring backend. Doing so might result in a loss of funds by making your funds remotely accessible via the `eth_sendTransaction` JSON-RPC endpoint.
 
 Ref: [Security Advisory: Insecurely configured geth can make funds remotely accessible](https://blog.ethereum.org/2015/08/29/security-alert-insecurely-configured-geth-can-make-funds-remotely-accessible/)
 :::
