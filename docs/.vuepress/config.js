@@ -51,12 +51,12 @@ module.exports = {
         project: {
             name: 'Enron',
             denom: 'Enron',
-            ticker: 'ECH',
+            ticker: 'ENR',
             binary: 'enrond',
             testnet_denom: 'tEnron',
             testnet_ticker: 'tENRON',
-            rpc_url: 'https://eth.bd.enron.org:8545',
-            rpc_url_testnet: 'https://eth.bd.enron.dev:8545',
+            rpc_url: 'https://enr.bd.enron.org:8545',
+            rpc_url_testnet: 'https://enr.bd.enron.dev:8545',
             rpc_url_local: 'http://localhost:8545/',
             chain_id: '3000',
             testnet_chain_id: '9003',
@@ -294,11 +294,11 @@ module.exports = {
                 },
                 {
                     service: "twitter",
-                    url: "https://twitter.com/EnronOrg",
+                    url: "https://twitter.com/EnronNetwork",
                 },
                 {
                     service: "telegram",
-                    url: "https://t.me/EnronOrg",
+                    url: "https://t.me/EnronNetwork",
                 },
                 {
                     service: "linkedin",

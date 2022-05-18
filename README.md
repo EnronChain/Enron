@@ -4,7 +4,7 @@ parent:
 -->
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/102999403/161656793-7a826432-de47-46ea-b212-72907f462b7d.gif" />
+  <img src="https://" />
   <h1> Enron </h1>
 </div>
 
@@ -26,7 +26,7 @@ parent:
   </a>
 </div>
 <div align="center">
-  <a href="https://discord.gg/ArXNfK99ae">
+  <a href="https://discord.gg/enron">
     <img alt="Discord" src="https://img.shields.io/discord/962917488180490250.svg" />
   </a>
   <a href="https://github.com/enronchain/enron/actions?query=branch%3Amain+workflow%3ALint">
@@ -35,8 +35,8 @@ parent:
   <a href="https://codecov.io/gh/enronchain/enron">
     <img alt="Code Coverage" src="https://codecov.io/gh/enronchain/enron/branch/main/graph/badge.svg" />
   </a>
-  <a href="https://twitter.com/EnronFDN">
-    <img alt="Twitter Follow Enron" src="https://img.shields.io/twitter/follow/EnronFDN"/>
+  <a href="https://twitter.com/EnronNetwork">
+    <img alt="Twitter Follow Enron" src="https://img.shields.io/twitter/follow/EnronNetwork"/>
   </a>
 </div>
 
@@ -47,7 +47,7 @@ interoperable with Ethereum and Cosmos. It's built using the [Cosmos SDK](https:
 
 ## Installation
 
-For prerequisites and detailed build instructions please read the [Installation](https://docs.ech.network) instructions. Once the dependencies are installed, run:
+For prerequisites and detailed build instructions please read the [Installation](https://docs.enron.network) instructions. Once the dependencies are installed, run:
 
 ```bash
 make install
@@ -66,15 +66,15 @@ and then move it into the enrond config (after you have initilized your node)
 
 ## Quick Start
 
-To learn how the Enron works from a high-level perspective, go to the [Introduction](https://docs.ech.network) section from the documentation. You can also check the instructions to [Run a Node](https://docs.ech.network).
+To learn how the Enron works from a high-level perspective, go to the [Introduction](https://docs.enron.network) section from the documentation. You can also check the instructions to [Run a Node](https://docs.enron.network).
 
 ## Community
 
 The following chat channels and forums are a great spot to ask questions about Enron:
 
-- [Enron Twitter](https://twitter.com/EnronFDN)
-- [Enron Discord](https://discord.gg/ArXNfK99ae)
-- [Enron Telegram](https://t.me/enronchain)
+- [Enron Twitter](https://twitter.com/EnronNetwork)
+- [Enron Discord](https://discord.gg/enron)
+- [Enron Telegram](https://t.me/enronnetwork)
 
 ## Contributing
 

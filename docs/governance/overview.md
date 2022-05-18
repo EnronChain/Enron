@@ -30,7 +30,7 @@ Venues involve community members to different degrees and individuals often perf
 - **[Commonwealth](https://commonwealth.im/enron)**
     - All-in-one platform to discuss, vote, and fund projects together
     - Enron [proposals](https://commonwealth.im/enron/proposals) list
-- **[Telegram (@EnronOrg)](https://t.me/EnronOrg)**
+- **[Telegram (@EnronNetwork)](https://t.me/EnronNetwork)**
     - General Enron Telegram group
-- **[Twitter (@EnronOrg)](https://twitter.com/EnronOrg)**
+- **[Twitter (@EnronNetwork)](https://twitter.com/EnronNetwork)**
     - Official Enron Twitter

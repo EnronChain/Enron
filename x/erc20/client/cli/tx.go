@@ -164,7 +164,7 @@ Where metadata.json contains (example):
 	"base": "aenron",
 	"display: "enron",
 	"name": "Enron",
-	"symbol": "ECH"
+	"symbol": "ENR"
 }`, version.AppName,
 		),
 		RunE: func(cmd *cobra.Command, args []string) error {
