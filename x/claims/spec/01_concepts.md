@@ -6,9 +6,9 @@ order: 1
 
 ## Rektdrop
 
-The Echelon [Rektdrop](https://echelon.blog/the-echelon-rektdrop-abbe931ba823) is the genesis airdrop for the ECHELON token to Cosmos Hub, Osmosis and Ethereum users.
+The Enron [Rektdrop](https://enron.blog/the-enron-rektdrop-abbe931ba823) is the genesis airdrop for the ENRON token to Cosmos Hub, Osmosis and Ethereum users.
 
-> The end goal of Echelon is to bring together the Cosmos and Ethereum community and thus the Rektdrop has been designed to reward past participation in both networks under this theme of “getting rekt”.
+> The end goal of Enron is to bring together the Cosmos and Ethereum community and thus the Rektdrop has been designed to reward past participation in both networks under this theme of “getting rekt”.
 
 The Rektdrop is the first airdrop that:
 
@@ -48,7 +48,7 @@ After voting on a proposal, the corresponding proportion will be airdropped to t
 
 ### Staking (i.e Delegate) Action
 
-After staking Echelon tokens (i.e delegating), the corresponding proportion will be airdropped to the user's balance by performing a transfer from the claim escrow account (`ModuleAccount`) to the user.
+After staking Enron tokens (i.e delegating), the corresponding proportion will be airdropped to the user's balance by performing a transfer from the claim escrow account (`ModuleAccount`) to the user.
 
 ### EVM Action
 
@@ -64,24 +64,24 @@ A Claims Records is the metadata of claim data per address. It keeps track of al
 
 ## Claiming Process
 
-As described in the [Action](#action) section, a user must submit transactions to receive the allocated tokens from the airdrop. However, since Echelon only supports Ethereum keys and not de default Tendermint keys, this process differs for Ethereum and Cosmos eligible users.
+As described in the [Action](#action) section, a user must submit transactions to receive the allocated tokens from the airdrop. However, since Enron only supports Ethereum keys and not de default Tendermint keys, this process differs for Ethereum and Cosmos eligible users.
 
 ### Ethereum Users
 
-Echelon shares the coin type (`60`) and key derivation (Ethereum `secp256k1`) with Ethereum. This allows users (EOA accounts) that have been allocated ECHELON tokens to directly claim their tokens using their preferred web3 wallet.
+Enron shares the coin type (`60`) and key derivation (Ethereum `secp256k1`) with Ethereum. This allows users (EOA accounts) that have been allocated ENRON tokens to directly claim their tokens using their preferred web3 wallet.
 
 ### Cosmos Hub and Osmosis Users
 
-Cosmos Hub and Osmosis users who use the default Tendermint `secp256k1` keys, need to perform a "cross-chain attestation" of their Echelon address.
+Cosmos Hub and Osmosis users who use the default Tendermint `secp256k1` keys, need to perform a "cross-chain attestation" of their Enron address.
 
 This can be done by submitting an IBC transfer from Cosmos Hub and Osmosis, which is signed by the addresses, that have been allocated the tokens.
 
-The recipient Echelon address of this IBC transfer is the address, that the tokens will be airdropped to.
+The recipient Enron address of this IBC transfer is the address, that the tokens will be airdropped to.
 
 ::: warning
 **IMPORTANT**
 
-Only submit an IBC transfer to an Echelon address that you own. Otherwise, you will lose your airdrop allocation.
+Only submit an IBC transfer to an Enron address that you own. Otherwise, you will lose your airdrop allocation.
 :::
 
 ## Decay Period

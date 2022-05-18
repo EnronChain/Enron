@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "Echelon Documentation",
+  "description": "Enron Documentation",
   "main": "index.js",
   "scripts": {
     "preserve": "./pre.sh",
@@ -13,7 +13,7 @@
     "postbuild": "./post.sh"
   },
   "keywords": [
-    "echelon",
+    "enron",
     "cosmos",
     "ethereum",
     "blockchain",

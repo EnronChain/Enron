@@ -4,7 +4,7 @@ order: 1
 
 # Installation
 
-Build and install the Echelon binaries from source or using Docker. {synopsis}
+Build and install the Enron binaries from source or using Docker. {synopsis}
 
 ## Pre-requisites
 
@@ -14,7 +14,7 @@ Build and install the Echelon binaries from source or using Docker. {synopsis}
 ## Install Go
 
 ::: warning
-Echelon is built using [Go](https://golang.org/dl/) version `1.17.5+`
+Enron is built using [Go](https://golang.org/dl/) version `1.17.5+`
 :::
 
 ```bash
@@ -22,7 +22,7 @@ go version
 ```
 
 :::tip
-If the `echelond: command not found` error message is returned, confirm that your [`GOPATH`](https://golang.org/doc/gopath_code#GOPATH) is correctly configured by running the following command:
+If the `enrond: command not found` error message is returned, confirm that your [`GOPATH`](https://golang.org/doc/gopath_code#GOPATH) is correctly configured by running the following command:
 
 ```bash
 export PATH=$PATH:$(go env GOPATH)/bin
@@ -33,7 +33,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 ## Install Binaries
 
 ::: tip
-The latest {{ $themeConfig.project.name }} [version](https://github.com/enronchain/echelon/releases) is `{{ $themeConfig.project.binary }} {{ $themeConfig.project.latest_version }}`
+The latest {{ $themeConfig.project.name }} [version](https://github.com/enron/enron/releases) is `{{ $themeConfig.project.binary }} {{ $themeConfig.project.latest_version }}`
 :::
 
 ### GitHub
@@ -41,15 +41,15 @@ The latest {{ $themeConfig.project.name }} [version](https://github.com/enroncha
 Clone and build {{ $themeConfig.project.name }} using `git`:
 
 ```bash
-git clone https://github.com/enronchain/echelon.git
-cd echelon
+git clone https://github.com/enron/enron.git
+cd enron
 make install
 ```
 
 Check that the `{{ $themeConfig.project.binary }}` binaries have been successfully installed:
 
 ```bash
-echelond version
+enrond version
 ```
 
 ### Docker
@@ -60,22 +60,22 @@ You can build {{ $themeConfig.project.name }} using Docker by running:
 make build-docker
 ```
 
-The command above will create a docker container: `tharsishq/echelon:latest`. Now you can run `echelond` in the container.
+The command above will create a docker container: `tharsishq/enron:latest`. Now you can run `enrond` in the container.
 
 ```bash
-docker run -it -p 26657:26657 -p 26656:26656 -v ~/.echelond/:/root/.echelond tharsishq/echelon:latest echelond version
+docker run -it -p 26657:26657 -p 26656:26656 -v ~/.enrond/:/root/.enrond tharsishq/enron:latest enrond version
 
 # To initialize
-# docker run -it -p 26657:26657 -p 26656:26656 -v ~/.echelond/:/root/.echelond tharsishq/echelon:latest echelond init test-chain --chain-id test_9000-2
+# docker run -it -p 26657:26657 -p 26656:26656 -v ~/.enrond/:/root/.enrond tharsishq/enron:latest enrond init test-chain --chain-id test_9000-2
 
 # To run
-# docker run -it -p 26657:26657 -p 26656:26656 -v ~/.echelond/:/root/.echelond tharsishq/echelon:latest echelond start
+# docker run -it -p 26657:26657 -p 26656:26656 -v ~/.enrond/:/root/.enrond tharsishq/enron:latest enrond start
 ```
 
 ### Releases
 
-You can also download a specific release available on the {{ $themeConfig.project.name }} [repository](https://github.com/enronchain/echelon/releases) or via command line:
+You can also download a specific release available on the {{ $themeConfig.project.name }} [repository](https://github.com/enron/enron/releases) or via command line:
 
 ```bash
-go install github.com/enronchain/echelon@latest
+go install github.com/enron/enron@latest
 ```

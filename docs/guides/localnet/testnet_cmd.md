@@ -18,7 +18,7 @@ This is similar to the `init` command when initializing a single node, but in th
 In order to initialize the files for a test network, run the following command:
 
 ```bash
-echelond testnet init-files
+enrond testnet init-files
 ```
 
 You should see the following output in your terminal:
@@ -44,14 +44,14 @@ The `start` subcommand both initializes and starts an in-process test network. T
 You can start the local test network by running the following command:
 
 ```bash
-echelond testnet start
+enrond testnet start
 ```
 
 You should see something similar to the following:
 
 ```bash
 acquiring test network lock
-preparing test network with chain-id "echelon_1276974-1"
+preparing test network with chain-id "enron_1276974-1"
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -74,19 +74,19 @@ The first validator node is now running in-process, which means the test network
 Check the status of the first validator node:
 
 ```bash
-echelond status
+enrond status
 ```
 
 Import the key from the provided mnemonic:
 
 ```bash
-echelond keys add test --recover
+enrond keys add test --recover
 ```
 
 Check the balance of the account address:
 
 ```bash
-echelond q bank balances [address]
+enrond q bank balances [address]
 ```
 
 Use this test account to manually test against the test network.

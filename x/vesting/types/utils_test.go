@@ -24,31 +24,31 @@ func (suite *ScheduleTestSuite) TestScaleCoins() {
 	}{
 		{
 			"one coin",
-			sdk.NewCoins(sdk.NewCoin("echelon", sdk.NewInt(10))),
+			sdk.NewCoins(sdk.NewCoin("enron", sdk.NewInt(10))),
 			sdk.NewDecWithPrec(50, 2),
-			sdk.NewCoins(sdk.NewCoin("echelon", sdk.NewInt(5))),
+			sdk.NewCoins(sdk.NewCoin("enron", sdk.NewInt(5))),
 		},
 		{
 			"zero coin",
-			sdk.NewCoins(sdk.NewCoin("echelon", sdk.ZeroInt())),
+			sdk.NewCoins(sdk.NewCoin("enron", sdk.ZeroInt())),
 			sdk.NewDecWithPrec(50, 2),
-			sdk.NewCoins(sdk.NewCoin("echelon", sdk.ZeroInt())),
+			sdk.NewCoins(sdk.NewCoin("enron", sdk.ZeroInt())),
 		},
 		{
 			"two coins",
 			sdk.NewCoins(
-				sdk.NewCoin("echelon", sdk.NewInt(10)),
+				sdk.NewCoin("enron", sdk.NewInt(10)),
 				sdk.NewCoin("photon", sdk.NewInt(20)),
 			),
 			sdk.NewDecWithPrec(50, 2),
 			sdk.NewCoins(
-				sdk.NewCoin("echelon", sdk.NewInt(5)),
+				sdk.NewCoin("enron", sdk.NewInt(5)),
 				sdk.NewCoin("photon", sdk.NewInt(10)),
 			),
 		},
 		{
 			"zero scale",
-			sdk.NewCoins(sdk.NewCoin("echelon", sdk.NewInt(10))),
+			sdk.NewCoins(sdk.NewCoin("enron", sdk.NewInt(10))),
 			sdk.ZeroDec(),
 			sdk.Coins(nil),
 		},

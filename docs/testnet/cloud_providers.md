@@ -48,32 +48,32 @@ ssh -i digital-ocean-key root@<DROPLET_IP_ADDRESS>
 
 Now you are connected to the droplet.
 
-#### Install Echelon
+#### Install Enron
 
-Clone and build Echelon in the droplet using `git`:
+Clone and build Enron in the droplet using `git`:
 
 ```bash
-go install https://github.com/enronchain/echelon.git
+go install https://github.com/enron/enron.git
 ```
 
 Check that the binaries have been successfully installed:
 
 ```bash
-echelond -h
+enrond -h
 ```
 
 ### Copy the Genesis File
 
-To connect the node to the existing testnet, fetch the testnet's `genesis.json` file and copy it into the new droplets config directory (i.e `$HOME/.echelond/config/genesis.json`).
+To connect the node to the existing testnet, fetch the testnet's `genesis.json` file and copy it into the new droplets config directory (i.e `$HOME/.enrond/config/genesis.json`).
 
 To do this ssh into both the testnet droplet and the new node droplet.
 
 On your local machine copy the genesis.json file from the testnet droplet to the new droplet using:
 
 ```bash
-scp -3 root@<TESTNET_IP_ADDRESS>:$HOME/.echelond/config/genesis.json root@<NODE_IP_ADDRESS>:$HOME/.echelond/config/genesis.json
+scp -3 root@<TESTNET_IP_ADDRESS>:$HOME/.enrond/config/genesis.json root@<NODE_IP_ADDRESS>:$HOME/.enrond/config/genesis.json
 ```
 
 ### Start the Node
 
-Once the genesis file is copied over run `echelond start` inside the node droplet.
+Once the genesis file is copied over run `enrond start` inside the node droplet.

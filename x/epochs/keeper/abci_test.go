@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/enronchain/echelon/v3/x/epochs"
-	"github.com/enronchain/echelon/v3/x/epochs/types"
+	"github.com/enron/enron/v3/x/epochs"
+	"github.com/enron/enron/v3/x/epochs/types"
 )
 
 func (suite *KeeperTestSuite) TestEpochInfoChangesBeginBlockerAndInitGenesis() {

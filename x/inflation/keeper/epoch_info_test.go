@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"fmt"
 
-	"github.com/enronchain/echelon/v3/x/inflation/types"
+	"github.com/enron/enron/v3/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestSetGetEpochIdentifier() {

@@ -48,7 +48,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/tharsis/ethermint/crypto/hd"
-	"github.com/enronchain/echelon/v3/app"
+	"github.com/enron/enron/v3/app"
 
 	"github.com/tharsis/ethermint/encoding"
 	"github.com/tharsis/ethermint/server/config"
@@ -107,7 +107,7 @@ func DefaultConfig() Config {
 		AppConstructor:    NewAppConstructor(encCfg),
 		GenesisState:      app.ModuleBasics.DefaultGenesis(encCfg.Marshaler),
 		TimeoutCommit:     2 * time.Second,
-		ChainID:           fmt.Sprintf("echelon_%d-1", tmrand.Int63n(9999999999999)+1),
+		ChainID:           fmt.Sprintf("enron_%d-1", tmrand.Int63n(9999999999999)+1),
 		NumValidators:     4,
 		BondDenom:         ethermint.AttoPhoton,
 		MinGasPrices:      fmt.Sprintf("0.000006%s", ethermint.AttoPhoton),
@@ -122,10 +122,10 @@ func DefaultConfig() Config {
 	}
 }
 
-// NewAppConstructor returns a new Echelon AppConstructor
+// NewAppConstructor returns a new Enron AppConstructor
 func NewAppConstructor(encodingCfg params.EncodingConfig) AppConstructor {
 	return func(val Validator) servertypes.Application {
-		return app.NewEchelon(
+		return app.NewEnron(
 			val.Ctx.Logger, dbm.NewMemDB(), nil, true, make(map[int64]bool), val.Ctx.Config.RootDir, 0,
 			encodingCfg,
 			simapp.EmptyAppOptions{},
@@ -330,8 +330,8 @@ func New(l Logger, baseDir string, cfg Config) (*Network, error) {
 		ctx.Logger = logger
 
 		nodeDirName := fmt.Sprintf("node%d", i)
-		nodeDir := filepath.Join(network.BaseDir, nodeDirName, "echelond")
-		clientDir := filepath.Join(network.BaseDir, nodeDirName, "echeloncli")
+		nodeDir := filepath.Join(network.BaseDir, nodeDirName, "enrond")
+		clientDir := filepath.Join(network.BaseDir, nodeDirName, "enroncli")
 		gentxsDir := filepath.Join(network.BaseDir, "gentxs")
 
 		err := os.MkdirAll(filepath.Join(nodeDir, "config"), 0o750)

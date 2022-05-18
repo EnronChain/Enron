@@ -15,8 +15,8 @@ import (
 
 	"github.com/tharsis/ethermint/server/config"
 
-	"github.com/enronchain/echelon/v3/testutil/network"
-	"github.com/enronchain/echelon/v3/x/erc20/types"
+	"github.com/enron/enron/v3/testutil/network"
+	"github.com/enron/enron/v3/x/erc20/types"
 )
 
 // var _ = Describe("E2e", func() {
@@ -70,7 +70,7 @@ func (s *IntegrationTestSuite) SetupSuite() {
 
 	s.grpcQueryClient = types.NewQueryClient(grpcConn)
 
-	// FIXME: "unknown service echelon.erc20.v1.Msg"
+	// FIXME: "unknown service enron.erc20.v1.Msg"
 	s.grpcTxClient = types.NewMsgClient(grpcConn)
 }
 

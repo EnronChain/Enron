@@ -4,11 +4,11 @@ order: 4
 
 # Resources
 
-Learn about Echelon with the list of official resources. {synopsis}
+Learn about Enron with the list of official resources. {synopsis}
 
-- Official Documentation: [https://echelon.dev/](https://echelon.dev/)
-- Official Codebase: [https://github.com/enronchain/echelon](https://github.com/enronchain/echelon)
-- Official Website: [https://echelon.org/](https://echelon.org/)
+- Official Documentation: [https://enron.dev/](https://enron.dev/)
+- Official Codebase: [https://github.com/enron/enron](https://github.com/enron/enron)
+- Official Website: [https://enron.org/](https://enron.org/)
 
 ## Workshops and Videos
 
@@ -43,4 +43,4 @@ Note: most of these articles are outdated as they refer to the previous Ethermin
 
 ## Next {hide}
 
-Learn how to run an Echelon [node](./../quickstart/run_node.md) {hide}
+Learn how to run an Enron [node](./../quickstart/run_node.md) {hide}

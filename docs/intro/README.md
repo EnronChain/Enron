@@ -6,7 +6,7 @@ parent:
 
 # Introduction
 
-This folder contains introduction material for Echelon.
+This folder contains introduction material for Enron.
 
 1. [Overview](./overview)
 1. [Architecture](./architecture)
@@ -18,4 +18,4 @@ After reading the introduction material, head over to the [basics](../basics/REA
 
 ## Next {hide}
 
-Get an high-level [overview](./overview) of Echelon {hide}
+Get an high-level [overview](./overview) of Enron {hide}

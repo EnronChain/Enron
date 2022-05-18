@@ -6,9 +6,9 @@ parent:
 
 # Core Concepts
 
-This repository contains reference documentation on the core concepts of Echelon.
+This repository contains reference documentation on the core concepts of Enron.
 
 1. [Encoding](./encoding.md)
 2. [Pending State](./pending_state.md)
 
-After reading the core concepts, head on to the [guides](../guides/README.md) to learn how to use Ethereum tooling with Echelon.
+After reading the core concepts, head on to the [guides](../guides/README.md) to learn how to use Ethereum tooling with Enron.

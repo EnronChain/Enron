@@ -14,7 +14,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	ethermint "github.com/tharsis/ethermint/types"
 
-	"github.com/enronchain/echelon/v3/x/incentives/types"
+	"github.com/enron/enron/v3/x/incentives/types"
 )
 
 var _ types.QueryServer = Keeper{}

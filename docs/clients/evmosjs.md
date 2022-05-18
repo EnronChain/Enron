@@ -2,11 +2,11 @@
 order: 1
 -->
 
-# Echelonjs
+# Enronjs
 
-Use the echelonjs library for connecting clients to Echelon {synopsis}
+Use the enronjs library for connecting clients to Enron {synopsis}
 
-[`echelonjs`](https://github.com/enronchain/echelonjs) is a JavaScript and TypeScript client library for [Echelon](https://github.com/enronchain/echelon) and [Ethermint](https://github.com/tharsis/ethermint) nodes.
+[`enronjs`](https://github.com/enron/enronjs) is a JavaScript and TypeScript client library for [Enron](https://github.com/enron/enron) and [Ethermint](https://github.com/tharsis/ethermint) nodes.
 
 ::: tip
 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧
@@ -18,10 +18,10 @@ This documentation page is currently under work in progress.
 
 ## Cosmjs
 
-Additionally to `echelonjs`, users can integrate [cosmjs](https://github.com/cosmos/cosmjs) to:
+Additionally to `enronjs`, users can integrate [cosmjs](https://github.com/cosmos/cosmjs) to:
 
-- Connect to Echelon Tendermint RPC
-- Use Echelon Cosmos Proto Signing
+- Connect to Enron Tendermint RPC
+- Use Enron Cosmos Proto Signing
 - Network and misc. utils and more
 
 CosmJS documentation can be found [here](https://cosmos.github.io/cosmjs). As of February 2022, CosmJS documentation is still work in progress.

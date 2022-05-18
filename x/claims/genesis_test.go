@@ -15,10 +15,10 @@ import (
 	"github.com/tharsis/ethermint/tests"
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
-	"github.com/enronchain/echelon/v3/app"
-	"github.com/enronchain/echelon/v3/x/claims"
-	"github.com/enronchain/echelon/v3/x/claims/types"
-	inflationtypes "github.com/enronchain/echelon/v3/x/inflation/types"
+	"github.com/enron/enron/v3/app"
+	"github.com/enron/enron/v3/x/claims"
+	"github.com/enron/enron/v3/x/claims/types"
+	inflationtypes "github.com/enron/enron/v3/x/inflation/types"
 )
 
 type GenesisTestSuite struct {
@@ -26,7 +26,7 @@ type GenesisTestSuite struct {
 
 	ctx sdk.Context
 
-	app     *app.Echelon
+	app     *app.Enron
 	genesis types.GenesisState
 }
 
@@ -37,7 +37,7 @@ func (suite *GenesisTestSuite) SetupTest() {
 	suite.app = app.Setup(false, feemarkettypes.DefaultGenesisState())
 	suite.ctx = suite.app.BaseApp.NewContext(false, tmproto.Header{
 		Height:          1,
-		ChainID:         "echelon_3000-3",
+		ChainID:         "enron_3000-3",
 		Time:            time.Now().UTC(),
 		ProposerAddress: consAddress.Bytes(),
 
@@ -78,8 +78,8 @@ func TestGenesisTestSuite(t *testing.T) {
 
 var (
 	now     = time.Now().UTC()
-	acc1, _ = sdk.AccAddressFromBech32("echelon1qxx0fdsmruzuar2fay88lfw6sce6emamyu2s8h4d")
-	acc2, _ = sdk.AccAddressFromBech32("echelon1nsrs4t7dngkdltehkm3p6n8dp22sz3mct9uhc8")
+	acc1, _ = sdk.AccAddressFromBech32("enron1qxx0fdsmruzuar2fay88lfw6sce6emamyu2s8h4d")
+	acc2, _ = sdk.AccAddressFromBech32("enron1nsrs4t7dngkdltehkm3p6n8dp22sz3mct9uhc8")
 )
 
 func (suite *GenesisTestSuite) TestClaimInitGenesis() {
@@ -113,7 +113,7 @@ func (suite *GenesisTestSuite) TestClaimInitGenesis() {
 				},
 			},
 			func() {
-				coins := sdk.NewCoins(sdk.NewCoin("aechelon", sdk.NewInt(2_800)))
+				coins := sdk.NewCoins(sdk.NewCoin("aenron", sdk.NewInt(2_800)))
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)
 				err = suite.app.BankKeeper.SendCoinsFromModuleToModule(suite.ctx, inflationtypes.ModuleName, types.ModuleName, coins)
@@ -139,7 +139,7 @@ func (suite *GenesisTestSuite) TestClaimInitGenesis() {
 				},
 			},
 			func() {
-				coins := sdk.NewCoins(sdk.NewCoin("aechelon", sdk.NewInt(400)))
+				coins := sdk.NewCoins(sdk.NewCoin("aenron", sdk.NewInt(400)))
 				err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 				suite.Require().NoError(err)
 				err = suite.app.BankKeeper.SendCoinsFromModuleToModule(suite.ctx, inflationtypes.ModuleName, types.ModuleName, coins)
@@ -188,7 +188,7 @@ func (suite *GenesisTestSuite) TestClaimExportGenesis() {
 		},
 	}
 
-	coins := sdk.NewCoins(sdk.NewCoin("aechelon", sdk.NewInt(400)))
+	coins := sdk.NewCoins(sdk.NewCoin("aenron", sdk.NewInt(400)))
 	err := suite.app.BankKeeper.MintCoins(suite.ctx, inflationtypes.ModuleName, coins)
 	suite.Require().NoError(err)
 	err = suite.app.BankKeeper.SendCoinsFromModuleToModule(suite.ctx, inflationtypes.ModuleName, types.ModuleName, coins)

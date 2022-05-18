@@ -5,8 +5,8 @@ import (
 	"github.com/tharsis/ethermint/tests"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/enronchain/echelon/v3/contracts"
-	"github.com/enronchain/echelon/v3/x/erc20/types"
+	"github.com/enron/enron/v3/contracts"
+	"github.com/enron/enron/v3/x/erc20/types"
 )
 
 func (suite *KeeperTestSuite) TestQueryERC20() {

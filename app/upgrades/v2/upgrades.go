@@ -5,8 +5,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	// claimstypes "github.com/enronchain/echelon/v3/x/claims/types"
-	erc20types "github.com/enronchain/echelon/v3/x/erc20/types"
+	// claimstypes "github.com/enron/enron/v3/x/claims/types"
+	erc20types "github.com/enron/enron/v3/x/erc20/types"
 )
 
 // CreateUpgradeHandler creates an SDK upgrade handler for v2

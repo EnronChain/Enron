@@ -1,10 +1,10 @@
 syntax = "proto3";
-package echelon.recovery.v1;
+package enron.recovery.v1;
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/duration.proto";
 
-option go_package = "github.com/enronchain/echelon/v3/x/recovery/types";
+option go_package = "github.com/enronchain/enron/v3/x/recovery/types";
 
 // GenesisState defines the recovery module's genesis state.
 message GenesisState {

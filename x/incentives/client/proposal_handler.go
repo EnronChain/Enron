@@ -3,8 +3,8 @@ package client
 import (
 	govclient "github.com/cosmos/cosmos-sdk/x/gov/client"
 
-	"github.com/enronchain/echelon/v3/x/incentives/client/cli"
-	"github.com/enronchain/echelon/v3/x/incentives/client/rest"
+	"github.com/enron/enron/v3/x/incentives/client/cli"
+	"github.com/enron/enron/v3/x/incentives/client/rest"
 )
 
 var (

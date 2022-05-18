@@ -1,7 +1,7 @@
 package keeper_test
 
 import (
-	"github.com/enronchain/echelon/v3/x/claims/types"
+	"github.com/enron/enron/v3/x/claims/types"
 )
 
 func (suite *KeeperTestSuite) TestParams() {

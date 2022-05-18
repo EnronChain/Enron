@@ -10,8 +10,8 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/enronchain/echelon/v3/contracts"
-	"github.com/enronchain/echelon/v3/x/erc20/types"
+	"github.com/enron/enron/v3/contracts"
+	"github.com/enron/enron/v3/x/erc20/types"
 )
 
 // Hooks wrapper struct for erc20 keeper

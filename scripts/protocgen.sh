@@ -41,5 +41,5 @@ buf protoc \
 $(find "$(pwd)/proto" -maxdepth 5 -name '*.proto')
 
 # move proto files to the right places
-cp -r github.com/enronchain/echelon/v*/x/* x/
+cp -r github.com/enronchain/enron/v*/x/* x/
 rm -rf github.com

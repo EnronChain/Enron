@@ -3,9 +3,9 @@ before:
   - go mod download
 
 builds:
-  - id: "echelond-linux-amd64"
-    main: ./cmd/echelond
-    binary: bin/echelond
+  - id: "enrond-linux-amd64"
+    main: ./cmd/enrond
+    binary: bin/enrond
     env:
       - CGO_ENABLED=1
       - CC=gcc
@@ -17,10 +17,10 @@ builds:
     flags:
       - -tags=cgo
     ldflags:
-      - -s -w -X github.com/cosmos/cosmos-sdk/version.Name=echelon -X github.com/cosmos/cosmos-sdk/version.AppName=echelond -X github.com/cosmos/cosmos-sdk/version.Version={{.Version}} -X github.com/cosmos/cosmos-sdk/version.Commit={{.Commit}}
-  - id: "echelond-linux-arm64"
-    main: ./cmd/echelond
-    binary: bin/echelond
+      - -s -w -X github.com/cosmos/cosmos-sdk/version.Name=enron -X github.com/cosmos/cosmos-sdk/version.AppName=enrond -X github.com/cosmos/cosmos-sdk/version.Version={{.Version}} -X github.com/cosmos/cosmos-sdk/version.Commit={{.Commit}}
+  - id: "enrond-linux-arm64"
+    main: ./cmd/enrond
+    binary: bin/enrond
     env:
       - CGO_ENABLED=1
       - CC=aarch64-linux-gnu-gcc
@@ -32,10 +32,10 @@ builds:
     flags:
       - -tags=cgo
     ldflags:
-      - -s -w -X github.com/cosmos/cosmos-sdk/version.Name=echelon -X github.com/cosmos/cosmos-sdk/version.AppName=echelond -X github.com/cosmos/cosmos-sdk/version.Version={{.Version}} -X github.com/cosmos/cosmos-sdk/version.Commit={{.Commit}}
-  - id: "echelond-windows"
-    main: ./cmd/echelond
-    binary: bin/echelond
+      - -s -w -X github.com/cosmos/cosmos-sdk/version.Name=enron -X github.com/cosmos/cosmos-sdk/version.AppName=enrond -X github.com/cosmos/cosmos-sdk/version.Version={{.Version}} -X github.com/cosmos/cosmos-sdk/version.Commit={{.Commit}}
+  - id: "enrond-windows"
+    main: ./cmd/enrond
+    binary: bin/enrond
     env:
       - CGO_ENABLED=1
       - CC=x86_64-w64-mingw32-gcc
@@ -48,7 +48,7 @@ builds:
       - -tags=cgo
       - -buildmode=exe
     ldflags:
-      - -s -w -X github.com/cosmos/cosmos-sdk/version.Name=echelon -X github.com/cosmos/cosmos-sdk/version.AppName=echelond -X github.com/cosmos/cosmos-sdk/version.Version={{.Version}} -X github.com/cosmos/cosmos-sdk/version.Commit={{.Commit}}
+      - -s -w -X github.com/cosmos/cosmos-sdk/version.Name=enron -X github.com/cosmos/cosmos-sdk/version.AppName=enrond -X github.com/cosmos/cosmos-sdk/version.Version={{.Version}} -X github.com/cosmos/cosmos-sdk/version.Commit={{.Commit}}
 
 archives:
 - name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
@@ -60,9 +60,9 @@ archives:
     - goos: windows
       format: zip
   builds:
-  - echelond-windows
-  - echelond-linux-amd64
-  - echelond-linux-arm64
+  - enrond-windows
+  - enrond-linux-amd64
+  - enrond-linux-arm64
   
 checksum:
   name_template: 'checksums.txt'

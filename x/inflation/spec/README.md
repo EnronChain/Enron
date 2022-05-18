@@ -9,9 +9,9 @@ parent:
 
 ## Abstract
 
-The `x/inflation` module mints new Echelon tokens and allocates them in daily
-epochs according to the [Echelon Token
-Model](https://echelon.blog/the-echelon-token-model-edc07014978b) distribution to
+The `x/inflation` module mints new Enron tokens and allocates them in daily
+epochs according to the [Enron Token
+Model](https://enron.blog/the-enron-token-model-edc07014978b) distribution to
 
 * Staking Rewards `40%`,
 * Team Vesting `25%`,
@@ -20,7 +20,7 @@ Model](https://echelon.blog/the-echelon-token-model-edc07014978b) distribution t
 
 It replaces the currently used Cosmos SDK `x/mint` module.
 
-The allocation of new coins incentivizes specific behaviour in the Echelon
+The allocation of new coins incentivizes specific behaviour in the Enron
 network. Inflation allocates funds to 1) the `Fee Collector account` (in the sdk
 `x/auth` module) to increase staking rewards, 2) the  `x/incentives` module
 account  to provide supply for usage incentives and 3) the community pool

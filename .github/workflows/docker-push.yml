@@ -40,4 +40,4 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64, linux/386, linux/arm64
-          tags: tharsishq/echelon:latest, tharsishq/echelon:${{ steps.meta.outputs.tag }}
+          tags: tharsishq/enron:latest, tharsishq/enron:${{ steps.meta.outputs.tag }}

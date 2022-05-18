@@ -4,14 +4,14 @@ order: 2
 
 # MetaMask
 
-Connect your Metamask wallet with Echelon {synopsis}
+Connect your Metamask wallet with Enron {synopsis}
 
 - [Download Metamask](https://metamask.io/download/) {prereq}
 
 The [MetaMask](https://metamask.io/) browser extension is a wallet for accessing Ethereum-enabled applications and managing user identities. It can be used to connect to {{ $themeConfig.project.name }} through the official testnet or via a locally-running {{ $themeConfig.project.name }} node.
 
 ::: tip
-If you are planning on developing on Echelon locally and you haven’t already set up your own local node, refer to [the quickstart tutorial](../../quickstart/run_node/), or follow the instructions in the [GitHub repository](https://github.com/enronchain/echelon/).
+If you are planning on developing on Enron locally and you haven’t already set up your own local node, refer to [the quickstart tutorial](../../quickstart/run_node/), or follow the instructions in the [GitHub repository](https://github.com/enron/enron/).
 :::
 
 ## Adding a New Network
@@ -60,9 +60,9 @@ Here is the list of fields that you can use to paste on Metamask:
 Once you have added {{ $themeConfig.project.name }} to the Metamask `Networks`, you can automatically import your accounts by:
 
 1. Go to the official EVM Chain ID Registry website: [chainlist.org](https://chainlist.org/)
-2. Search for `"Echelon"`
+2. Search for `"Enron"`
    ![chainlist.org website](./../img/chainlist.png)
-3. Click the `Connect Wallet` button under `Echelon Testnet`
+3. Click the `Connect Wallet` button under `Enron Testnet`
    ![add accounts via chainlist](./../img/chainlist_metamask.png)
 
 ### Manual Import
@@ -74,7 +74,7 @@ Close the `Settings`, go to `My Accounts` (top right circle) and select `Import 
 Now you can export your private key from the terminal using the following command. Again, make sure to replace `mykey` with the name of the key that you want to export and use the correct `keyring-backend`:
 
 ```bash
-echelond keys unsafe-export-eth-key mykey
+enrond keys unsafe-export-eth-key mykey
 ```
 
 Go back to the browser and select the `Private Key` option. Then paste the private key exported from the `unsafe-export-eth-key` command.

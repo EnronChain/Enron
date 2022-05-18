@@ -9,15 +9,15 @@ TMVERSION := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::'
 COMMIT := $(shell git log -1 --format='%H')
 LEDGER_ENABLED ?= true
 BINDIR ?= $(GOPATH)/bin
-ECHELON_BINARY = echelond
-ECHELON_DIR = echelon
+ENRON_BINARY = enrond
+ENRON_DIR = enron
 BUILDDIR ?= $(CURDIR)/build
 SIMAPP = ./app
-HTTPS_GIT := https://github.com/enronchain/echelon.git
+HTTPS_GIT := https://github.com/enronchain/enron.git
 DOCKER := $(shell which docker)
 DOCKER_BUF := $(DOCKER) run --rm -v $(CURDIR):/workspace --workdir /workspace bufbuild/buf
 NAMESPACE := tharsishq
-PROJECT := echelon
+PROJECT := enron
 DOCKER_IMAGE := $(NAMESPACE)/$(PROJECT)
 COMMIT_HASH := $(shell git rev-parse --short=7 HEAD)
 DOCKER_TAG := $(COMMIT_HASH)
@@ -68,8 +68,8 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=echelon \
-          -X github.com/cosmos/cosmos-sdk/version.AppName=$(ECHELON_BINARY) \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=enron \
+          -X github.com/cosmos/cosmos-sdk/version.AppName=$(ENRON_BINARY) \
           -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
           -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
           -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
@@ -129,7 +129,7 @@ build-reproducible: go.sum
 	$(DOCKER) rm latest-build || true
 	$(DOCKER) run --volume=$(CURDIR):/sources:ro \
         --env TARGET_PLATFORMS='linux/amd64' \
-        --env APP=echelond \
+        --env APP=enrond \
         --env VERSION=$(VERSION) \
         --env COMMIT=$(COMMIT) \
         --env CGO_ENABLED=1 \
@@ -144,12 +144,12 @@ build-docker:
 	$(DOCKER) tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest
 	# docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:${COMMIT_HASH}
 	# update old container
-	$(DOCKER) rm echelon || true
+	$(DOCKER) rm enron || true
 	# create a new container from the latest image
-	$(DOCKER) create --name echelon -t -i ${DOCKER_IMAGE}:latest echelon
+	$(DOCKER) create --name enron -t -i ${DOCKER_IMAGE}:latest enron
 	# move the binaries to the ./build directory
 	mkdir -p ./build/
-	$(DOCKER) cp echelon:/usr/bin/echelond ./build/
+	$(DOCKER) cp enron:/usr/bin/enrond ./build/
 
 push-docker: build-docker
 	$(DOCKER) push ${DOCKER_IMAGE}:${DOCKER_TAG}
@@ -286,7 +286,7 @@ update-swagger-docs: statik
 .PHONY: update-swagger-docs
 
 godocs:
-	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/enronchain/echelon/types"
+	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/enronchain/enron/types"
 	godoc -http=:6060
 
 # Start docs site at localhost:8080
@@ -367,8 +367,8 @@ test-sim-nondeterminism:
 
 test-sim-custom-genesis-fast:
 	@echo "Running custom genesis simulation..."
-	@echo "By default, ${HOME}/.$(ECHELON_DIR)/config/genesis.json will be used."
-	@go test -mod=readonly $(SIMAPP) -run TestFullAppSimulation -Genesis=${HOME}/.$(ECHELON_DIR)/config/genesis.json \
+	@echo "By default, ${HOME}/.$(ENRON_DIR)/config/genesis.json will be used."
+	@go test -mod=readonly $(SIMAPP) -run TestFullAppSimulation -Genesis=${HOME}/.$(ENRON_DIR)/config/genesis.json \
 		-Enabled=true -NumBlocks=100 -BlockSize=200 -Commit=true -Seed=99 -Period=5 -v -timeout 24h
 
 test-sim-import-export: runsim
@@ -381,8 +381,8 @@ test-sim-after-import: runsim
 
 test-sim-custom-genesis-multi-seed: runsim
 	@echo "Running multi-seed custom genesis simulation..."
-	@echo "By default, ${HOME}/.$(ECHELON_DIR)/config/genesis.json will be used."
-	@$(BINDIR)/runsim -Genesis=${HOME}/.$(ECHELON_DIR)/config/genesis.json -SimAppPkg=$(SIMAPP) -ExitOnFail 400 5 TestFullAppSimulation
+	@echo "By default, ${HOME}/.$(ENRON_DIR)/config/genesis.json will be used."
+	@$(BINDIR)/runsim -Genesis=${HOME}/.$(ENRON_DIR)/config/genesis.json -SimAppPkg=$(SIMAPP) -ExitOnFail 400 5 TestFullAppSimulation
 
 test-sim-multi-seed-long: runsim
 	@echo "Running long multi-seed application simulation. This may take awhile!"
@@ -437,7 +437,7 @@ lint-fix-contracts:
 format:
 	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/docs/statik/statik.go" -not -name '*.pb.go' | xargs gofmt -w -s
 	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/docs/statik/statik.go" -not -name '*.pb.go' | xargs misspell -w
-	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/docs/statik/statik.go" -not -name '*.pb.go' | xargs goimports -w -local github.com/enronchain/echelon
+	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/docs/statik/statik.go" -not -name '*.pb.go' | xargs goimports -w -local github.com/enronchain/enron
 .PHONY: format
 
 ###############################################################################
@@ -525,13 +525,13 @@ ifeq ($(OS),Windows_NT)
 	mkdir localnet-setup &
 	@$(MAKE) localnet-build
 
-	IF not exist "build/node0/$(ECHELON_BINARY)/config/genesis.json" docker run --rm -v $(CURDIR)/build\echelon\Z echelond/node "./echelond testnet --v 4 -o /echelon --keyring-backend=test --ip-addresses echelondnode0,echelondnode1,echelondnode2,echelondnode3"
+	IF not exist "build/node0/$(ENRON_BINARY)/config/genesis.json" docker run --rm -v $(CURDIR)/build\enron\Z enrond/node "./enrond testnet --v 4 -o /enron --keyring-backend=test --ip-addresses enrondnode0,enrondnode1,enrondnode2,enrondnode3"
 	docker-compose up -d
 else
 	mkdir -p localnet-setup
 	@$(MAKE) localnet-build
 
-	if ! [ -f localnet-setup/node0/$(ECHELON_BINARY)/config/genesis.json ]; then docker run --rm -v $(CURDIR)/localnet-setup:/echelon:Z echelond/node "./echelond testnet --v 4 -o /echelon --keyring-backend=test --ip-addresses echelondnode0,echelondnode1,echelondnode2,echelondnode3"; fi
+	if ! [ -f localnet-setup/node0/$(ENRON_BINARY)/config/genesis.json ]; then docker run --rm -v $(CURDIR)/localnet-setup:/enron:Z enrond/node "./enrond testnet --v 4 -o /enron --keyring-backend=test --ip-addresses enrondnode0,enrondnode1,enrondnode2,enrondnode3"; fi
 	docker-compose up -d
 endif
 
@@ -548,28 +548,28 @@ localnet-clean:
 localnet-unsafe-reset:
 	docker-compose down
 ifeq ($(OS),Windows_NT)
-	@docker run --rm -v $(CURDIR)\localnet-setup\node0\echelond:echelon\Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
-	@docker run --rm -v $(CURDIR)\localnet-setup\node1\echelond:echelon\Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
-	@docker run --rm -v $(CURDIR)\localnet-setup\node2\echelond:echelon\Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
-	@docker run --rm -v $(CURDIR)\localnet-setup\node3\echelond:echelon\Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
+	@docker run --rm -v $(CURDIR)\localnet-setup\node0\enrond:enron\Z enrond/node "./enrond unsafe-reset-all --home=/enron"
+	@docker run --rm -v $(CURDIR)\localnet-setup\node1\enrond:enron\Z enrond/node "./enrond unsafe-reset-all --home=/enron"
+	@docker run --rm -v $(CURDIR)\localnet-setup\node2\enrond:enron\Z enrond/node "./enrond unsafe-reset-all --home=/enron"
+	@docker run --rm -v $(CURDIR)\localnet-setup\node3\enrond:enron\Z enrond/node "./enrond unsafe-reset-all --home=/enron"
 else
-	@docker run --rm -v $(CURDIR)/localnet-setup/node0/echelond:/echelon:Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
-	@docker run --rm -v $(CURDIR)/localnet-setup/node1/echelond:/echelon:Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
-	@docker run --rm -v $(CURDIR)/localnet-setup/node2/echelond:/echelon:Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
-	@docker run --rm -v $(CURDIR)/localnet-setup/node3/echelond:/echelon:Z echelond/node "./echelond unsafe-reset-all --home=/echelon"
+	@docker run --rm -v $(CURDIR)/localnet-setup/node0/enrond:/enron:Z enrond/node "./enrond unsafe-reset-all --home=/enron"
+	@docker run --rm -v $(CURDIR)/localnet-setup/node1/enrond:/enron:Z enrond/node "./enrond unsafe-reset-all --home=/enron"
+	@docker run --rm -v $(CURDIR)/localnet-setup/node2/enrond:/enron:Z enrond/node "./enrond unsafe-reset-all --home=/enron"
+	@docker run --rm -v $(CURDIR)/localnet-setup/node3/enrond:/enron:Z enrond/node "./enrond unsafe-reset-all --home=/enron"
 endif
 
 # Clean testnet
 localnet-show-logstream:
 	docker-compose logs --tail=1000 -f
 
-.PHONY: build-docker-local-echelon localnet-start localnet-stop
+.PHONY: build-docker-local-enron localnet-start localnet-stop
 
 ###############################################################################
 ###                                Releasing                                ###
 ###############################################################################
 
-PACKAGE_NAME:=github.com/enronchain/echelon
+PACKAGE_NAME:=github.com/enronchain/enron
 GOLANG_CROSS_VERSION  = v1.17.1
 GOPATH ?= '$(HOME)/go'
 release-dry-run:

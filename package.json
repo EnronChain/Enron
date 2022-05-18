@@ -1,7 +1,7 @@
 {
-  "name": "echelon",
+  "name": "enron",
   "version": "1.0.3",
-  "description": "Echelon Cosmos/EVM Blockchain",
+  "description": "Enron Cosmos/EVM Blockchain",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enronchain/echelon.git"
+    "url": "git+https://github.com/enron/enron.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/enronchain/echelon/issues"
+    "url": "https://github.com/enron/enron/issues"
   },
-  "homepage": "https://github.com/enronchain/echelon#readme"
+  "homepage": "https://github.com/enron/enron#readme"
 }

@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	incentivestypes "github.com/enronchain/echelon/v3/x/incentives/types"
-	"github.com/enronchain/echelon/v3/x/inflation/types"
+	incentivestypes "github.com/enron/enron/v3/x/incentives/types"
+	"github.com/enron/enron/v3/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestMintAndAllocateInflation() {
@@ -123,7 +123,7 @@ func (suite *KeeperTestSuite) TestGetTotalSupplyAndInflationRate() {
 			suite.SetupTest() // reset
 
 			// Team allocation is only set on mainnet
-			suite.ctx = suite.ctx.WithChainID("echelon_9001-1")
+			suite.ctx = suite.ctx.WithChainID("enron_9001-1")
 			tc.malleate()
 
 			// Mint coins to increase supply

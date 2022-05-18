@@ -4,13 +4,13 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/tharsis/ethermint/tests"
-	"github.com/enronchain/echelon/v3/x/claims/types"
-	inflationtypes "github.com/enronchain/echelon/v3/x/inflation/types"
+	"github.com/enron/enron/v3/x/claims/types"
+	inflationtypes "github.com/enron/enron/v3/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestTotalUnclaimed() {
 	ctx := sdk.WrapSDKContext(suite.ctx)
-	coins := sdk.NewCoins(sdk.NewCoin("aechelon", sdk.NewInt(1000)))
+	coins := sdk.NewCoins(sdk.NewCoin("aenron", sdk.NewInt(1000)))
 
 	testCases := []struct {
 		name       string
@@ -148,7 +148,7 @@ func (suite *KeeperTestSuite) TestClaimsRecord() {
 			"invalid address",
 			func() {
 				req = &types.QueryClaimsRecordRequest{
-					Address: "echelon1",
+					Address: "enron1",
 				}
 			},
 			true,

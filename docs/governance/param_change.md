@@ -22,9 +22,9 @@ For a comprehensive list of available module parameters see the table below:
 | `slashing`     | `cosmos-sdk` | [reference](https://docs.cosmos.network/master/modules/slashing/08_params.html)                 |
 | `staking`      | `cosmos-sdk` | [reference](https://docs.cosmos.network/master/modules/staking/08_params.html)                  |
 | `transfer`     | `ibc-go`     | [reference](https://github.com/cosmos/ibc-go/blob/main/modules/apps/transfer/spec/07_params.md) |
-| `evm`          | `ethermint`  | [reference](https://echelon.dev/modules/evm/08_params.html)                                       |
-| `feemarket`    | `ethermint`  | [reference](https://echelon.dev/modules/feemarket/07_params.html)                                 |
-| `claims`       | `echelon`      | [reference](https://echelon.dev/modules/claims/06_parameters.html)                                |
-| `erc20`        | `echelon`      | [reference](https://echelon.dev/modules/erc20/07_parameters.html)                                 |
-| `incentives`   | `echelon`      | [reference](https://echelon.dev/modules/incentives/07_parameters.html)                            |
-| `inflation`    | `echelon`      | [reference](https://echelon.dev/modules/inflation/05_parameters.html)                             |
+| `evm`          | `ethermint`  | [reference](https://enron.dev/modules/evm/08_params.html)                                       |
+| `feemarket`    | `ethermint`  | [reference](https://enron.dev/modules/feemarket/07_params.html)                                 |
+| `claims`       | `enron`      | [reference](https://enron.dev/modules/claims/06_parameters.html)                                |
+| `erc20`        | `enron`      | [reference](https://enron.dev/modules/erc20/07_parameters.html)                                 |
+| `incentives`   | `enron`      | [reference](https://enron.dev/modules/incentives/07_parameters.html)                            |
+| `inflation`    | `enron`      | [reference](https://enron.dev/modules/inflation/05_parameters.html)                             |

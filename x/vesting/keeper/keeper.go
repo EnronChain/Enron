@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/enronchain/echelon/v3/x/vesting/types"
+	"github.com/enron/enron/v3/x/vesting/types"
 )
 
 // Keeper of this module maintains collections of vesting.

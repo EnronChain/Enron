@@ -17,9 +17,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/enronchain/echelon/v3/x/claims/client/cli"
-	"github.com/enronchain/echelon/v3/x/claims/keeper"
-	"github.com/enronchain/echelon/v3/x/claims/types"
+	"github.com/enron/enron/v3/x/claims/client/cli"
+	"github.com/enron/enron/v3/x/claims/keeper"
+	"github.com/enron/enron/v3/x/claims/types"
 )
 
 var (

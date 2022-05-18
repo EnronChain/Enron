@@ -2,7 +2,7 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/enronchain/echelon/v3/x/inflation/types"
+	"github.com/enron/enron/v3/x/inflation/types"
 )
 
 // GetEpochIdentifier gets the epoch identifier

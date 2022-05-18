@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/enronchain/echelon/v3/x/erc20/types"
+	"github.com/enron/enron/v3/x/erc20/types"
 )
 
 // ensureHooksSet tries to set the hooks on EVMKeeper, this will fail if the erc20 hook is already set

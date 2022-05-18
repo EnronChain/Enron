@@ -24,10 +24,10 @@ import (
 	ethermint "github.com/tharsis/ethermint/types"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 
-	echelonkr "github.com/enronchain/echelon/v3/crypto/keyring"
+	enronkr "github.com/enron/enron/v3/crypto/keyring"
 
-	vestingcli "github.com/enronchain/echelon/v3/x/vesting/client/cli"
-	vestingtypes "github.com/enronchain/echelon/v3/x/vesting/types"
+	vestingcli "github.com/enron/enron/v3/x/vesting/client/cli"
+	vestingtypes "github.com/enron/enron/v3/x/vesting/types"
 )
 
 const (
@@ -68,7 +68,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 						keyringBackend,
 						clientCtx.HomeDir,
 						inBuf,
-						echelonkr.Option(),
+						enronkr.Option(),
 					)
 					if err != nil {
 						return err

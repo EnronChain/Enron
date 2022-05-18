@@ -4,7 +4,7 @@ order: 1
 
 # Chain ID
 
-Learn about the Echelon chain-id format {synopsis}
+Learn about the Enron chain-id format {synopsis}
 
 ## Official Chain IDs
 
@@ -17,16 +17,16 @@ Learn about the Echelon chain-id format {synopsis}
 
 | Name                                            | Chain ID                                      | Identifier | EIP155 Number                         | Version Number                            |
 |-------------------------------------------------|-----------------------------------------------|------------|---------------------------------------|-------------------------------------------|
-| Echelon {{ $themeConfig.project.version_number }} | `echelon_{{ $themeConfig.project.chain_id }}-2` | `echelon`    | `{{ $themeConfig.project.chain_id }}` | `{{ $themeConfig.project.version_number }}` |
-| Echelon 1  | `echelon_{{ $themeConfig.project.chain_id }}-1` | `echelon`    | `{{ $themeConfig.project.chain_id }}` | `1` |
+| Enron {{ $themeConfig.project.version_number }} | `enron_{{ $themeConfig.project.chain_id }}-2` | `enron`    | `{{ $themeConfig.project.chain_id }}` | `{{ $themeConfig.project.version_number }}` |
+| Enron 1  | `enron_{{ $themeConfig.project.chain_id }}-1` | `enron`    | `{{ $themeConfig.project.chain_id }}` | `1` |
 :::
 ::: tab Testnets
 
 | Name                              | Chain ID                                              | Identifier | EIP155 Number                                 | Version Number                                      |
 |-----------------------------------|-------------------------------------------------------|------------|-----------------------------------------------|-----------------------------------------------------|
-| Echelon Public Testnet | `echelon_{{ $themeConfig.project.testnet_chain_id }}-3` | `echelon`    | `{{ $themeConfig.project.testnet_chain_id }}` | `{{ $themeConfig.project.testnet_version_number }}` |
-| Olympus Mons Incentivized Testnet | `echelon_{{ $themeConfig.project.testnet_chain_id }}-2` | `echelon`    | `{{ $themeConfig.project.testnet_chain_id }}` | `2` |
-| Arsia Mons Testnet                | `echelon_{{ $themeConfig.project.testnet_chain_id }}-1` | `echelon`    | `{{ $themeConfig.project.testnet_chain_id }}` | `1`                                                 |
+| Enron Public Testnet | `enron_{{ $themeConfig.project.testnet_chain_id }}-3` | `enron`    | `{{ $themeConfig.project.testnet_chain_id }}` | `{{ $themeConfig.project.testnet_version_number }}` |
+| Olympus Mons Incentivized Testnet | `enron_{{ $themeConfig.project.testnet_chain_id }}-2` | `enron`    | `{{ $themeConfig.project.testnet_chain_id }}` | `2` |
+| Arsia Mons Testnet                | `enron_{{ $themeConfig.project.testnet_chain_id }}-1` | `enron`    | `{{ $themeConfig.project.testnet_chain_id }}` | `1`                                                 |
 
 :::
 ::::
@@ -40,11 +40,11 @@ You can also lookup the [EIP155](https://github.com/ethereum/EIPs/blob/master/EI
 ## The Chain Identifier
 
 Every chain must have a unique identifier or `chain-id`. Tendermint requires each application to
-define its own `chain-id` in the [genesis.json fields](https://docs.tendermint.com/master/spec/core/genesis.html#genesis-fields). However, in order to comply with both EIP155 and Cosmos standard for chain upgrades, Echelon-compatible chains must implement a special structure for their chain identifiers.
+define its own `chain-id` in the [genesis.json fields](https://docs.tendermint.com/master/spec/core/genesis.html#genesis-fields). However, in order to comply with both EIP155 and Cosmos standard for chain upgrades, Enron-compatible chains must implement a special structure for their chain identifiers.
 
 ## Structure
 
-The Echelon Chain ID contains 3 main components
+The Enron Chain ID contains 3 main components
 
 - **Identifier**: Unstructured string that defines the name of the application.
 - **EIP155 Number**: Immutable [EIP155](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md) `CHAIN_ID` that defines the replay attack protection number.
@@ -53,7 +53,7 @@ This number **MUST** be incremented every time the chain is upgraded or forked i
 
 ### Format
 
-The format for specifying and Echelon compatible chain-id in genesis is the following:
+The format for specifying and Enron compatible chain-id in genesis is the following:
 
 ```bash
 {identifier}_{EIP155}-{version}
@@ -63,7 +63,7 @@ The following table provides an example where the second row corresponds to an u
 
 | ChainID        | Identifier | EIP155 Number | Version Number |
 |----------------|------------|---------------|----------------|
-| `echelon_3000-3` | echelon      | 9000          | 1              |
-| `echelon_9000-2` | echelon      | 9000          | 2              |
+| `enron_3000-3` | enron      | 9000          | 1              |
+| `enron_9000-2` | enron      | 9000          | 2              |
 | `...`          | ...        | ...           | ...            |
-| `echelon_9000-N` | echelon      | 9000          | N              |
+| `enron_9000-N` | enron      | 9000          | N              |

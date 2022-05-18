@@ -11,34 +11,34 @@ There are multiple ways to interact with a node: using the CLI, using gRPC or us
 Now that your very own node is running, it is time to try sending tokens from the first account you created to a second account. In a new terminal window, start by running the following query command:
 
 ```bash
-echelond query bank balances $MY_VALIDATOR_ADDRESS --chain-id=echelon_9000-3
+enrond query bank balances $MY_VALIDATOR_ADDRESS --chain-id=enron_9000-3
 ```
 
 You should see the current balance of the account you created, equal to the original balance of tokens you granted it minus the amount you delegated via the `gentx`. Now, create a second account:
 
 ```bash
-echelond keys add recipient --keyring-backend=file
+enrond keys add recipient --keyring-backend=file
 
 # Put the generated address in a variable for later use.
-RECIPIENT=$(echelond keys show recipient -a --keyring-backend=file)
+RECIPIENT=$(enrond keys show recipient -a --keyring-backend=file)
 ```
 
 The command above creates a local key-pair that is not yet registered on the chain. An account is created the first time it receives tokens from another account. Now, run the following command to send tokens to the `recipient` account:
 
 ```bash
-echelond tx bank send $MY_VALIDATOR_ADDRESS $RECIPIENT 1000000aechelon --chain-id=echelon_9000-3 --keyring-backend=file
+enrond tx bank send $MY_VALIDATOR_ADDRESS $RECIPIENT 1000000aenron --chain-id=enron_9000-3 --keyring-backend=file
 
 # Check that the recipient account did receive the tokens.
-echelond query bank balances $RECIPIENT --chain-id=echelon_9000-3
+enrond query bank balances $RECIPIENT --chain-id=enron_9000-3
 ```
 
 Finally, delegate some of the stake tokens sent to the `recipient` account to the validator:
 
 ```bash
-echelond tx staking delegate $(echelond keys show my_validator --bech val -a --keyring-backend=file) 500aechelon --from=recipient --chain-id=echelon_9000-3 --keyring-backend=file
+enrond tx staking delegate $(enrond keys show my_validator --bech val -a --keyring-backend=file) 500aenron --from=recipient --chain-id=enron_9000-3 --keyring-backend=file
 
 # Query the total delegations to `validator`.
-echelond query staking delegations-to $(echelond keys show my_validator --bech val -a --keyring-backend=file) --chain-id=echelon_9000-3
+enrond query staking delegations-to $(enrond keys show my_validator --bech val -a --keyring-backend=file) --chain-id=enron_9000-3
 ```
 
 You should see two delegations, the first one made from the `gentx`, and the second one you just performed from the `recipient` account.

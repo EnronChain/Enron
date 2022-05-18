@@ -6,7 +6,7 @@ parent:
 
 # Architecture Decision Records (ADR)
 
-This is a location to record all high-level architecture decisions in Echelon.
+This is a location to record all high-level architecture decisions in Enron.
 
 You can read more about the ADR concept in this blog posts:
 
